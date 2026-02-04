@@ -2,60 +2,117 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>System Checkmate</title>
+<meta charset="UTF-8">
+<title>System Checkmate</title>
 
-  <!-- Vercel Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
 
-  <style>
-    body {
-      background: black;
-      color: #00ff88;
-      font-family: monospace;
+<style>
 
-      /* CENTER TERMINAL LOOK */
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
+/* =====================
+   BASE TERMINAL STYLE
+   ===================== */
+body{
+  background:black;
+  color:#00ff88;
+  font-family:monospace;
+  margin:0;
+}
 
-      line-height: 1.6;
-    }
+/* center everything */
+.wrapper{
+  max-width:900px;
+  margin:auto;
+  padding:40px;
+}
 
-    a {
-      color: #00ff88;
-      text-decoration: none;
-    }
+/* links */
+a{
+  color:#00ff88;
+  text-decoration:none;
+}
 
-    button {
-      background: #00ff88;
-      color: black;
-      padding: 14px 26px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-    }
+/* image */
+img{
+  max-width:340px;
+  border:2px solid #00ff88;
+  display:block;
+  margin:20px 0;
+}
 
-    /* BLINKING CURSOR */
-    .blink {
-      animation: blink 1s steps(2, start) infinite;
-    }
+/* buttons */
+button{
+  background:#00ff88;
+  color:black;
+  padding:14px 26px;
+  font-weight:bold;
+  cursor:pointer;
+  border:none;
+  margin-right:10px;
+}
 
-    @keyframes blink {
-      to { visibility: hidden; }
-    }
-  </style>
+/* blinking cursor */
+.blink{
+  animation:blink 1s steps(2,start) infinite;
+}
+
+@keyframes blink{
+  to { visibility:hidden; }
+}
+
+
+/* =====================
+   MOBILE VERSION
+   ===================== */
+@media (max-width:700px){
+
+  .wrapper{
+    padding:22px;
+  }
+
+  body{
+    font-size:18px;
+  }
+
+  h1{
+    font-size:30px;
+  }
+
+  p{
+    font-size:18px;
+    line-height:1.6;
+  }
+
+  button{
+    width:100%;
+    font-size:18px;
+    padding:16px;
+    margin:8px 0;
+  }
+
+  img{
+    max-width:100%;
+  }
+
+  nav{
+    font-size:18px;
+  }
+}
+
+</style>
 </head>
 
 
 <body>
 
+<div class="wrapper">
+
 <!-- NAV -->
-<nav style="padding:20px 0;">
-  &gt;
-  <a href="index.html">home</a> |
-  <a href="gallery.html">cats</a> |
-  <a href="art.html">art</a>
+<nav>
+&gt; <a href="index.html">home</a> |
+<a href="gallery.html">cats</a> |
+<a href="art.html">art</a>
 </nav>
 
 
@@ -67,8 +124,8 @@
 <p>&gt; cat_division: online</p>
 <p>&gt; this_is_real: true</p>
 
-<br>
 
+<br>
 
 <!-- HUMAN MESSAGE -->
 <p>
@@ -77,29 +134,20 @@ We create cyberpunk / AI artwork to fund food and supplies.<br>
 Everything here is real.
 </p>
 
-<br><br>
 
-
-<!-- FEATURE CAT -->
-<img src="images/lava.jpg"
-     style="max-width:340px;border:2px solid #00ff88;display:block;margin-bottom:20px;">
+<!-- FEATURE IMAGE -->
+<img src="images/lava.jpg">
 
 
 <!-- BUTTONS -->
-<a href="gallery.html">
-  <button>VIEW REAL CATS</button>
-</a>
-
-<a href="art.html">
-  <button style="margin-left:10px;">VIEW ARTWORK</button>
-</a>
+<a href="gallery.html"><button>VIEW REAL CATS</button></a>
+<a href="art.html"><button>VIEW ARTWORK</button></a>
 
 
 <br><br>
 
-
-<!-- MISSION LOG LINK -->
-<a href="system-checkmate.html" style="font-size:18px;">
+<!-- BLINKING TERMINAL LINK -->
+<a href="system-checkmate.html">
 &gt; open_mission_log<span class="blink">_</span>
 </a>
 
@@ -107,10 +155,9 @@ Everything here is real.
 <br><br><br>
 
 
-<!-- TERMINAL STATUS -->
 <hr style="border-color:#003322;">
 
-<div style="margin-top:30px;font-size:14px;opacity:0.85;">
+<div style="opacity:0.85; line-height:1.6">
 
 &gt; SYSTEM STATUS<br>
 &gt; rescued_cats: 3<br>
@@ -126,5 +173,6 @@ Everything here is real.
 
 </div>
 
+</div>
 </body>
 </html>
