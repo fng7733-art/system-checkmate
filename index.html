@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-<body style="background:black;color:#00ff88;font-family:monospace;padding:40px;max-width:900px;margin:auto;">
+<body <style>
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+</style> style="background:black;color:#00ff88;font-family:monospace;padding:40px;max-width:900px;margin:auto;">
 
 <!-- NAV -->
 <nav style="padding:20px 0;">
@@ -55,7 +63,7 @@ Everything here is real.
 
 <a href="system-checkmate.html"
    style="color:#00ff88;text-decoration:none;font-size:18px;">
-&gt; open_mission_log
+&gt; open_mission_log<span class="blink">_</span>
 </a>
 
 <br><br><br>
@@ -75,7 +83,9 @@ Everything here is real.
 &gt; rescue_mode: running<br>
 &gt; compassion: maximum<br>
 &gt; directive: protect_the_small<br>
-
+&gt; operator: nic.exe<br>
+&gt; ai_assist: echo.sys<br>
+  
 </div>
 
 </body>
