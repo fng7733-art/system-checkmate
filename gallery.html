@@ -1,58 +1,120 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cat Gallery</title>
 
-  <head>
-  <meta charset="UTF-8">
-  <title>System Checkmate</title>
-
-  <!-- Vercel Analytics -->
+  <!-- Vercel analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
-<body style="background:black;color:#00ff88;font-family:monospace;padding:40px">
+  <style>
+    body {
+      background: black;
+      color: #00ff88;
+      font-family: monospace;
+      margin: 0;
+    }
 
-  <nav style="padding:20px 0;">
-    >
-    <a href="index.html" style="color:#00ff88;">home</a> |
-    <a href="gallery.html" style="color:#00ff88;">gallery</a>
+    /* CENTER CONTENT LIKE INDEX */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    a {
+      color: #00ff88;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin-top: 10px;
+    }
+
+    /* GALLERY GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .card {
+      border: 2px solid #00ff88;
+      padding: 6px;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .caption {
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    /* MOBILE BOOST */
+    @media (max-width: 600px) {
+      body {
+        font-size: 18px;
+      }
+
+      .wrap {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <nav>
+    &gt;
+    <a href="index.html">home</a> |
+    <a href="gallery.html">cats</a> |
+    <a href="art.html">art</a>
   </nav>
 
-  <h1>> cat_gallery</h1>
-  <p>> this_is_real: true</p>
-  <p>> rescued_units: active</p>
+  <!-- BACK BUTTON -->
+  <p style="margin-top:15px;">
+    &gt; <a href="index.html">← back_to_home</a>
+  </p>
 
-  <br>
+  <h1>&gt; cat_gallery</h1>
+  <p>&gt; this_is_real: true<br>&gt; rescued_units: active</p>
 
   <p>Real photos from cats we rescue and care for.</p>
 
-  <br><br>
+  <!-- GRID -->
+  <div class="grid">
 
-  <!-- CAT GRID -->
-  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div class="card">
+      <img src="images/edith.jpg">
+      <div class="caption">&gt; Edith's story – The Protector</div>
+    </div>
 
-  <!-- Edith -->
-  <div style="text-align:center">
-    <img src="images/edith1.jpg" style="width:220px;border:2px solid #00ff88;"><br>
-    <a href="edith-story.html" style="color:#00ff88;font-family:monospace;">> Edith's story -The Protector</a>
-  </div>
+    <div class="card">
+      <img src="images/mister.jpg">
+      <div class="caption">&gt; Mister's story – He Learned To Trust</div>
+    </div>
 
-  <!-- Mister -->
-  <div style="text-align:center">
-    <img src="images/mister.jpg" style="width:220px;border:2px solid #00ff88;"><br>
-    <a href="mister-story.html" style="color:#00ff88;font-family:monospace;">> Mister's story -He Learned To Trust</a>
-  </div>
+    <div class="card">
+      <img src="images/chili.jpg">
+      <div class="caption">&gt; Chili's story – The Survivor</div>
+    </div>
 
-  <!-- Chili -->
-  <div style="text-align:center">
-    <img src="images/chili.jpg" style="width:220px;border:2px solid #00ff88;"><br>
-    <a href="chili-story.html" style="color:#00ff88;font-family:monospace;">> Chili's story - The Survivor</a>
+    <div class="card">
+      <img src="images/gubben.jpg">
+      <div class="caption">&gt; Gubben's story – The Lost One</div>
+    </div>
+
   </div>
-    
-<!-- Lilla Gubben -->
-  <div style="text-align:center">
-    <img src="images/gubben3.jpg" style="width:220px;border:2px solid #00ff88;"><br>
-    <a href="gubbens-story.html" style="color:#00ff88;font-family:monospace;">> Gubben's story -The Lost One</a>
-  </div>
-    
 
 </div>
 
+</body>
+</html>
