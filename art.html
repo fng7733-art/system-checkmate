@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art Gallery</title>
 
-  <!-- Vercel analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
   <style>
@@ -55,7 +54,6 @@
       box-shadow: 0 0 10px #00ff88;
     }
 
-    /* CLICKABLE IMAGE */
     .card a {
       display: block;
     }
@@ -65,11 +63,6 @@
       display: block;
     }
 
-    .caption {
-      font-size: 14px;
-      margin-top: 6px;
-    }
-
     /* MOBILE */
     @media (max-width: 600px) {
       body {
@@ -77,11 +70,7 @@
       }
 
       .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .caption {
-        font-size: 16px;
+        grid-template-columns: 1fr; /* one vertical */
       }
     }
   </style>
@@ -117,29 +106,24 @@
   <!-- GRID -->
   <div class="grid">
 
-    <!-- IMAGE 1 -->
-    <div class="card">
-      <a href="images/art/black.png" target="_blank">
-        <img src="images/art/black.png" alt="">
-      </a>
-    </div>
+    <!-- row 1 -->
+    <div class="card"><a href="images/art/black.png" target="_blank"><img src="images/art/black.png"></a></div>
+    <div class="card"><a href="images/art/green_cat.png" target="_blank"><img src="images/art/green_cat.png"></a></div>
+    <div class="card"><a href="images/art/rescue_screen.png" target="_blank"><img src="images/art/rescue_screen.png"></a></div>
 
-    <!-- IMAGE 2 -->
-    <div class="card">
-      <a href="images/art/green_cat.png" target="_blank">
-        <img src="images/art/green_cat.png" alt="">
-      </a>
-    </div>
+    <!-- row 2 -->
+    <div class="card"><a href="images/art/snow_cat.png" target="_blank"><img src="images/art/snow_cat.png"></a></div>
+    <div class="card"><a href="images/art/terminal_cat.png" target="_blank"><img src="images/art/terminal_cat.png"></a></div>
+    <div class="card"><a href="images/art/keyboard_cat.png" target="_blank"><img src="images/art/keyboard_cat.png"></a></div>
 
-    <!-- IMAGE 3 -->
-    <div class="card">
-      <a href="images/art/rescue_screen.png" target="_blank">
-        <img src="images/art/rescue_screen.png" alt="">
-      </a>
-    </div>
+    <!-- row 3 -->
+    <div class="card"><a href="images/art/warrior_cat.png" target="_blank"><img src="images/art/warrior_cat.png"></a></div>
+    <div class="card"><a href="images/art/box_cat.png" target="_blank"><img src="images/art/box_cat.png"></a></div>
+    <div class="card"><a href="images/art/edith_close.png" target="_blank"><img src="images/art/edith_close.png"></a></div>
 
-    <!-- ADD MORE SAME WAY -->
-    <!-- copy a card and just change filename -->
+    <!-- row 4 -->
+    <div class="card"><a href="images/art/ragnarok.png" target="_blank"><img src="images/art/ragnarok.png"></a></div>
+    <div class="card"><a href="images/art/cyber_edith.png" target="_blank"><img src="images/art/cyber_edith.png"></a></div>
 
   </div>
 
