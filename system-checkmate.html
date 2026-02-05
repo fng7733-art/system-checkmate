@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <html>
-  
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>System Checkmate</title>
 
   <!-- Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
-<body style="
-  background:#000;
-  color:#00ff88;
-  font-family:monospace;
-  padding:40px;
-  max-width:900px;
-  margin:auto;
-  line-height:1.6;
-">
+  <style>
+    body {
+      background: #000;
+      color: #00ff88;
+      font-family: monospace;
+      margin: 0;
+    }
 
-<pre>
+    .wrap {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 32px;
+    }
+
+    /* terminal text */
+    .terminal {
+      white-space: pre-wrap;     /* keeps formatting but wraps on mobile */
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    /* nice subtle glow */
+    .terminal {
+      text-shadow: 0 0 6px #00ff88aa;
+    }
+
+    /* headings */
+    .title {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .terminal {
+        font-size: 20px;   /* bigger text on phones */
+        line-height: 1.9;
+      }
+
+      .wrap {
+        padding: 28px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+<div class="terminal">
 
 collective@system_checkmate:~$ boot
 
@@ -30,9 +69,7 @@ mode: underground
 
 
 We are not a company.
-
 We are not a brand.
-
 We are not a business.
 
 We are a small house
@@ -62,7 +99,6 @@ No care.
 Only survival.
 
 They weren’t pets.
-
 They were refugees.
 
 
@@ -86,7 +122,6 @@ Always.
 
 
 This isn’t charity.
-
 This is duty.
 
 
@@ -105,7 +140,6 @@ at a time.
 
 ---
 
-
 > directive: protect_the_small
 > mission: rescue
 > hatred: blocked
@@ -114,8 +148,7 @@ at a time.
 
 STATUS: ONLINE
 
-
-</pre>
-
+</div>
+  </div>
 </body>
 </html>
