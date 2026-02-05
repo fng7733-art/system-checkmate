@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Gallery | System Checkmate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art Gallery</title>
 
   <!-- Vercel analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
@@ -17,7 +16,6 @@
       margin: 0;
     }
 
-    /* CENTER CONTENT LIKE INDEX */
     .wrap {
       max-width: 1000px;
       margin: 0 auto;
@@ -29,25 +27,37 @@
       text-decoration: none;
     }
 
-    /* GRID LAYOUT */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      margin-top: 10px;
+      font-size: 28px;
+    }
+
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
       margin-top: 25px;
     }
 
-    /* CLICKABLE CARDS */
+    /* CARD */
     .card {
       border: 2px solid #00ff88;
-      display: block;
       padding: 6px;
       transition: 0.15s;
     }
 
     .card:hover {
-      background: #001a11;
-      transform: scale(1.02);
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    /* CLICKABLE IMAGE */
+    .card a {
+      display: block;
     }
 
     .card img {
@@ -55,9 +65,13 @@
       display: block;
     }
 
-    /* MOBILE: ONE IMAGE PER ROW + BIGGER TEXT */
-    @media (max-width: 600px) {
+    .caption {
+      font-size: 14px;
+      margin-top: 6px;
+    }
 
+    /* MOBILE */
+    @media (max-width: 600px) {
       body {
         font-size: 18px;
       }
@@ -65,10 +79,13 @@
       .grid {
         grid-template-columns: 1fr;
       }
+
+      .caption {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
-
 
 <body>
 
@@ -76,13 +93,12 @@
 
   <!-- NAV -->
   <nav>
-    &gt;
-    <a href="index.html">home</a> |
+    &gt; <a href="index.html">home</a> |
     <a href="gallery.html">cats</a> |
     <a href="art.html">art</a>
   </nav>
 
-  <!-- BACK BUTTON -->
+  <!-- BACK -->
   <p style="margin-top:15px;">
     &gt; <a href="index.html">← back_to_home</a>
   </p>
@@ -91,53 +107,39 @@
 
   <p>
     &gt; all_art_free: true<br>
-    &gt; donate_if_you_like: https://paypal.me/systemcheckmate<br>
+    &gt; donate_if_you_like:
+    <a href="https://paypal.me/systemcheckmate" target="_blank">
+      paypal.me/systemcheckmate
+    </a><br>
     &gt; made_for_cats: always
   </p>
 
-
-  <!-- ART GRID -->
+  <!-- GRID -->
   <div class="grid">
 
-    <a href="images/art/black.png" class="card" target="_blank">
-      <img src="images/art/black.png">
-    </a>
+    <!-- IMAGE 1 -->
+    <div class="card">
+      <a href="images/art/black.png" target="_blank">
+        <img src="images/art/black.png" alt="">
+      </a>
+    </div>
 
-    <a href="images/art/edith1.png" class="card" target="_blank">
-      <img src="images/art/edith1.png">
-    </a>
+    <!-- IMAGE 2 -->
+    <div class="card">
+      <a href="images/art/green_cat.png" target="_blank">
+        <img src="images/art/green_cat.png" alt="">
+      </a>
+    </div>
 
-    <a href="images/art/chili1.png" class="card" target="_blank">
-      <img src="images/art/chili1.png">
-    </a>
+    <!-- IMAGE 3 -->
+    <div class="card">
+      <a href="images/art/rescue_screen.png" target="_blank">
+        <img src="images/art/rescue_screen.png" alt="">
+      </a>
+    </div>
 
-    <a href="images/art/rescue1.png" class="card" target="_blank">
-      <img src="images/art/rescue1.png">
-    </a>
-
-    <a href="images/art/edith2.png" class="card" target="_blank">
-      <img src="images/art/edith2.png">
-    </a>
-
-    <a href="images/art/viking.png" class="card" target="_blank">
-      <img src="images/art/viking.png">
-    </a>
-
-    <a href="images/art/catbox.png" class="card" target="_blank">
-      <img src="images/art/catbox.png">
-    </a>
-
-    <a href="images/art/viking+cat.png" class="card" target="_blank">
-      <img src="images/art/viking+cat.png">
-    </a>
-
-    <a href="images/art/viking+victim.png" class="card" target="_blank">
-      <img src="images/art/viking+victim.png">
-    </a>
-
-    <a href="images/art/warrior1.png" class="card" target="_blank">
-      <img src="images/art/warrior1.png">
-    </a>
+    <!-- ADD MORE SAME WAY -->
+    <!-- copy a card and just change filename -->
 
   </div>
 
