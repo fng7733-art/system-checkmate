@@ -32,7 +32,7 @@
       margin-top: 10px;
     }
 
-    /* GALLERY GRID */
+    /* ===== GRID ===== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -40,33 +40,48 @@
       margin-top: 25px;
     }
 
+    /* ===== CLICKABLE CARD ===== */
     .card {
+      display: block;
       border: 2px solid #00ff88;
       padding: 6px;
+      transition: background 0.15s;
     }
 
+    .card:hover {
+      background: #002b1a;
+    }
+
+    /* ⭐ important: lets taps go through image */
     .card img {
       width: 100%;
       display: block;
+      pointer-events: none;
     }
 
     .caption {
       font-size: 14px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
-    /* MOBILE BOOST */
+    /* ===== MOBILE MODE ===== */
     @media (max-width: 600px) {
+
       body {
         font-size: 18px;
       }
 
-      .wrap {
-        padding: 18px;
+      .grid {
+        grid-template-columns: 1fr; /* one per row */
+      }
+
+      .caption {
+        font-size: 18px;
       }
     }
   </style>
 </head>
+
 
 <body>
 
@@ -86,32 +101,37 @@
   </p>
 
   <h1>&gt; cat_gallery</h1>
-  <p>&gt; this_is_real: true<br>&gt; rescued_units: active</p>
+
+  <p>
+    &gt; this_is_real: true<br>
+    &gt; rescued_units: active
+  </p>
 
   <p>Real photos from cats we rescue and care for.</p>
 
-  <!-- GRID -->
+
+  <!-- ===== GALLERY ===== -->
   <div class="grid">
 
-    <div class="card">
+    <a href="edith-story.html" class="card">
       <img src="images/edith.jpg">
       <div class="caption">&gt; Edith's story – The Protector</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="mister-story.html" class="card">
       <img src="images/mister.jpg">
       <div class="caption">&gt; Mister's story – He Learned To Trust</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="chili-story.html" class="card">
       <img src="images/chili.jpg">
       <div class="caption">&gt; Chili's story – The Survivor</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="gubben-story.html" class="card">
       <img src="images/gubben.jpg">
       <div class="caption">&gt; Gubben's story – The Lost One</div>
-    </div>
+    </a>
 
   </div>
 
