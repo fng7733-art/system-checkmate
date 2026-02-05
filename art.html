@@ -1,50 +1,118 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="UTF-8">
-  <title>System Checkmate</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery</title>
 
-  <!-- Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
-<body style="background:black;color:#00ff88;font-family:monospace;padding:40px">
+  <style>
+    body {
+      background: black;
+      color: #00ff88;
+      font-family: monospace;
+      margin: 0;
+    }
 
-<nav>
-  &gt;
-  <a href="index.html" style="color:#00ff88;">home</a> |
-  <a href="gallery.html" style="color:#00ff88;">cats</a> |
-  <a href="art.html" style="color:#00ff88;">art</a>
-</nav>
+    /* center content like index */
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px;
+    }
 
-<h1>&gt; art_gallery</h1>
-<p>&gt; cyberpunk_rescue_art: online</p>
+    a {
+      color: #00ff88;
+      text-decoration: none;
+    }
 
-<p>&gt; All art here is free to use "Opensource".</p>
-<p>&gt; Wallpapers, prints, whatever.</p>
-</p>
-<p>&gt; If you'd like to support the cats!</p>
-<p>&gt; donate 5$ for food & supplies.</p>
+    h1 {
+      margin-top: 10px;
+    }
 
-<p>&gt; Every donation helps the cats.</p>
+    /* ===== GRID ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
 
-<p>&gt; [ Donate / Support ]</p>
+    /* image cards */
+    .card {
+      border: 2px solid #00ff88;
+      padding: 6px;
+      transition: background 0.15s;
+    }
+
+    .card:hover {
+      background: #002b1a;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 600px) {
+
+      body {
+        font-size: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr; /* one per row */
+      }
+    }
+  </style>
+</head>
 
 
-<br>
+<body>
 
-<div style="display:flex;flex-wrap:wrap;gap:20px">
+<div class="wrap">
 
-<img src="images/art/black.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/edith1.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/chili1.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/rescue1.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/edith2.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/viking.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/catbox.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/viking+cat.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/viking+victim.png" style="width:260px;border:2px solid #00ff88;">
-<img src="images/art/warrior1.png" style="width:260px;border:2px solid #00ff88;">
+  <!-- NAV -->
+  <nav>
+    &gt;
+    <a href="index.html">home</a> |
+    <a href="gallery.html">cats</a> |
+    <a href="art.html">art</a>
+  </nav>
+
+
+  <h1>&gt; art_gallery</h1>
+
+  <p>
+    &gt; cyberpunk_rescue_art: online<br>
+    &gt; all_art_free: true<br>
+    &gt; donation_optional: 5_usd<br>
+    &gt; every_donation_helps_the_cats
+  </p>
+
+  <p>
+    [ <a href="https://paypal.me/YOURNAME">Donate / Support</a> ]
+  </p>
+
+
+  <!-- ===== ART GRID ===== -->
+  <div class="grid">
+
+    <!-- just add images here -->
+    <div class="card"><images/art/black.png"></div>
+    <div class="card"><images/art/edith1.png"></div>
+    <div class="card"><images/art/chili1.png"></div>
+    <div class="card"><images/art/rescue1.png"></div>
+    <div class="card"><images/art/edith2.png"></div>
+    <div class="card"><images/art/viking.png"></div>
+    <div class="card"><images/art/catbox.png"></div>
+    <div class="card"><images/art/viking+cat.png"></div>
+    <div class="card"><images/art/viking+victim.png"></div>
+    <div class="card"><images/art/warrior1.png"></div>
+
+  </div>
 
 </div>
 
