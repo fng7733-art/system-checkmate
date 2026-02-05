@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Gallery</title>
+  <title>Cat Gallery</title>
 
+  <!-- Vercel analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 
   <style>
@@ -15,9 +16,9 @@
       margin: 0;
     }
 
-    /* center content like index */
+    /* CENTER CONTENT LIKE INDEX */
     .wrap {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 24px;
     }
@@ -34,13 +35,14 @@
     /* ===== GRID ===== */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
       margin-top: 25px;
     }
 
-    /* image cards */
+    /* ===== CLICKABLE CARD ===== */
     .card {
+      display: block;
       border: 2px solid #00ff88;
       padding: 6px;
       transition: background 0.15s;
@@ -50,12 +52,19 @@
       background: #002b1a;
     }
 
+    /* ⭐ important: lets taps go through image */
     .card img {
       width: 100%;
       display: block;
+      pointer-events: none;
     }
 
-    /* ===== MOBILE ===== */
+    .caption {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    /* ===== MOBILE MODE ===== */
     @media (max-width: 600px) {
 
       body {
@@ -64,6 +73,10 @@
 
       .grid {
         grid-template-columns: 1fr; /* one per row */
+      }
+
+      .caption {
+        font-size: 18px;
       }
     }
   </style>
@@ -82,34 +95,43 @@
     <a href="art.html">art</a>
   </nav>
 
-
-  <h1>&gt; art_gallery</h1>
-
-  <p>
-    &gt; cyberpunk_rescue_art: online<br>
-    &gt; all_art_free: true<br>
-    &gt; donation_optional: 5_usd<br>
-    &gt; every_donation_helps_the_cats
+  <!-- BACK BUTTON -->
+  <p style="margin-top:15px;">
+    &gt; <a href="index.html">← back_to_home</a>
   </p>
 
+  <h1>&gt; cat_gallery</h1>
+
   <p>
-    [ <a href="https://paypal.me/YOURNAME">Donate / Support</a> ]
+    &gt; this_is_real: true<br>
+    &gt; rescued_units: active
   </p>
 
+  <p>Real photos from cats we rescue and care for.</p>
 
-  <!-- ===== ART GRID ===== -->
+
+  <!-- ===== GALLERY ===== -->
   <div class="grid">
 
-    <!-- just add images here -->
-    <div class="card"><img src="art/1.jpg"></div>
-    <div class="card"><img src="art/2.jpg"></div>
-    <div class="card"><img src="art/3.jpg"></div>
-    <div class="card"><img src="art/4.jpg"></div>
-    <div class="card"><img src="art/5.jpg"></div>
-    <div class="card"><img src="art/6.jpg"></div>
-    <div class="card"><img src="art/7.jpg"></div>
-    <div class="card"><img src="art/8.jpg"></div>
-    <div class="card"><img src="art/9.jpg"></div>
+    <a href="edith-story.html" class="card">
+      <img src="images/edith1.jpg">
+      <div class="caption">&gt; Edith's story – The Protector</div>
+    </a>
+
+    <a href="mister-story.html" class="card">
+      <img src="images/mister.jpg">
+      <div class="caption">&gt; Mister's story – He Learned To Trust</div>
+    </a>
+
+    <a href="chili-story.html" class="card">
+      <img src="images/chili.jpg">
+      <div class="caption">&gt; Chili's story – The Survivor</div>
+    </a>
+
+    <a href="gubben-story.html" class="card">
+      <img src="images/gubben3.jpg">
+      <div class="caption">&gt; Gubben's story – The Lost One</div>
+    </a>
 
   </div>
 
