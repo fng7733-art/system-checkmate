@@ -164,30 +164,42 @@ function stopBlink(){
   setIcon("/ico/rune.svg");
 }
 
-/* REAL boot sequence — wait for page */
-window.addEventListener("load", ()=>{
+/* --- BOOT SEQUENCE --- */
 
-  // black terminal
+function bootSequence(){
+
+  // 1 — black screen (guaranteed visible)
   setIcon("/ico/off.svg");
 
-  // give browser time to paint
+  // stay black 2 seconds
   setTimeout(()=>{
     setIcon("/ico/rune.svg");
-  }, 700);
+  }, 2000);
 
+  // cursor online
   setTimeout(()=>{
     startBlink();
-  }, 1600);
+  }, 3200);
+}
 
-});
+/* wait until tab is actually visible */
+if (document.visibilityState === "visible"){
+  setTimeout(bootSequence, 50);
+}else{
+  document.addEventListener("visibilitychange", function once(){
+    if(!document.hidden){
+      document.removeEventListener("visibilitychange", once);
+      setTimeout(bootSequence, 50);
+    }
+  });
+}
 
-/* tab awareness */
+/* guard mode when switching tabs */
 document.addEventListener("visibilitychange", ()=>{
   if(document.hidden){
     stopBlink();
   }else{
-    setIcon("/ico/off.svg");
-    setTimeout(startBlink, 200);
+    bootSequence(); // returning feels like reconnect
   }
 });
 </script>
