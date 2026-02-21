@@ -142,7 +142,46 @@ Everything here is real.
 
 <!-- system boot confirmation (activates rune) -->
 <script>
-document.documentElement.classList.add("system-online");
+/* ========= SYSTEM CHECKMATE NODE ICON ========= */
+
+const favicon = document.getElementById("favicon");
+
+function setIcon(path){
+  // forces browser to reload icon instead of caching
+  favicon.href = path + "?v=" + Date.now();
+}
+
+/* --- BOOT SEQUENCE --- */
+setIcon("/ico/off.svg");           // cold boot
+
+window.addEventListener("load", () => {
+
+  setTimeout(()=>{
+    setIcon("/ico/rune.svg");      // shield wall raised
+  }, 500);
+
+  setTimeout(()=>{
+    setIcon("/ico/live.svg");      // terminal ready
+    startHeartbeat();
+  }, 1300);
+
+});
+
+/* --- HEARTBEAT --- */
+function startHeartbeat(){
+  let state = true;
+  setInterval(()=>{
+    setIcon(state ? "/ico/live.svg" : "/ico/rune.svg");
+    state = !state;
+  }, 900);
+}
+
+/* --- TAB NOT FOCUSED = DIM NODE --- */
+document.addEventListener("visibilitychange", () => {
+  if(document.hidden){
+    setIcon("/ico/rune.svg"); // idle guard mode
+  }
+});
 </script>
 
 </body>
