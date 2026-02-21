@@ -142,44 +142,41 @@ Everything here is real.
 
 <!-- system boot confirmation (activates rune) -->
 <script>
-/* ========= SYSTEM CHECKMATE NODE ICON ========= */
-
-const favicon = document.getElementById("favicon");
+const icon = document.getElementById("favicon");
 
 function setIcon(path){
-  // forces browser to reload icon instead of caching
-  favicon.href = path + "?v=" + Date.now();
+  icon.href = path + "?v=" + Date.now();
 }
 
-/* --- BOOT SEQUENCE --- */
-setIcon("/ico/off.svg");           // cold boot
+/* boot */
+setIcon("/ico/off.svg");
+setTimeout(()=>setIcon("/ico/rune.svg"), 500);
+setTimeout(()=>startBlink(), 1200);
 
-window.addEventListener("load", () => {
+let blinkInterval;
 
-  setTimeout(()=>{
-    setIcon("/ico/rune.svg");      // shield wall raised
-  }, 500);
-
-  setTimeout(()=>{
-    setIcon("/ico/live.svg");      // terminal ready
-    startHeartbeat();
-  }, 1300);
-
-});
-
-/* --- HEARTBEAT --- */
-function startHeartbeat(){
-  let state = true;
-  setInterval(()=>{
-    setIcon(state ? "/ico/live.svg" : "/ico/rune.svg");
-    state = !state;
+/* blinking when active */
+function startBlink(){
+  stopBlink();
+  let on = true;
+  blinkInterval = setInterval(()=>{
+    setIcon(on ? "/ico/live.svg" : "/ico/rune.svg");
+    on = !on;
   }, 900);
 }
 
-/* --- TAB NOT FOCUSED = DIM NODE --- */
-document.addEventListener("visibilitychange", () => {
+function stopBlink(){
+  clearInterval(blinkInterval);
+  setIcon("/ico/rune.svg");
+}
+
+/* tab awareness */
+document.addEventListener("visibilitychange", ()=>{
   if(document.hidden){
-    setIcon("/ico/rune.svg"); // idle guard mode
+    stopBlink(); // guard mode
+  }else{
+    setIcon("/ico/off.svg"); // acknowledgement flash
+    setTimeout(startBlink, 120);
   }
 });
 </script>
