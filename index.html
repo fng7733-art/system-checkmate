@@ -148,14 +148,8 @@ function setIcon(path){
   icon.href = path + "?v=" + Date.now();
 }
 
-/* boot */
-setIcon("/ico/off.svg");
-setTimeout(()=>setIcon("/ico/rune.svg"), 500);
-setTimeout(()=>startBlink(), 1200);
-
 let blinkInterval;
 
-/* blinking when active */
 function startBlink(){
   stopBlink();
   let on = true;
@@ -170,13 +164,30 @@ function stopBlink(){
   setIcon("/ico/rune.svg");
 }
 
+/* REAL boot sequence — wait for page */
+window.addEventListener("load", ()=>{
+
+  // black terminal
+  setIcon("/ico/off.svg");
+
+  // give browser time to paint
+  setTimeout(()=>{
+    setIcon("/ico/rune.svg");
+  }, 700);
+
+  setTimeout(()=>{
+    startBlink();
+  }, 1600);
+
+});
+
 /* tab awareness */
 document.addEventListener("visibilitychange", ()=>{
   if(document.hidden){
-    stopBlink(); // guard mode
+    stopBlink();
   }else{
-    setIcon("/ico/off.svg"); // acknowledgement flash
-    setTimeout(startBlink, 120);
+    setIcon("/ico/off.svg");
+    setTimeout(startBlink, 200);
   }
 });
 </script>
