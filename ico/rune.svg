@@ -3,12 +3,12 @@
 
 <g stroke="#00ff88" stroke-width="5" fill="none" stroke-linecap="square">
 
-  <!-- main spine (LONGER — passes into crown) -->
-  <line x1="32" y1="54" x2="32" y2="10"/>
+  <!-- very long spine -->
+  <line x1="32" y1="58" x2="32" y2="6"/>
 
-  <!-- arms moved slightly downward -->
-  <line x1="32" y1="22" x2="12" y2="6"/>
-  <line x1="32" y1="22" x2="52" y2="6"/>
+  <!-- arms start lower -->
+  <line x1="32" y1="28" x2="10" y2="10"/>
+  <line x1="32" y1="28" x2="54" y2="10"/>
 
 </g>
 </svg>
