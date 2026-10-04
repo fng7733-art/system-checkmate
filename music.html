@@ -21,7 +21,7 @@ body{
 }
 
 .wrapper{
-  max-width:900px;
+  max-width:1100px;
   margin:auto;
   padding:40px;
 }
@@ -39,10 +39,17 @@ h1{
   font-size:30px;
 }
 
+.track-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+
 .track{
   border:2px solid #00ff88;
-  padding:20px;
-  margin:24px 0;
+  padding:16px;
+  margin:0;
+  min-width:0;
 }
 
 .track-number{
@@ -53,6 +60,14 @@ h1{
 .track-title{
   font-size:22px;
   margin:8px 0 16px;
+}
+
+.track-cover{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  display:block;
+  margin:0 0 16px;
 }
 
 audio{
@@ -70,6 +85,7 @@ audio{
   .wrapper{ padding:22px; }
   body{ font-size:18px; }
   h1{ font-size:30px; }
+  .track-grid{ grid-template-columns:1fr; }
   .track{ padding:16px; }
 }
 </style>
@@ -101,9 +117,11 @@ audio{
 
 <hr style="border-color:#003322;">
 
+<div class="track-grid">
+
 <div class="track">
   <div class="track-number">TRACK_01</div>
-  <img src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence cover" style="width:100%;display:block;margin:0 0 20px;">
+  <img class="track-cover" src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence cover">
   <div class="track-title">&gt; Neural Boot Sequence</div>
   <audio controls preload="none">
     <source src="music/audio/neural-boot-sequence.mp3" type="audio/mpeg">
@@ -114,7 +132,7 @@ audio{
 
 <div class="track">
   <div class="track-number">TRACK_02</div>
-  <img src="music/covers/system-surge.png" alt="System Surge cover" style="width:100%;display:block;margin:0 0 20px;">
+  <img class="track-cover" src="music/covers/system-surge.png" alt="System Surge cover">
   <div class="track-title">&gt; System Surge</div>
   <audio controls preload="none">
     <source src="music/audio/system-surge.mp3" type="audio/mpeg">
@@ -153,7 +171,9 @@ audio{
   <div class="status">&gt; audio_file: pending</div>
 </div>
 
-<hr style="border-color:#003322;">
+</div>
+
+<hr style="border-color:#003322;margin-top:24px;">
 
 <p style="opacity:0.8;">
 &gt; album_art: TRACK_01_02_READY<br>
