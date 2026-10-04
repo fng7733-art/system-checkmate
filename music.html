@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>system_checkmate // music</title>
+
+<link id="favicon" rel="icon" href="/ico/off.svg">
+<meta name="theme-color" content="#00ff88">
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+<style>
+body{
+  background:black;
+  color:#00ff88;
+  font-family:monospace;
+  margin:0;
+}
+
+.wrapper{
+  max-width:900px;
+  margin:auto;
+  padding:40px;
+}
+
+a{
+  color:#00ff88;
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+h1{
+  font-size:30px;
+}
+
+.track{
+  border:2px solid #00ff88;
+  padding:20px;
+  margin:24px 0;
+}
+
+.track-number{
+  font-size:14px;
+  opacity:0.8;
+}
+
+.track-title{
+  font-size:22px;
+  margin:8px 0 16px;
+}
+
+audio{
+  width:100%;
+  filter:invert(1) hue-rotate(100deg);
+}
+
+.status{
+  margin-top:10px;
+  font-size:14px;
+  opacity:0.75;
+}
+
+@media (max-width:700px){
+  .wrapper{ padding:22px; }
+  body{ font-size:18px; }
+  h1{ font-size:30px; }
+  .track{ padding:16px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<nav>
+&gt; <a href="index.html">home</a> |
+<a href="gallery.html">cats</a> |
+<a href="art.html">art</a> |
+<a href="music.html">music</a>
+</nav>
+
+<p style="margin-top:15px;">
+&gt; <a href="index.html">← back_to_home</a>
+</p>
+
+<h1>&gt; system_checkmate_music</h1>
+
+<p>
+&gt; audio_subsystem: online<br>
+&gt; cat_division: listening<br>
+&gt; tracks_loaded: 5<br>
+&gt; artwork_status: pending
+</p>
+
+<hr style="border-color:#003322;">
+
+<div class="track">
+  <div class="track-number">TRACK_01</div>
+  <div class="track-title">&gt; 1</div>
+  <audio controls preload="none">
+    <source src="music/1.mp3" type="audio/mpeg">
+    Your browser does not support the audio player.
+  </audio>
+  <div class="status">&gt; audio_file: pending</div>
+</div>
+
+<div class="track">
+  <div class="track-number">TRACK_02</div>
+  <div class="track-title">&gt; 2</div>
+  <audio controls preload="none">
+    <source src="music/2.mp3" type="audio/mpeg">
+    Your browser does not support the audio player.
+  </audio>
+  <div class="status">&gt; audio_file: pending</div>
+</div>
+
+<div class="track">
+  <div class="track-number">TRACK_03</div>
+  <div class="track-title">&gt; 3</div>
+  <audio controls preload="none">
+    <source src="music/3.mp3" type="audio/mpeg">
+    Your browser does not support the audio player.
+  </audio>
+  <div class="status">&gt; audio_file: pending</div>
+</div>
+
+<div class="track">
+  <div class="track-number">TRACK_04</div>
+  <div class="track-title">&gt; 4</div>
+  <audio controls preload="none">
+    <source src="music/4.mp3" type="audio/mpeg">
+    Your browser does not support the audio player.
+  </audio>
+  <div class="status">&gt; audio_file: pending</div>
+</div>
+
+<div class="track">
+  <div class="track-number">TRACK_05</div>
+  <div class="track-title">&gt; 5</div>
+  <audio controls preload="none">
+    <source src="music/5.mp3" type="audio/mpeg">
+    Your browser does not support the audio player.
+  </audio>
+  <div class="status">&gt; audio_file: pending</div>
+</div>
+
+<hr style="border-color:#003322;">
+
+<p style="opacity:0.8;">
+&gt; album_art: not_yet_generated<br>
+&gt; titles: awaiting_operator_selection<br>
+&gt; system_status: ONLINE<span class="blink">_</span>
+</p>
+
+</div>
+
+<style>
+.blink{
+  animation:blink 1s steps(2,start) infinite;
+}
+@keyframes blink{
+  to{ visibility:hidden; }
+}
+</style>
+
+<script>
+const icon = document.getElementById("favicon");
+
+function setIcon(path){
+  icon.href = path + "?v=" + Date.now();
+}
+
+let blinkInterval;
+
+function startBlink(){
+  stopBlink();
+  let on = true;
+  blinkInterval = setInterval(()=>{
+    setIcon(on ? "/ico/live.svg" : "/ico/rune.svg");
+    on = !on;
+  }, 900);
+}
+
+function stopBlink(){
+  clearInterval(blinkInterval);
+  setIcon("/ico/rune.svg");
+}
+
+function bootSequence(){
+  setIcon("/ico/off.svg");
+
+  setTimeout(()=>{
+    setIcon("/ico/rune.svg");
+  }, 2000);
+
+  setTimeout(()=>{
+    startBlink();
+  }, 3200);
+}
+
+if(document.visibilityState === "visible"){
+  setTimeout(bootSequence,50);
+}else{
+  document.addEventListener("visibilitychange",function once(){
+    if(!document.hidden){
+      document.removeEventListener("visibilitychange",once);
+      setTimeout(bootSequence,50);
+    }
+  });
+}
+
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){
+    stopBlink();
+  }else{
+    bootSequence();
+  }
+});
+</script>
+
+</body>
+</html>
