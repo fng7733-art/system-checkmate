@@ -39,6 +39,55 @@ h1{
   font-size:30px;
 }
 
+.featured{
+  border:2px solid #00ff88;
+  padding:20px;
+  margin:24px 0 34px;
+  box-shadow:0 0 18px rgba(0,255,136,0.22);
+}
+
+.featured-label{
+  font-size:14px;
+  letter-spacing:2px;
+  opacity:0.85;
+  margin-bottom:14px;
+}
+
+.featured-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(260px,0.85fr);
+  gap:24px;
+  align-items:center;
+}
+
+.featured-cover{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  display:block;
+}
+
+.featured-info{
+  padding:4px 4px 4px 0;
+}
+
+.featured-number{
+  font-size:14px;
+  opacity:0.8;
+}
+
+.featured-title{
+  font-size:30px;
+  margin:10px 0 20px;
+}
+
+.featured-status{
+  margin-top:12px;
+  font-size:14px;
+  opacity:0.75;
+  line-height:1.7;
+}
+
 .track-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -85,6 +134,8 @@ audio{
   .wrapper{ padding:22px; }
   body{ font-size:18px; }
   h1{ font-size:30px; }
+  .featured-inner{ grid-template-columns:1fr; }
+  .featured-title{ font-size:26px; }
   .track-grid{ grid-template-columns:1fr; }
   .track{ padding:16px; }
 }
@@ -116,6 +167,26 @@ audio{
 </p>
 
 <hr style="border-color:#003322;">
+
+<div class="featured">
+  <div class="featured-label">&gt; FEATURED_SIGNAL // SELECTED</div>
+  <div class="featured-inner">
+    <img class="featured-cover" src="music/covers/system-surge.png" alt="System Surge featured cover">
+    <div class="featured-info">
+      <div class="featured-number">TRACK_02 // HIGH_PRIORITY</div>
+      <div class="featured-title">&gt; System Surge</div>
+      <audio controls preload="none">
+        <source src="music/audio/system-surge.mp3" type="audio/mpeg">
+        Your browser does not support the audio player.
+      </audio>
+      <div class="featured-status">
+        &gt; signal_selected: true<br>
+        &gt; operator_selection: featured<br>
+        &gt; status: HIGH_PRIORITY
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="track-grid">
 
@@ -177,6 +248,7 @@ audio{
 
 <p style="opacity:0.8;">
 &gt; album_art: TRACK_01_02_READY<br>
+&gt; featured_signal: TRACK_02<br>
 &gt; titles: Neural Boot Sequence | System Surge<br>
 &gt; system_status: ONLINE<span class="blink">_</span>
 </p>
