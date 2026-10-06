@@ -36,7 +36,7 @@ body{background:black;color:#00ff88;font-family:monospace;margin:0;}
 .wrapper{max-width:1100px;margin:auto;padding:40px;}
 a{color:#00ff88;text-decoration:none;}
 a:hover{text-decoration:underline;}
-h1{font-size:30px;}
+h1{font-size:30px;overflow-wrap:anywhere;word-break:break-word;}
 .featured{border:2px solid #00ff88;padding:20px;margin:24px 0 34px;box-shadow:0 0 18px rgba(0,255,136,0.22);}
 .featured-label{font-size:14px;letter-spacing:2px;opacity:0.85;margin-bottom:14px;}
 .featured-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,0.85fr);gap:24px;align-items:center;}
@@ -69,7 +69,7 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <p style="margin-top:15px;">&gt; <a href="index.html">← back_to_home</a></p>
 <h1>&gt; system_checkmate_music<span class="blink">_</span></h1>
 <p>
-&gt; audio_subsystem: online<br>
+&gt; audio_subsystem: online<span class="blink">_</span><br>
 &gt; cat_division: listening<br>
 &gt; tracks_loaded: 5<br>
 &gt; artwork_status: pending
@@ -166,6 +166,8 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
   <div class="track-title">&gt; Awake to Flight</div>
   <audio controls preload="none"><source src="music/audio/awake-to-flight.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
   <div class="status">&gt; audio_file: awake-to-flight.mp3</div>
+</div>
+
 <div class="track">
   <div class="track-number">TRACK_06</div>
   <div class="track-cover pending-cover"><div>&gt; SYSTEM QUIETUDE</div><span>COVER_PENDING</span></div>
