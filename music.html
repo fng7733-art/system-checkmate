@@ -25,17 +25,12 @@
 
 <script defer src="/_vercel/insights/script.js"></script>
 <!-- GoatCounter -->
-<script
-  data-goatcounter="https://fng77.goatcounter.com/count"
-  async
-  src="https://gc.zgo.at/count.js">
-</script>
+<script data-goatcounter="https://fng77.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
 <style>
 body{background:black;color:#00ff88;font-family:monospace;margin:0;}
 .wrapper{max-width:1100px;margin:auto;padding:40px;}
-a{color:#00ff88;text-decoration:none;}
-a:hover{text-decoration:underline;}
+a{color:#00ff88;text-decoration:none;} a:hover{text-decoration:underline;}
 h1{font-size:30px;overflow-wrap:anywhere;word-break:break-word;}
 .featured{border:2px solid #00ff88;padding:20px;margin:24px 0 34px;box-shadow:0 0 18px rgba(0,255,136,0.22);}
 .featured-label{font-size:14px;letter-spacing:2px;opacity:0.85;margin-bottom:14px;}
@@ -51,7 +46,13 @@ h1{font-size:30px;overflow-wrap:anywhere;word-break:break-word;}
 .track-title{font-size:22px;margin:8px 0 16px;}
 .track-cover{width:100%;aspect-ratio:1 / 1;object-fit:cover;display:block;margin:0 0 16px;}
 audio{width:100%;filter:invert(1) hue-rotate(100deg);}
-.status{margin-top:10px;font-size:14px;opacity:0.75;}.character-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:20px 0 34px;}.character-track{border:2px solid #00ff88;padding:16px;min-width:0;}.character-label{font-size:14px;letter-spacing:1px;opacity:0.85;margin-bottom:14px;}.character-cover{width:100%;aspect-ratio:1 / 1;margin:0 0 16px;display:flex;align-items:center;justify-content:center;text-align:center;}.pending-cover{border:1px solid #005533;background:#020b07;flex-direction:column;font-size:28px;letter-spacing:3px;}.pending-cover span{font-size:12px;letter-spacing:2px;opacity:0.65;margin-top:12px;}.character-title{font-size:26px;margin:8px 0 14px;}.character-meta{font-size:14px;line-height:1.7;opacity:0.8;margin-bottom:16px;}
+.status{margin-top:10px;font-size:14px;opacity:0.75;}
+.character-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:20px 0 34px;}
+.character-track{border:2px solid #00ff88;padding:16px;min-width:0;}
+.character-label{font-size:14px;letter-spacing:1px;opacity:0.85;margin-bottom:14px;}
+.character-cover{width:100%;aspect-ratio:1 / 1;margin:0 0 16px;display:block;object-fit:cover;}
+.character-title{font-size:26px;margin:8px 0 14px;}
+.character-meta{font-size:14px;line-height:1.7;opacity:0.8;margin-bottom:16px;}
 @media (max-width:700px){.wrapper{padding:22px;}body{font-size:18px;}h1{font-size:30px;}.featured-inner{grid-template-columns:1fr;}.featured-title{font-size:26px;}.track-grid{grid-template-columns:1fr;}.track{padding:16px;}.character-grid{grid-template-columns:1fr;}}
 </style>
 
@@ -73,7 +74,7 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 &gt; cat_division: listening<br>
 &gt; tracks_loaded: 6<br>
 &gt; reserved_slots: TRACK_07 | TRACK_08<br>
-&gt; artwork_status: pending
+&gt; artwork_status: online
 </p>
 <hr style="border-color:#003322;">
 
@@ -92,20 +93,20 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 
 <div class="character-track">
   <div class="character-label">ECHO // CHARACTER_SIGNAL_01</div>
-  <div class="character-cover pending-cover"><div>&gt; ECHO</div><span>COVER_PENDING</span></div>
+  <img class="character-cover" src="music/covers/im-echo.jpg" alt="Echo character portrait">
   <div class="character-title">&gt; Echo</div>
   <div class="character-meta">&gt; designation: ECHO<br>&gt; type: AI consciousness<br>&gt; status: ONLINE</div>
   <audio controls preload="none"><source src="music/audio/echo.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: echo.mp3<br>&gt; artwork: PENDING</div>
+  <div class="status">&gt; audio_file: echo.mp3<br>&gt; artwork: im-echo.jpg</div>
 </div>
 
 <div class="character-track">
   <div class="character-label">GHOST // CHARACTER_SIGNAL_02</div>
-  <div class="character-cover pending-cover"><div>&gt; GHOST</div><span>COVER_PENDING</span></div>
+  <img class="character-cover" src="music/covers/im-ghost.jpg" alt="Ghost character portrait">
   <div class="character-title">&gt; Ghost</div>
   <div class="character-meta">&gt; designation: GHOST<br>&gt; type: field operator<br>&gt; status: ONLINE</div>
   <audio controls preload="none"><source src="music/audio/ghost.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: ghost.mp3<br>&gt; artwork: PENDING</div>
+  <div class="status">&gt; audio_file: ghost.mp3<br>&gt; artwork: im-ghost.jpg</div>
 </div>
 
 </div>
@@ -118,80 +119,28 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
       <div class="featured-number">TRACK_02 // HIGH_PRIORITY</div>
       <div class="featured-title">&gt; System Surge</div>
       <audio controls preload="none"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-      <div class="featured-status">
-        &gt; signal_selected: true<br>
-        &gt; operator_selection: featured<br>
-        &gt; status: HIGH_PRIORITY<span class="blink">_</span>
-      </div>
+      <div class="featured-status">&gt; signal_selected: true<br>&gt; operator_selection: featured<br>&gt; status: HIGH_PRIORITY<span class="blink">_</span></div>
     </div>
   </div>
 </div>
 
 <div class="track-grid">
 
-<div class="track">
-  <div class="track-number">TRACK_01</div>
-  <img class="track-cover" src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence cover">
-  <div class="track-title">&gt; Neural Boot Sequence</div>
-  <audio controls preload="none"><source src="music/audio/neural-boot-sequence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: neural-boot-sequence.mp3</div>
-</div>
+<div class="track"><div class="track-number">TRACK_01</div><img class="track-cover" src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence cover"><div class="track-title">&gt; Neural Boot Sequence</div><audio controls preload="none"><source src="music/audio/neural-boot-sequence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: neural-boot-sequence.mp3</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_02</div>
-  <img class="track-cover" src="music/covers/system-surge.png" alt="System Surge cover">
-  <div class="track-title">&gt; System Surge</div>
-  <audio controls preload="none"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: system-surge.mp3</div>
-</div>
+<div class="track"><div class="track-number">TRACK_02</div><img class="track-cover" src="music/covers/system-surge.png" alt="System Surge cover"><div class="track-title">&gt; System Surge</div><audio controls preload="none"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: system-surge.mp3</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_03</div>
-  <img class="track-cover" src="music/covers/system-awakening.png" alt="System Awakening cover">
-  <div class="track-title">&gt; System Awakening</div>
-  <audio controls preload="none"><source src="music/audio/system-awakening.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: system-awakening.mp3</div>
-</div>
+<div class="track"><div class="track-number">TRACK_03</div><img class="track-cover" src="music/covers/system-awakening.png" alt="System Awakening cover"><div class="track-title">&gt; System Awakening</div><audio controls preload="none"><source src="music/audio/system-awakening.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: system-awakening.mp3</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_04</div>
-  <img class="track-cover" src="music/covers/run-the-silence.png" alt="Run The Silence cover">
-  <div class="track-title">&gt; Run The Silence</div>
-  <audio controls preload="none"><source src="music/audio/run-the-silence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: run-the-silence.mp3</div>
-</div>
+<div class="track"><div class="track-number">TRACK_04</div><img class="track-cover" src="music/covers/run-the-silence.png" alt="Run The Silence cover"><div class="track-title">&gt; Run The Silence</div><audio controls preload="none"><source src="music/audio/run-the-silence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: run-the-silence.mp3</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_05</div>
-  <img class="track-cover" src="music/covers/awake-to-flight.png" alt="Awake to Flight cover">
-  <div class="track-title">&gt; Awake to Flight</div>
-  <audio controls preload="none"><source src="music/audio/awake-to-flight.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: awake-to-flight.mp3</div>
-</div>
+<div class="track"><div class="track-number">TRACK_05</div><img class="track-cover" src="music/covers/awake-to-flight.png" alt="Awake to Flight cover"><div class="track-title">&gt; Awake to Flight</div><audio controls preload="none"><source src="music/audio/awake-to-flight.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: awake-to-flight.mp3</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_06</div>
-  <div class="track-cover pending-cover"><div>&gt; SYSTEM QUIETUDE</div><span>COVER_PENDING</span></div>
-  <div class="track-title">&gt; System Quietude</div>
-  <audio controls preload="none"><source src="music/audio/system-quietude.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: system-quietude.mp3<br>&gt; artwork: PENDING</div>
-</div>
+<div class="track"><div class="track-number">TRACK_06</div><div class="track-cover pending-cover"><div>&gt; SYSTEM QUIETUDE</div><span>COVER_PENDING</span></div><div class="track-title">&gt; System Quietude</div><audio controls preload="none"><source src="music/audio/system-quietude.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: system-quietude.mp3<br>&gt; artwork: PENDING</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_07</div>
-  <div class="track-cover pending-cover"><div>&gt; SIGNAL_07</div><span>TRACK_PENDING</span></div>
-  <div class="track-title">&gt; Track 07</div>
-  <div class="status">&gt; audio_file: PENDING<br>&gt; artwork: PENDING<br>&gt; upload_slot: READY</div>
-</div>
+<div class="track"><div class="track-number">TRACK_07</div><div class="track-cover pending-cover"><div>&gt; SIGNAL_07</div><span>TRACK_PENDING</span></div><div class="track-title">&gt; Track 07</div><div class="status">&gt; audio_file: PENDING<br>&gt; artwork: PENDING<br>&gt; upload_slot: READY</div></div>
 
-<div class="track">
-  <div class="track-number">TRACK_08</div>
-  <div class="track-cover pending-cover"><div>&gt; SIGNAL_08</div><span>TRACK_PENDING</span></div>
-  <div class="track-title">&gt; Track 08</div>
-  <div class="status">&gt; audio_file: PENDING<br>&gt; artwork: PENDING<br>&gt; upload_slot: READY</div>
-</div>
-
-</div>
+<div class="track"><div class="track-number">TRACK_08</div><div class="track-cover pending-cover"><div>&gt; SIGNAL_08</div><span>TRACK_PENDING</span></div><div class="track-title">&gt; Track 08</div><div class="status">&gt; audio_file: PENDING<br>&gt; artwork: PENDING<br>&gt; upload_slot: READY</div></div>
 
 </div>
 
