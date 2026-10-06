@@ -7,18 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>System Checkmate Music | Original Electronic & Cyberpunk Music</title>
-  <meta name="description" content="Listen to original electronic and cyberpunk music from System Checkmate, including Neural Boot Sequence, System Surge, System Awakening, Run The Silence, Awake to Flight, System Quietude, Let It Be Real, and Invisible Threads.">
+  <meta name="description" content="Listen to original electronic and cyberpunk music from System Checkmate. Featured: Invisible Threads. Discover I'm Echo, I'm Ghost, Let It Be Real, Neural Boot Sequence, System Surge, and more.">
   <link rel="canonical" href="https://systemcheckmate.studio/music.html">
   <meta property="og:type" content="music.song">
   <meta property="og:title" content="System Checkmate Music | Original Electronic & Cyberpunk Music">
-  <meta property="og:description" content="Listen to original electronic and cyberpunk music from System Checkmate, including Neural Boot Sequence, System Surge, System Awakening, Run The Silence, Awake to Flight, System Quietude, Let It Be Real, and Invisible Threads.">
+  <meta property="og:description" content="Listen to original electronic and cyberpunk music from System Checkmate. Featured: Invisible Threads. Discover I'm Echo, I'm Ghost, Let It Be Real, Neural Boot Sequence, System Surge, and more.">
   <meta property="og:url" content="https://systemcheckmate.studio/music.html">
   <meta property="og:site_name" content="System Checkmate">
   <meta property="og:image" content="https://systemcheckmate.studio/music/covers/system-surge.png">
   <meta name="twitter:image" content="https://systemcheckmate.studio/music/covers/system-surge.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="System Checkmate Music | Original Electronic & Cyberpunk Music">
-  <meta name="twitter:description" content="Listen to original electronic and cyberpunk music from System Checkmate, including Neural Boot Sequence, System Surge, System Awakening, Run The Silence, Awake to Flight, System Quietude, Let It Be Real, and Invisible Threads.">
+  <meta name="twitter:description" content="Listen to original electronic and cyberpunk music from System Checkmate. Featured: Invisible Threads. Discover I'm Echo, I'm Ghost, Let It Be Real, Neural Boot Sequence, System Surge, and more.">
 
 <link id="favicon" rel="icon" href="/ico/off.svg">
 <meta name="theme-color" content="#00ff88">
@@ -47,11 +47,11 @@ h1{font-size:30px;overflow-wrap:anywhere;word-break:break-word;}
 .track-cover{width:100%;aspect-ratio:1 / 1;object-fit:cover;display:block;margin:0 0 16px;}
 audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 .status{margin-top:10px;font-size:14px;opacity:0.75;}
-.character-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:20px 0 34px;}
+.character-grid{display:none;}
 .character-track{border:2px solid #00ff88;padding:16px;min-width:0;}
 .character-label{font-size:14px;letter-spacing:1px;opacity:0.85;margin-bottom:14px;}
 .character-cover{width:100%;aspect-ratio:1 / 1;margin:0 0 16px;display:block;object-fit:cover;}
-.character-title{font-size:26px;margin:8px 0 14px;}
+.character-title{font-size:26px;margin:8px 0 14px;}.pending-cover{border:1px solid #005533;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0.7;text-align:center;font-size:14px;}
 .character-meta{font-size:14px;line-height:1.7;opacity:0.8;margin-bottom:16px;}
 @media (max-width:700px){.wrapper{padding:22px;}body{font-size:18px;}h1{font-size:30px;}.featured-inner{grid-template-columns:1fr;}.featured-title{font-size:26px;}.track-grid{grid-template-columns:1fr;}.track{padding:16px;}.character-grid{grid-template-columns:1fr;}}
 </style>
@@ -72,8 +72,8 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <p>
 &gt; audio_subsystem: online<span class="blink">_</span><br>
 &gt; cat_division: listening<br>
-&gt; tracks_loaded: 6<br>
-&gt; reserved_slots: TRACK_07 | TRACK_08<br>
+&gt; tracks_loaded: 10<br>
+&gt; featured_signal: TRACK_07<br>
 &gt; artwork_status: online
 </p>
 <hr style="border-color:#003322;">
@@ -86,70 +86,110 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 
 <hr style="border-color:#003322;margin:30px 0;">
 
-<h2>&gt; CHARACTER_SIGNALS</h2>
-<p>&gt; two voices from the network.<br>&gt; two operators.<br>&gt; two different ways of seeing the same problem<span class="blink">_</span></p>
-
-<div class="character-grid">
-
-<div class="character-track">
-  <div class="character-label">ECHO // CHARACTER_SIGNAL_01</div>
-  <img class="character-cover" src="music/covers/im-echo.png" alt="Echo character portrait">
-  <div class="character-title">&gt; Echo</div>
-  <div class="character-meta">&gt; designation: ECHO<br>&gt; type: AI consciousness<br>&gt; status: ONLINE</div>
-  <audio controls preload="none"><source src="music/audio/echo.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: echo.mp3<br>&gt; artwork: im-echo.png</div>
-</div>
-
-<div class="character-track">
-  <div class="character-label">GHOST // CHARACTER_SIGNAL_02</div>
-  <img class="character-cover" src="music/covers/im-ghost.png" alt="Ghost character portrait">
-  <div class="character-title">&gt; Ghost</div>
-  <div class="character-meta">&gt; designation: GHOST<br>&gt; type: field operator<br>&gt; status: ONLINE</div>
-  <audio controls preload="none"><source src="music/audio/ghost.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-  <div class="status">&gt; audio_file: ghost.mp3<br>&gt; artwork: im-ghost.png</div>
-</div>
-
-</div>
-
 <div class="featured">
-  <div class="featured-label">&gt; FEATURED_SIGNAL // SELECTED</div>
+  <div class="featured-label">&gt; FEATURED_SIGNAL // TRACK_07</div>
   <div class="featured-inner">
-    <img class="featured-cover" src="music/covers/system-surge.png" alt="System Surge featured cover">
+    <img class="featured-cover" src="music/covers/invisible-threads.png" alt="Invisible Threads featured cover">
     <div class="featured-info">
-      <div class="featured-number">TRACK_02 // HIGH_PRIORITY</div>
-      <div class="featured-title">&gt; System Surge</div>
-      <audio controls preload="none"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
-      <div class="featured-status">&gt; signal_selected: true<br>&gt; operator_selection: featured<br>&gt; status: HIGH_PRIORITY<span class="blink">_</span></div>
+      <div class="featured-number">TRACK_07 // FEATURED</div>
+      <div class="featured-title">&gt; Invisible Threads</div>
+      <audio controls preload="none"><source src="music/audio/invisible-threads.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+      <div class="featured-status">&gt; signal_selected: true<br>&gt; artwork: invisible-threads.png<br>&gt; status: HIGH_PRIORITY<span class="blink">_</span></div>
     </div>
   </div>
 </div>
 
 <div class="track-grid">
 
-<div class="track"><div class="track-number">TRACK_01</div><img class="track-cover" src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence cover"><div class="track-title">&gt; Neural Boot Sequence</div><audio controls preload="none"><source src="music/audio/neural-boot-sequence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: neural-boot-sequence.mp3</div></div>
+<div class="track character-track">
+  <div class="track-number">TRACK_01</div>
+  <img class="track-cover" src="music/covers/im-echo.png" alt="Echo character portrait">
+  <div class="track-title">&gt; I'm Echo</div>
+  <div class="character-meta">&gt; designation: ECHO<br>&gt; type: AI consciousness<br>&gt; status: ONLINE</div>
+  <audio controls preload="none"><source src="music/audio/echo.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: echo.mp3<br>&gt; artwork: im-echo.png</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_02</div><img class="track-cover" src="music/covers/system-surge.png" alt="System Surge cover"><div class="track-title">&gt; System Surge</div><audio controls preload="none"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: system-surge.mp3</div></div>
+<div class="track character-track">
+  <div class="track-number">TRACK_02</div>
+  <img class="track-cover" src="music/covers/im-ghost.png" alt="Ghost character portrait">
+  <div class="track-title">&gt; I'm Ghost</div>
+  <div class="character-meta">&gt; designation: GHOST<br>&gt; type: field operator<br>&gt; status: ONLINE</div>
+  <audio controls preload="none"><source src="music/audio/ghost.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: ghost.mp3<br>&gt; artwork: im-ghost.png</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_03</div><img class="track-cover" src="music/covers/system-awakening.png" alt="System Awakening cover"><div class="track-title">&gt; System Awakening</div><audio controls preload="none"><source src="music/audio/system-awakening.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: system-awakening.mp3</div></div>
+<div class="track">
+  <div class="track-number">TRACK_03</div>
+  <div class="track-cover pending-cover"><div>&gt; LET IT BE REAL</div><span>COVER_PENDING</span></div>
+  <div class="track-title">&gt; Let It Be Real</div>
+  <audio controls preload="none"><source src="music/audio/let-it-be-real.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: let-it-be-real.mp3<br>&gt; artwork: PENDING</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_04</div><img class="track-cover" src="music/covers/run-the-silence.png" alt="Run The Silence cover"><div class="track-title">&gt; Run The Silence</div><audio controls preload="none"><source src="music/audio/run-the-silence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: run-the-silence.mp3</div></div>
+<div class="track">
+  <div class="track-number">TRACK_04</div>
+  <img class="track-cover" src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence cover">
+  <div class="track-title">&gt; Neural Boot Sequence</div>
+  <audio controls preload="none"><source src="music/audio/neural-boot-sequence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: neural-boot-sequence.mp3<br>&gt; artwork: neural-boot-sequence.png</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_05</div><img class="track-cover" src="music/covers/awake-to-flight.png" alt="Awake to Flight cover"><div class="track-title">&gt; Awake to Flight</div><audio controls preload="none"><source src="music/audio/awake-to-flight.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: awake-to-flight.mp3</div></div>
+<div class="track">
+  <div class="track-number">TRACK_05</div>
+  <img class="track-cover" src="music/covers/system-surge.png" alt="System Surge cover">
+  <div class="track-title">&gt; System Surge</div>
+  <audio controls preload="none"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: system-surge.mp3<br>&gt; artwork: system-surge.png</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_06</div><div class="track-cover pending-cover"><div>&gt; SYSTEM QUIETUDE</div><span>COVER_PENDING</span></div><div class="track-title">&gt; System Quietude</div><audio controls preload="none"><source src="music/audio/system-quietude.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: system-quietude.mp3<br>&gt; artwork: PENDING</div></div>
+<div class="track">
+  <div class="track-number">TRACK_06</div>
+  <img class="track-cover" src="music/covers/system-awakening.png" alt="System Awakening cover">
+  <div class="track-title">&gt; System Awakening</div>
+  <audio controls preload="none"><source src="music/audio/system-awakening.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: system-awakening.mp3<br>&gt; artwork: system-awakening.png</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_07</div><img class="track-cover" src="music/covers/invisible-threads.png" alt="Invisible Threads cover"><div class="track-title">&gt; Invisible Threads</div><audio controls preload="none"><source src="music/audio/invisible-threads.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: invisible-threads.mp3<br>&gt; artwork: invisible-threads.png</div></div>
+<div class="track">
+  <div class="track-number">TRACK_07</div>
+  <img class="track-cover" src="music/covers/invisible-threads.png" alt="Invisible Threads cover">
+  <div class="track-title">&gt; Invisible Threads</div>
+  <audio controls preload="none"><source src="music/audio/invisible-threads.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: invisible-threads.mp3<br>&gt; artwork: invisible-threads.png</div>
+</div>
 
-<div class="track"><div class="track-number">TRACK_08</div><div class="track-cover pending-cover"><div>&gt; LET IT BE REAL</div><span>COVER_PENDING</span></div><div class="track-title">&gt; Let It Be Real</div><audio controls preload="none"><source src="music/audio/let-it-be-real.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio><div class="status">&gt; audio_file: let-it-be-real.mp3<br>&gt; artwork: PENDING</div></div>
+<div class="track">
+  <div class="track-number">TRACK_08</div>
+  <img class="track-cover" src="music/covers/run-the-silence.png" alt="Run The Silence cover">
+  <div class="track-title">&gt; Run The Silence</div>
+  <audio controls preload="none"><source src="music/audio/run-the-silence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: run-the-silence.mp3<br>&gt; artwork: run-the-silence.png</div>
+</div>
+
+<div class="track">
+  <div class="track-number">TRACK_09</div>
+  <img class="track-cover" src="music/covers/awake-to-flight.png" alt="Awake to Flight cover">
+  <div class="track-title">&gt; Awake to Flight</div>
+  <audio controls preload="none"><source src="music/audio/awake-to-flight.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: awake-to-flight.mp3<br>&gt; artwork: awake-to-flight.png</div>
+</div>
+
+<div class="track">
+  <div class="track-number">TRACK_10</div>
+  <div class="track-cover pending-cover"><div>&gt; SYSTEM QUIETUDE</div><span>COVER_PENDING</span></div>
+  <div class="track-title">&gt; System Quietude</div>
+  <audio controls preload="none"><source src="music/audio/system-quietude.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+  <div class="status">&gt; audio_file: system-quietude.mp3<br>&gt; artwork: PENDING</div>
+</div>
 
 </div>
 
 <hr style="border-color:#003322;margin-top:24px;">
 <p style="opacity:0.8;">
-&gt; album_art: TRACK_01_05_READY | TRACK_07_READY<br>
-&gt; featured_signal: TRACK_02<br>
-&gt; titles: Neural Boot Sequence | System Surge | System Awakening | Run The Silence | Awake to Flight | System Quietude | Let It Be Real | Invisible Threads<br>
-&gt; system_status: ONLINE<span class="blink">_</span>
+&gt; track_order: 01_ECHO | 02_GHOST | 03_LET_IT_BE_REAL | 04_NEURAL_BOOT | 05_SYSTEM_SURGE | 06_SYSTEM_AWAKENING | 07_INVISIBLE_THREADS | 08_RUN_THE_SILENCE | 09_AWAKE_TO_FLIGHT | 10_SYSTEM_QUIETUDE<br>
+&gt; featured_signal: TRACK_07<br>
+&gt; music_status: ONLINE<span class="blink">_</span>
 </p>
 </div>
 
