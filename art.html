@@ -1,6 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- System Checkmate Google Analytics: load only after visitor consent -->
+<style>
+#sc-consent-banner{position:fixed;z-index:99999;left:16px;right:16px;bottom:16px;max-width:760px;margin:0 auto;padding:18px;background:#101714;color:#eafff2;border:1px solid #00ff88;box-shadow:0 8px 32px rgba(0,0,0,.55);font:15px/1.5 system-ui,sans-serif}
+#sc-consent-banner p{margin:0 0 12px}
+#sc-consent-banner .sc-consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+#sc-consent-banner button{border:1px solid #00ff88;padding:10px 16px;font-weight:700;cursor:pointer;font:inherit}
+#sc-consent-accept{background:#00ff88;color:#00150b}
+#sc-consent-reject{background:transparent;color:#eafff2}
+#sc-consent-banner button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+</style>
+<script>
+(function(){
+  var measurementId = 'G-8WRZTBEEN4';
+  window.scLoadGoogleAnalytics = function(){
+    if (window.scGoogleAnalyticsLoaded) return;
+    window.scGoogleAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId);
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(script);
+  };
+  try {
+    if (window.localStorage.getItem('sc-ga-consent') === 'accepted') {
+      window.scLoadGoogleAnalytics();
+    }
+  } catch(e) {}
+  window.scSaveAnalyticsConsent = function(choice){
+    try { window.localStorage.setItem('sc-ga-consent', choice); } catch(e) {}
+    var banner = document.getElementById('sc-consent-banner');
+    if (banner) banner.hidden = true;
+    if (choice === 'accepted') window.scLoadGoogleAnalytics();
+  };
+})();
+</script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Original Cyberpunk &amp; AI Art Gallery | System Checkmate</title>
@@ -35,6 +75,24 @@ h1{margin-top:10px;font-size:28px;}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Original Cyberpunk & AI Art Gallery | System Checkmate","description":"Explore original cyberpunk, AI, Viking and rescue-cat artwork from System Checkmate. Browse the art gallery and discover the original music.","url":"https://systemcheckmate.studio/art.html","isPartOf":{"@type":"WebSite","name":"System Checkmate","url":"https://systemcheckmate.studio/"},"mainEntity":{"@type":"ItemList","name":"System Checkmate original artwork gallery","numberOfItems":13,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"ImageObject","name":"Black Cat — Cyberpunk Artwork","caption":"Black cat cyberpunk artwork by System Checkmate","contentUrl":"https://systemcheckmate.studio/images/art/black.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":2,"item":{"@type":"ImageObject","name":"Edith — Rescue Cat Artwork","caption":"Edith rescue cat artwork by System Checkmate","contentUrl":"https://systemcheckmate.studio/images/art/edith2.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":3,"item":{"@type":"ImageObject","name":"Viking — Cyberpunk Artwork","caption":"Viking cyberpunk artwork by System Checkmate","contentUrl":"https://systemcheckmate.studio/images/art/viking.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":4,"item":{"@type":"ImageObject","name":"Catbox — Cyberpunk Cat Artwork","caption":"Cyberpunk cat artwork by System Checkmate","contentUrl":"https://systemcheckmate.studio/images/art/catbox.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":5,"item":{"@type":"ImageObject","name":"Warrior — Cyberpunk Artwork","caption":"Cyberpunk warrior artwork by System Checkmate","contentUrl":"https://systemcheckmate.studio/images/art/warrior1.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":6,"item":{"@type":"ImageObject","name":"System Awakening","caption":"System Awakening — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/1.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":7,"item":{"@type":"ImageObject","name":"System Quietude","caption":"System Quietude — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/2.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":8,"item":{"@type":"ImageObject","name":"I'm Ghost","caption":"I'm Ghost — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/3.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":9,"item":{"@type":"ImageObject","name":"0-1","caption":"0-1 — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/4.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":10,"item":{"@type":"ImageObject","name":"Free Together — Original Artwork","caption":"Free Together — original System Checkmate artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/5.png","url":"https://systemcheckmate.studio/art.html#free-together"}},{"@type":"ListItem","position":11,"item":{"@type":"ImageObject","name":"I'm Echo","caption":"I'm Echo — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/6.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":12,"item":{"@type":"ImageObject","name":"Neural Boot Sequence","caption":"Neural Boot Sequence — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/7.png","url":"https://systemcheckmate.studio/art.html"}},{"@type":"ListItem","position":13,"item":{"@type":"ImageObject","name":"Awake to Flight","caption":"Awake to Flight — original System Checkmate music artwork","contentUrl":"https://systemcheckmate.studio/images/images/art/8.png","url":"https://systemcheckmate.studio/art.html"}}]}}</script>
 </head>
 <body>
+
+<div id="sc-consent-banner" role="dialog" aria-label="Analytics cookie preferences" aria-live="polite" hidden>
+  <p><strong>Help us improve System Checkmate.</strong> We use Google Analytics to understand visits and improve the site. Google Analytics will only run if you accept. Vercel Analytics and GoatCounter are separate services.</p>
+  <div class="sc-consent-actions">
+    <button id="sc-consent-accept" type="button" onclick="window.scSaveAnalyticsConsent('accepted')">Accept analytics</button>
+    <button id="sc-consent-reject" type="button" onclick="window.scSaveAnalyticsConsent('rejected')">Reject analytics</button>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('sc-consent-banner');
+  if (!banner) return;
+  var choice = null;
+  try { choice = window.localStorage.getItem('sc-ga-consent'); } catch(e) {}
+  if (choice !== 'accepted' && choice !== 'rejected') banner.hidden = false;
+})();
+</script>
+
 <div class="wrap">
 <nav aria-label="Main navigation">
 &gt; <a href="index.html">home</a> |
