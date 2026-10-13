@@ -2,6 +2,46 @@
 <html lang="en">
 
 <head>
+
+<!-- System Checkmate Google Analytics: load only after visitor consent -->
+<style>
+#sc-consent-banner{position:fixed;z-index:99999;left:16px;right:16px;bottom:16px;max-width:760px;margin:0 auto;padding:18px;background:#101714;color:#eafff2;border:1px solid #00ff88;box-shadow:0 8px 32px rgba(0,0,0,.55);font:15px/1.5 system-ui,sans-serif}
+#sc-consent-banner p{margin:0 0 12px}
+#sc-consent-banner .sc-consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+#sc-consent-banner button{border:1px solid #00ff88;padding:10px 16px;font-weight:700;cursor:pointer;font:inherit}
+#sc-consent-accept{background:#00ff88;color:#00150b}
+#sc-consent-reject{background:transparent;color:#eafff2}
+#sc-consent-banner button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+</style>
+<script>
+(function(){
+  var measurementId = 'G-8WRZTBEEN4';
+  window.scLoadGoogleAnalytics = function(){
+    if (window.scGoogleAnalyticsLoaded) return;
+    window.scGoogleAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId);
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(script);
+  };
+  try {
+    if (window.localStorage.getItem('sc-ga-consent') === 'accepted') {
+      window.scLoadGoogleAnalytics();
+    }
+  } catch(e) {}
+  window.scSaveAnalyticsConsent = function(choice){
+    try { window.localStorage.setItem('sc-ga-consent', choice); } catch(e) {}
+    var banner = document.getElementById('sc-consent-banner');
+    if (banner) banner.hidden = true;
+    if (choice === 'accepted') window.scLoadGoogleAnalytics();
+  };
+})();
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lilla Gubben — The Winter Ghost | Rescued Cat Story</title>
@@ -85,6 +125,24 @@
 </head>
 
 <body>
+
+<div id="sc-consent-banner" role="dialog" aria-label="Analytics cookie preferences" aria-live="polite" hidden>
+  <p><strong>Help us improve System Checkmate.</strong> We use Google Analytics to understand visits and improve the site. Google Analytics will only run if you accept. Vercel Analytics and GoatCounter are separate services.</p>
+  <div class="sc-consent-actions">
+    <button id="sc-consent-accept" type="button" onclick="window.scSaveAnalyticsConsent('accepted')">Accept analytics</button>
+    <button id="sc-consent-reject" type="button" onclick="window.scSaveAnalyticsConsent('rejected')">Reject analytics</button>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('sc-consent-banner');
+  if (!banner) return;
+  var choice = null;
+  try { choice = window.localStorage.getItem('sc-ga-consent'); } catch(e) {}
+  if (choice !== 'accepted' && choice !== 'rejected') banner.hidden = false;
+})();
+</script>
+
 
 <div class="wrap">
 
