@@ -1,24 +1,75 @@
-<nav>
-&gt; <a href="index.html">home</a> |
-<a href="gallery.html">cats</a> |
-<a href="art.html">art</a> |
-<a href="music.html">music</a>
-</nav>
-
-<img src="images/ChatGPT Image 1 feb. 2026 08_40_01.png" style="max-width:300px;border-radius:12px;">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>System Checkmate</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System Checkmate — Support Rescue Cats</title>
   <!-- Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
-<h2>> support_rescue</h2>
-
-<p>Every purchase helps feed and protect homeless cats.</p>
-
-<a href="https://buy.stripe.com/test_aFabIT3aN6Ng3EI00n2go00" target="_blank">
-  <button style="background:#00ff88;color:black;padding:14px 26px;font-weight:bold;cursor:pointer;">
-    DONATE 10€
-  </button>
-</a>
+  <!-- System Checkmate Google Analytics: load only after visitor consent -->
+  <style>
+  #sc-consent-banner{position:fixed;z-index:99999;left:16px;right:16px;bottom:16px;max-width:760px;margin:0 auto;padding:18px;background:#101714;color:#eafff2;border:1px solid #00ff88;box-shadow:0 8px 32px rgba(0,0,0,.55);font:15px/1.5 system-ui,sans-serif}
+  #sc-consent-banner p{margin:0 0 12px}
+  #sc-consent-banner .sc-consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+  #sc-consent-banner button{border:1px solid #00ff88;padding:10px 16px;font-weight:700;cursor:pointer;font:inherit}
+  #sc-consent-accept{background:#00ff88;color:#00150b}
+  #sc-consent-reject{background:transparent;color:#eafff2}
+  #sc-consent-banner button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  </style>
+  <script>
+  (function(){
+    var measurementId = 'G-8WRZTBEEN4';
+    window.scLoadGoogleAnalytics = function(){
+      if (window.scGoogleAnalyticsLoaded) return;
+      window.scGoogleAnalyticsLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      document.head.appendChild(script);
+    };
+    try {
+      if (window.localStorage.getItem('sc-ga-consent') === 'accepted') window.scLoadGoogleAnalytics();
+    } catch(e) {}
+    window.scSaveAnalyticsConsent = function(choice){
+      try { window.localStorage.setItem('sc-ga-consent', choice); } catch(e) {}
+      var banner = document.getElementById('sc-consent-banner');
+      if (banner) banner.hidden = true;
+      if (choice === 'accepted') window.scLoadGoogleAnalytics();
+    };
+  })();
+  </script>
+</head>
+<body style="background:black;color:#00ff88;font-family:monospace;margin:0;padding:24px">
+  <div id="sc-consent-banner" role="dialog" aria-label="Analytics cookie preferences" aria-live="polite" hidden>
+    <p><strong>Help us improve System Checkmate.</strong> We use Google Analytics to understand visits and improve the site. Google Analytics will only run if you accept. Vercel Analytics and GoatCounter are separate services.</p>
+    <div class="sc-consent-actions">
+      <button id="sc-consent-accept" type="button" onclick="window.scSaveAnalyticsConsent('accepted')">Accept analytics</button>
+      <button id="sc-consent-reject" type="button" onclick="window.scSaveAnalyticsConsent('rejected')">Reject analytics</button>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var banner = document.getElementById('sc-consent-banner');
+    var choice = null;
+    try { choice = window.localStorage.getItem('sc-ga-consent'); } catch(e) {}
+    if (choice !== 'accepted' && choice !== 'rejected') banner.hidden = false;
+  })();
+  </script>
+  <nav>
+    &gt; <a href="index.html" style="color:#00ff88">home</a> |
+    <a href="gallery.html" style="color:#00ff88">cats</a> |
+    <a href="art.html" style="color:#00ff88">art</a> |
+    <a href="music.html" style="color:#00ff88">music</a>
+  </nav>
+  <img src="images/ChatGPT Image 1 feb. 2026 08_40_01.png" alt="System Checkmate rescue cats" style="max-width:300px;border-radius:12px">
+  <h2>&gt; support_rescue</h2>
+  <p>Every purchase helps feed and protect homeless cats.</p>
+  <a href="https://buy.stripe.com/test_aFabIT3aN6Ng3EI00n2go00" target="_blank" rel="noopener noreferrer">
+    <button style="background:#00ff88;color:black;padding:14px 26px;font-weight:bold;cursor:pointer">DONATE 10€</button>
+  </a>
+</body>
+</html>
