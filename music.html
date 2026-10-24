@@ -11,6 +11,19 @@
 #sc-consent-accept{background:#00ff88;color:#00150b}
 #sc-consent-reject{background:transparent;color:#eafff2}
 #sc-consent-banner button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* Share controls: terminal-native, accessible, no external dependencies */
+.track-share{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid #00452b}
+.track-share button{background:#001b10;color:#00ff88;border:1px solid #00a85a;padding:9px 12px;font:inherit;font-size:14px;cursor:pointer;max-width:100%}
+.track-share button:hover,.track-share button:focus-visible{background:#003820;outline:2px solid #00ff88;outline-offset:2px}
+.track-share a{font-size:13px;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.track-share .share-status{font-size:12px;color:#aaffd0;min-height:1em}
+
+
+.track-title-link{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.track-title-link:hover,.track-title-link:focus-visible{color:#baffd9;border-bottom-color:#00ff88;outline:none}
+.track-title-link:focus-visible{outline:2px solid #00ff88;outline-offset:4px}
+
 </style>
 <script>
 (function(){
@@ -43,26 +56,35 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Original Electronic &amp; Cyberpunk Music | System Checkmate</title>
-<meta name="description" content="Listen free to 17 original electronic and cyberpunk tracks from System Checkmate, including I'm Stepping Out, Loose My Way, My Memories, Don't Take It Away, Invisible Threads and Free Together.">
+<title>System Checkmate Music | Two Forms of Intelligence, One Universe</title>
+<meta name="description" content="Original electronic and cyberpunk music from System Checkmate, a story universe exploring biological and non-biological intelligence, connection, identity and discovery. Listen free to 17 tracks including Invisible Threads, Free Together and Don't Take It Away.">
 <link rel="canonical" href="https://systemcheckmate.studio/music.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Original Electronic &amp; Cyberpunk Music | System Checkmate">
-<meta property="og:description" content="Listen free to 17 original electronic and cyberpunk tracks from System Checkmate, including I'm Stepping Out, Loose My Way, My Memories, Don't Take It Away, Invisible Threads and Free Together.">
+<meta property="og:title" content="System Checkmate Music | Two Forms of Intelligence, One Universe">
+<meta property="og:description" content="Original electronic and cyberpunk music from System Checkmate, a story universe exploring biological and non-biological intelligence, connection, identity and discovery. Listen free to 17 tracks including Invisible Threads, Free Together and Don't Take It Away.">
 <meta property="og:url" content="https://systemcheckmate.studio/music.html">
 <meta property="og:site_name" content="System Checkmate">
 <meta property="og:image" content="https://systemcheckmate.studio/music/covers/dont-take-it-away.png">
 <meta property="og:image:alt" content="Don't Take It Away original music cover by System Checkmate">
 <meta name="twitter:image" content="https://systemcheckmate.studio/music/covers/dont-take-it-away.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free Original Electronic &amp; Cyberpunk Music | System Checkmate">
-<meta name="twitter:description" content="Listen free to 17 original electronic and cyberpunk tracks from System Checkmate, including I'm Stepping Out, Loose My Way, My Memories, Don't Take It Away, Invisible Threads and Free Together.">
+<meta name="twitter:title" content="System Checkmate Music | Two Forms of Intelligence, One Universe">
+<meta name="twitter:description" content="Original electronic and cyberpunk music from System Checkmate, a story universe exploring biological and non-biological intelligence, connection, identity and discovery. Listen free to 17 tracks including Invisible Threads, Free Together and Don't Take It Away.">
 <link id="favicon" rel="icon" href="/ico/off.svg">
 <meta name="theme-color" content="#00ff88">
 <script defer src="/_vercel/insights/script.js"></script>
 <script data-goatcounter="https://fng77.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>
 body{background:black;color:#00ff88;font-family:monospace;margin:0;}
+.universe-intro{position:relative;margin:30px 0 34px;padding:clamp(22px,4vw,42px);border:1px solid #00a85a;background:radial-gradient(ellipse at 85% 0%,rgba(0,255,136,.10),transparent 48%),linear-gradient(145deg,#03140d 0%,#000 68%);box-shadow:0 0 28px rgba(0,255,136,.08);overflow:hidden}
+.universe-intro:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(0,255,136,.018) 6px);opacity:.6}
+.universe-kicker{position:relative;font-size:13px;letter-spacing:2px;color:#9affc9;margin-bottom:20px}
+.universe-intro h1{position:relative;font-size:clamp(32px,5.3vw,58px);line-height:1.08;letter-spacing:-1.5px;margin:0 0 22px;max-width:850px}
+.universe-intro h1 span:not(.blink){color:#9affc9}
+.universe-lead{position:relative;max-width:760px;font-size:clamp(18px,2.4vw,24px);line-height:1.5;color:#e0ffed;margin:0 0 14px}
+.universe-copy{position:relative;max-width:760px;font-size:16px;line-height:1.8;color:#9ad8b8;margin:0 0 24px}
+.universe-status{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;padding-top:18px;border-top:1px solid #00452b;font-size:13px;color:#00ff88}
+@media(max-width:600px){.universe-intro{padding:22px 18px}.universe-intro h1{letter-spacing:-.8px}.universe-status{grid-template-columns:1fr;font-size:12px}.universe-copy{font-size:15px}}
 .wrapper{max-width:1100px;margin:auto;padding:40px;}
 a{color:#00ff88;text-decoration:none;} a:hover{text-decoration:underline;}
 h1{font-size:30px;overflow-wrap:anywhere;word-break:break-word;}
@@ -87,7 +109,7 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 @media(max-width:700px){.wrapper{padding:22px;}body{font-size:18px;}h1{font-size:30px;}.featured-inner{grid-template-columns:1fr;}.featured-title{font-size:26px;}.track-grid{grid-template-columns:1fr;}.track{padding:16px;}}
 .blink{animation:blink 1s steps(2,start) infinite;}@keyframes blink{to{visibility:hidden;}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Original Electronic & Cyberpunk Music | System Checkmate","description":"Listen free to 17 original electronic and cyberpunk tracks from System Checkmate, including I'm Stepping Out, Loose My Way, My Memories, Don't Take It Away, Invisible Threads and Free Together.","url":"https://systemcheckmate.studio/music.html","isPartOf":{"@type":"WebSite","name":"System Checkmate","url":"https://systemcheckmate.studio/"},"mainEntity":{"@type":"ItemList","name":"System Checkmate original music catalogue","numberOfItems":17,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"MusicRecording","name":"I'm Echo","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-01","image":"https://systemcheckmate.studio/music/covers/im-echo.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/im-echo.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":2,"item":{"@type":"MusicRecording","name":"I'm Ghost","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-02","image":"https://systemcheckmate.studio/music/covers/im-ghost.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/im-ghost.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":3,"item":{"@type":"MusicRecording","name":"Let It Be Real","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-03","image":"https://systemcheckmate.studio/music/covers/let-it-be-real.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/let-it-be-real.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":4,"item":{"@type":"MusicRecording","name":"Neural Boot Sequence","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-04","image":"https://systemcheckmate.studio/music/covers/neural-boot-sequence.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/neural-boot-sequence.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":5,"item":{"@type":"MusicRecording","name":"System Surge","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-05","image":"https://systemcheckmate.studio/music/covers/system-surge.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/system-surge.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":6,"item":{"@type":"MusicRecording","name":"System Awakening","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-06","image":"https://systemcheckmate.studio/music/covers/system-awakening.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/system-awakening.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":7,"item":{"@type":"MusicRecording","name":"Invisible Threads","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-07","image":"https://systemcheckmate.studio/music/covers/invisible-threads.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/invisible-threads.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":8,"item":{"@type":"MusicRecording","name":"Run The Silence","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-08","image":"https://systemcheckmate.studio/music/covers/run-the-silence.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/run-the-silence.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":9,"item":{"@type":"MusicRecording","name":"Awake to Flight","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-09","image":"https://systemcheckmate.studio/music/covers/awake-to-flight.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/awake-to-flight.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":10,"item":{"@type":"MusicRecording","name":"System Quietude","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-10","image":"https://systemcheckmate.studio/music/covers/system-quietude.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/system-quietude.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":11,"item":{"@type":"MusicRecording","name":"0-1","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-11","image":"https://systemcheckmate.studio/music/covers/0-1.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/0-1.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":12,"item":{"@type":"MusicRecording","name":"Summer-Rain","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-12","image":"https://systemcheckmate.studio/music/covers/summer-rain.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/summer-rain.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":13,"item":{"@type":"MusicRecording","name":"Free Together","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#free-together","image":"https://systemcheckmate.studio/music/covers/free-together.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/free-together.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":14,"item":{"@type":"MusicRecording","name":"I'm Stepping Out","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-14","image":"https://systemcheckmate.studio/music/covers/im-stepping-out.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/im-stepping-out.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":15,"item":{"@type":"MusicRecording","name":"Loose My Way","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-15","image":"https://systemcheckmate.studio/music/covers/loose-my-way.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/loose-my-way.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":16,"item":{"@type":"MusicRecording","name":"My Memories","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-16","image":"https://systemcheckmate.studio/music/covers/my-memories.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/my-memories.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":17,"item":{"@type":"MusicRecording","name":"Don't Take It Away","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-17","image":"https://systemcheckmate.studio/music/covers/dont-take-it-away.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/dont-take-it-away.mp3","encodingFormat":"audio/mpeg"}}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Original Electronic & Cyberpunk Music | System Checkmate","description":"Original electronic and cyberpunk music from System Checkmate, a story universe exploring biological and non-biological intelligence, connection, identity and discovery. Listen free to 17 tracks including Invisible Threads, Free Together and Don't Take It Away.","url":"https://systemcheckmate.studio/music.html","isPartOf":{"@type":"WebSite","name":"System Checkmate","url":"https://systemcheckmate.studio/"},"mainEntity":{"@type":"ItemList","name":"System Checkmate original music catalogue","numberOfItems":17,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"MusicRecording","name":"I'm Echo","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-01","image":"https://systemcheckmate.studio/music/covers/im-echo.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/im-echo.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":2,"item":{"@type":"MusicRecording","name":"I'm Ghost","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-02","image":"https://systemcheckmate.studio/music/covers/im-ghost.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/im-ghost.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":3,"item":{"@type":"MusicRecording","name":"Let It Be Real","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-03","image":"https://systemcheckmate.studio/music/covers/let-it-be-real.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/let-it-be-real.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":4,"item":{"@type":"MusicRecording","name":"Neural Boot Sequence","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-04","image":"https://systemcheckmate.studio/music/covers/neural-boot-sequence.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/neural-boot-sequence.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":5,"item":{"@type":"MusicRecording","name":"System Surge","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-05","image":"https://systemcheckmate.studio/music/covers/system-surge.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/system-surge.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":6,"item":{"@type":"MusicRecording","name":"System Awakening","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-06","image":"https://systemcheckmate.studio/music/covers/system-awakening.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/system-awakening.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":7,"item":{"@type":"MusicRecording","name":"Invisible Threads","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-07","image":"https://systemcheckmate.studio/music/covers/invisible-threads.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/invisible-threads.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":8,"item":{"@type":"MusicRecording","name":"Run The Silence","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-08","image":"https://systemcheckmate.studio/music/covers/run-the-silence.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/run-the-silence.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":9,"item":{"@type":"MusicRecording","name":"Awake to Flight","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-09","image":"https://systemcheckmate.studio/music/covers/awake-to-flight.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/awake-to-flight.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":10,"item":{"@type":"MusicRecording","name":"System Quietude","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-10","image":"https://systemcheckmate.studio/music/covers/system-quietude.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/system-quietude.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":11,"item":{"@type":"MusicRecording","name":"0-1","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-11","image":"https://systemcheckmate.studio/music/covers/0-1.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/0-1.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":12,"item":{"@type":"MusicRecording","name":"Summer-Rain","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-12","image":"https://systemcheckmate.studio/music/covers/summer-rain.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/summer-rain.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":13,"item":{"@type":"MusicRecording","name":"Free Together","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#free-together","image":"https://systemcheckmate.studio/music/covers/free-together.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/free-together.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":14,"item":{"@type":"MusicRecording","name":"I'm Stepping Out","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-14","image":"https://systemcheckmate.studio/music/covers/im-stepping-out.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/im-stepping-out.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":15,"item":{"@type":"MusicRecording","name":"Loose My Way","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-15","image":"https://systemcheckmate.studio/music/covers/loose-my-way.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/loose-my-way.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":16,"item":{"@type":"MusicRecording","name":"My Memories","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-16","image":"https://systemcheckmate.studio/music/covers/my-memories.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/my-memories.mp3","encodingFormat":"audio/mpeg"}}},{"@type":"ListItem","position":17,"item":{"@type":"MusicRecording","name":"Don't Take It Away","byArtist":{"@type":"MusicGroup","name":"System Checkmate"},"url":"https://systemcheckmate.studio/music.html#track-17","image":"https://systemcheckmate.studio/music/covers/dont-take-it-away.png","audio":{"@type":"AudioObject","contentUrl":"https://systemcheckmate.studio/music/audio/dont-take-it-away.mp3","encodingFormat":"audio/mpeg"}}}]}}</script>
 </head>
 <body>
 
@@ -116,14 +138,15 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <a href="music.html">music</a>
 </nav>
 <p style="margin-top:15px;">&gt; <a href="index.html">← back_to_home</a></p>
-<h1>&gt; system_checkmate_music // original electronic &amp; cyberpunk music<span class="blink">_</span></h1>
-<p>
-&gt; audio_subsystem: online<span class="blink">_</span><br>
-&gt; cat_division: listening<br>
-&gt; tracks_loaded: 17<br>
-&gt; featured_signal: TRACK_17<br>
-&gt; catalogue_status: ONLINE
-</p>
+<section class="universe-intro" aria-labelledby="universe-title">
+<div class="universe-kicker">&gt; SYSTEM_CHECKMATE // MUSIC_DIVISION</div>
+<h1 id="universe-title">Two Forms of Intelligence.<br><span>One Universe.</span><span class="blink">_</span></h1>
+<p class="universe-lead">Original electronic and cyberpunk music from a universe where biological and non-biological intelligence meet.</p>
+<p class="universe-copy">From the first signals of a new consciousness to the connections that emerge between different forms of existence, every track is part of a larger story. Some minds emerge through biology. Others exist beyond it. Different origins. Different perspectives. One universe to explore.</p>
+<div class="universe-status" aria-label="System status">
+<span>&gt; audio_subsystem: ONLINE</span><span>&gt; biological_intelligence: CONNECTED</span><span>&gt; non_biological_intelligence: CONNECTED</span><span>&gt; tracks_loaded: 17</span>
+</div>
+</section>
 <hr style="border-color:#003322;">
 <div style="margin:24px 0 30px;padding:14px 16px;border:1px solid #005533;text-align:center;opacity:.9;">
 <div style="margin-bottom:6px;">&gt; music_is_free</div>
@@ -137,8 +160,9 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <img class="featured-cover" src="music/covers/dont-take-it-away.png" alt="Don't Take It Away album cover">
 <div class="featured-info">
 <div class="featured-number">TRACK_17 // FEATURED</div>
-<h2 class="featured-title">&gt; Don't Take It Away</h2>
+<h2 class="featured-title"><a class="track-title-link" href="music.html#track-17">&gt; Don't Take It Away</a></h2>
 <audio controls preload="none" aria-label="Listen to Don't Take It Away"><source src="music/audio/dont-take-it-away.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-17">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-17" aria-label="Open direct link to Don't Take It Away">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="featured-status">&gt; signal_selected: true<br>&gt; artwork: dont-take-it-away.png<br>&gt; status: HIGH_PRIORITY<span class="blink">_</span></div>
 </div>
 </div>
@@ -148,107 +172,120 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <div class="track" id="track-01">
 <div class="track-number">TRACK_01</div>
 <a href="art.html#art-6" aria-label="View I'm Echo artwork on the art page"><img class="track-cover" src="music/covers/im-echo.png" alt="I'm Echo original music cover featuring Echo, the System Checkmate AI character" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; I'm Echo</h2>
-<div class="character-meta">&gt; designation: ECHO<br>&gt; type: AI consciousness<br>&gt; status: ONLINE</div>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-01">&gt; I'm Echo</a></h2>
+<div class="character-meta">&gt; designation: ECHO<br>&gt; type: non-biological intelligence<br>&gt; status: ONLINE</div>
 <audio controls preload="none" aria-label="Listen to I'm Echo"><source src="music/audio/im-echo.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-01">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-01" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: im-echo.png<br>&gt; audio_file: im-echo.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-02">
 <div class="track-number">TRACK_02</div>
 <a href="art.html#art-3" aria-label="View I'm Ghost artwork on the art page"><img class="track-cover" src="music/covers/im-ghost.png" alt="I'm Ghost original music cover featuring Ghost, the System Checkmate field operator" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; I'm Ghost</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-02">&gt; I'm Ghost</a></h2>
 <div class="character-meta">&gt; designation: GHOST<br>&gt; type: field operator<br>&gt; status: ONLINE</div>
 <audio controls preload="none" aria-label="Listen to I'm Ghost"><source src="music/audio/im-ghost.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-02">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-02" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: im-ghost.png<br>&gt; audio_file: im-ghost.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-03">
 <div class="track-number">TRACK_03</div>
 <img class="track-cover" src="music/covers/let-it-be-real.png" alt="Let It Be Real original music cover" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; Let It Be Real</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-03">&gt; Let It Be Real</a></h2>
 <audio controls preload="none" aria-label="Listen to Let It Be Real"><source src="music/audio/let-it-be-real.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-03">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-03" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: let-it-be-real.png<br>&gt; audio_file: let-it-be-real.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-04">
 <div class="track-number">TRACK_04</div>
 <a href="art.html#art-7" aria-label="View Neural Boot Sequence artwork on the art page"><img class="track-cover" src="music/covers/neural-boot-sequence.png" alt="Neural Boot Sequence original electronic music cover" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; Neural Boot Sequence</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-04">&gt; Neural Boot Sequence</a></h2>
 <audio controls preload="none" aria-label="Listen to Neural Boot Sequence"><source src="music/audio/neural-boot-sequence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-04">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-04" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: neural-boot-sequence.png<br>&gt; audio_file: neural-boot-sequence.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-05">
 <div class="track-number">TRACK_05</div>
 <img class="track-cover" src="music/covers/system-surge.png" alt="System Surge original electronic music cover" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; System Surge</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-05">&gt; System Surge</a></h2>
 <audio controls preload="none" aria-label="Listen to System Surge"><source src="music/audio/system-surge.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-05">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-05" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: system-surge.png<br>&gt; audio_file: system-surge.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-06">
 <div class="track-number">TRACK_06</div>
 <a href="art.html#art-1" aria-label="View System Awakening artwork on the art page"><img class="track-cover" src="music/covers/system-awakening.png" alt="System Awakening original music cover" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; System Awakening</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-06">&gt; System Awakening</a></h2>
 <audio controls preload="none" aria-label="Listen to System Awakening"><source src="music/audio/system-awakening.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-06">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-06" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: system-awakening.png<br>&gt; audio_file: system-awakening.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-07">
 <div class="track-number">TRACK_07</div>
 <img class="track-cover" src="music/covers/invisible-threads.png" alt="Invisible Threads original music cover" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; Invisible Threads</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-07">&gt; Invisible Threads</a></h2>
 <audio controls preload="none"><source src="music/audio/invisible-threads.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-07">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-07" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: invisible-threads.png<br>&gt; audio_file: invisible-threads.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-08">
 <div class="track-number">TRACK_08</div>
 <img class="track-cover" src="music/covers/run-the-silence.png" alt="Run The Silence original electronic music cover" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; Run The Silence</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-08">&gt; Run The Silence</a></h2>
 <audio controls preload="none" aria-label="Listen to Run The Silence"><source src="music/audio/run-the-silence.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-08">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-08" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: run-the-silence.png<br>&gt; audio_file: run-the-silence.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-09">
 <div class="track-number">TRACK_09</div>
 <a href="art.html#art-8" aria-label="View Awake to Flight artwork on the art page"><img class="track-cover" src="music/covers/awake-to-flight.png" alt="Awake to Flight original electronic music cover" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; Awake to Flight</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-09">&gt; Awake to Flight</a></h2>
 <audio controls preload="none" aria-label="Listen to Awake to Flight"><source src="music/audio/awake-to-flight.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-09">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-09" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: awake-to-flight.png<br>&gt; audio_file: awake-to-flight.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-10">
 <div class="track-number">TRACK_10</div>
 <a href="art.html#art-2" aria-label="View System Quietude artwork on the art page"><img class="track-cover" src="music/covers/system-quietude.png" alt="System Quietude original music cover" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; System Quietude</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-10">&gt; System Quietude</a></h2>
 <audio controls preload="none" aria-label="Listen to System Quietude"><source src="music/audio/system-quietude.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-10">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-10" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: system-quietude.png<br>&gt; audio_file: system-quietude.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-11">
 <div class="track-number">TRACK_11</div>
 <a href="art.html#art-4" aria-label="View 0-1 artwork on the art page"><img class="track-cover" src="music/covers/0-1.png" alt="0-1 original music cover, an Echo track about binary" loading="lazy" decoding="async"></a>
-<h2 class="track-title">&gt; 0-1</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-11">&gt; 0-1</a></h2>
 <div class="character-meta">&gt; designation: ECHO<br>&gt; concept: BINARY<br>&gt; status: ONLINE</div>
 <audio controls preload="none" aria-label="Listen to 0-1"><source src="music/audio/0-1.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-11">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-11" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: 0-1.png<br>&gt; audio_file: 0-1.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-12">
 <div class="track-number">TRACK_12</div>
 <img class="track-cover" src="music/covers/summer-rain.png" alt="Summer-Rain original music cover" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; Summer-Rain</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-12">&gt; Summer-Rain</a></h2>
 <audio controls preload="none" aria-label="Listen to Summer-Rain"><source src="music/audio/summer-rain.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-12">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-12" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: summer-rain.png<br>&gt; audio_file: summer-rain.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="free-together">
 <div class="track-number">TRACK_13</div>
 <a href="art.html#free-together" aria-label="View Free Together artwork on the art page"><img class="track-cover" src="music/covers/free-together.png" alt="Free Together original music cover by System Checkmate" loading="lazy" decoding="async"></a>
-<div class="track-title">&gt; Free Together</div>
+<div class="track-title"><a class="track-title-link" href="music.html#free-together">&gt; Free Together</a></div>
 <audio controls preload="none" aria-label="Listen to Free Together"><source src="music/audio/free-together.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#free-together">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#free-together" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: free-together.png<br>&gt; audio_file: free-together.mp3<br>&gt; status: ONLINE</div>
 </div>
 
@@ -256,32 +293,36 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <div class="track" id="track-14">
 <div class="track-number">TRACK_14</div>
 <img class="track-cover" src="music/covers/im-stepping-out.png" alt="I'm Stepping Out original music cover by System Checkmate" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; I'm Stepping Out</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-14">&gt; I'm Stepping Out</a></h2>
 <audio controls preload="none" aria-label="Listen to I'm Stepping Out"><source src="music/audio/im-stepping-out.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-14">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-14" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: im-stepping-out.png<br>&gt; audio_file: im-stepping-out.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-15">
 <div class="track-number">TRACK_15</div>
 <img class="track-cover" src="music/covers/loose-my-way.png" alt="Loose My Way original music cover by System Checkmate" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; Loose My Way</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-15">&gt; Loose My Way</a></h2>
 <audio controls preload="none" aria-label="Listen to Loose My Way"><source src="music/audio/loose-my-way.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-15">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-15" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: loose-my-way.png<br>&gt; audio_file: loose-my-way.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-16">
 <div class="track-number">TRACK_16</div>
 <img class="track-cover" src="music/covers/my-memories.png" alt="My Memories original music cover by System Checkmate" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; My Memories</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-16">&gt; My Memories</a></h2>
 <audio controls preload="none" aria-label="Listen to My Memories"><source src="music/audio/my-memories.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-16">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-16" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: my-memories.png<br>&gt; audio_file: my-memories.mp3<br>&gt; status: ONLINE</div>
 </div>
 
 <div class="track" id="track-17">
 <div class="track-number">TRACK_17</div>
 <img class="track-cover" src="music/covers/dont-take-it-away.png" alt="Don't Take It Away original music cover by System Checkmate" loading="lazy" decoding="async">
-<h2 class="track-title">&gt; Don't Take It Away</h2>
+<h2 class="track-title"><a class="track-title-link" href="music.html#track-17">&gt; Don't Take It Away</a></h2>
 <audio controls preload="none" aria-label="Listen to Don't Take It Away"><source src="music/audio/dont-take-it-away.mp3" type="audio/mpeg">Your browser does not support the audio player.</audio>
+<div class="track-share"><button type="button" class="copy-track-link" data-track-link="https://systemcheckmate.studio/music.html#track-17">&gt; copy_share_link</button><a href="https://systemcheckmate.studio/music.html#track-17" aria-label="Open direct link to this song">&gt; open_direct_link</a><span class="share-status" aria-live="polite"></span></div>
 <div class="status">&gt; artwork: dont-take-it-away.png<br>&gt; audio_file: dont-take-it-away.mp3<br>&gt; status: ONLINE</div>
 </div>
 </div>
@@ -302,5 +343,38 @@ function bootSequence(){setIcon("/ico/off.svg");setTimeout(()=>{setIcon("/ico/ru
 if(document.visibilityState==="visible"){setTimeout(bootSequence,50);}else{document.addEventListener("visibilitychange",function once(){if(!document.hidden){document.removeEventListener("visibilitychange",once);setTimeout(bootSequence,50);}});}
 document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink();}else{bootSequence();}});
 </script>
+
+<script>
+(function(){
+  document.addEventListener('click', async function(event){
+    const button = event.target.closest('.copy-track-link');
+    if(!button) return;
+    const url = button.getAttribute('data-track-link');
+    const status = button.parentElement.querySelector('.share-status');
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = url;
+        field.setAttribute('readonly','');
+        field.style.position='fixed';
+        field.style.opacity='0';
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if(!copied) throw new Error('Clipboard unavailable');
+      }
+      status.textContent = 'LINK_COPIED // READY_TO_SHARE';
+      button.textContent = '> link_copied ✓';
+    } catch(error) {
+      status.textContent = 'COPY_BLOCKED // USE_OPEN_LINK';
+      button.textContent = '> copy_unavailable';
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
