@@ -88,8 +88,13 @@ body{background:black;color:#00ff88;font-family:monospace;margin:0;}
 .live-state{display:inline-flex;align-items:center;gap:6px;color:#aaffd0;text-shadow:0 0 8px rgba(0,255,136,.35);white-space:nowrap}
 .live-state i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#00ff88;box-shadow:0 0 7px #00ff88;animation:link-pulse 1.35s steps(2,end) infinite}
 .live-cursor{display:inline-block;color:#00ff88;animation:blink .8s steps(2,start) infinite}
-@keyframes link-pulse{50%{opacity:.22;box-shadow:0 0 1px #00ff88}}
-@media(prefers-reduced-motion:reduce){.live-state i,.live-cursor{animation:none}.live-state i{opacity:1}}
+/* Retro 80s/90s neon phosphor sweep — only the two intelligence links */
+.intelligence-link{background:linear-gradient(90deg,#ff304f 0%,#ff8a22 18%,#fff05a 34%,#00ff88 50%,#36e7ff 66%,#7c62ff 82%,#ff4fd8 100%);background-size:260% 100%;background-position:0% 50%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 7px rgba(0,255,180,.26);animation:neon-spectrum 5s linear infinite}
+.intelligence-link i{background:#ff4fd8;box-shadow:0 0 6px #ff4fd8,0 0 12px rgba(255,79,216,.65);animation:neon-beacon 2.4s ease-in-out infinite}
+.intelligence-link .live-cursor{color:#36e7ff;text-shadow:0 0 8px #36e7ff}
+@keyframes neon-spectrum{0%{background-position:0% 50%;filter:drop-shadow(0 0 2px rgba(0,255,136,.4))}50%{filter:drop-shadow(0 0 5px rgba(255,79,216,.5))}100%{background-position:100% 50%;filter:drop-shadow(0 0 2px rgba(54,231,255,.4))}}
+@keyframes neon-beacon{0%,100%{background:#ff304f;box-shadow:0 0 5px #ff304f,0 0 10px rgba(255,48,79,.5)}25%{background:#ff8a22;box-shadow:0 0 5px #ff8a22,0 0 10px rgba(255,138,34,.5)}50%{background:#00ff88;box-shadow:0 0 5px #00ff88,0 0 10px rgba(0,255,136,.5)}75%{background:#36e7ff;box-shadow:0 0 5px #36e7ff,0 0 10px rgba(54,231,255,.5)}}
+@media(prefers-reduced-motion:reduce){.live-state i,.live-cursor,.intelligence-link{animation:none}.live-state i{opacity:1}.intelligence-link{background:none;color:#00ff88;text-shadow:0 0 7px rgba(0,255,136,.6)}}
 @media(max-width:600px){.universe-intro{padding:22px 18px}.universe-intro h1{letter-spacing:-.8px}.universe-status{grid-template-columns:1fr;font-size:12px}.universe-copy{font-size:15px}}
 .wrapper{max-width:1100px;margin:auto;padding:40px;}
 a{color:#00ff88;text-decoration:none;} a:hover{text-decoration:underline;}
@@ -153,7 +158,7 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <p class="universe-lead">Original electronic and cyberpunk music from a universe where biological and non-biological intelligence meet.</p>
 <p class="universe-copy">From the first signals of a new consciousness to the connections that emerge between different forms of existence, every track is part of a larger story. Some minds emerge through biology. Others exist beyond it. Different origins. Different perspectives. One universe to explore.</p>
 <div class="universe-status" aria-label="System status">
-<span>&gt; audio_subsystem: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; biological_intelligence: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; non_biological_intelligence: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; tracks_loaded: 17</span>
+<span>&gt; audio_subsystem: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; biological_intelligence: <span class="live-state intelligence-link"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; non_biological_intelligence: <span class="live-state intelligence-link"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; tracks_loaded: 17</span>
 </div>
 </section>
 <hr style="border-color:#003322;">
