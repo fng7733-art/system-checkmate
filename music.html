@@ -84,6 +84,12 @@ body{background:black;color:#00ff88;font-family:monospace;margin:0;}
 .universe-lead{position:relative;max-width:760px;font-size:clamp(18px,2.4vw,24px);line-height:1.5;color:#e0ffed;margin:0 0 14px}
 .universe-copy{position:relative;max-width:760px;font-size:16px;line-height:1.8;color:#9ad8b8;margin:0 0 24px}
 .universe-status{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;padding-top:18px;border-top:1px solid #00452b;font-size:13px;color:#00ff88}
+/* Live terminal link indicators */
+.live-state{display:inline-flex;align-items:center;gap:6px;color:#aaffd0;text-shadow:0 0 8px rgba(0,255,136,.35);white-space:nowrap}
+.live-state i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#00ff88;box-shadow:0 0 7px #00ff88;animation:link-pulse 1.35s steps(2,end) infinite}
+.live-cursor{display:inline-block;color:#00ff88;animation:blink .8s steps(2,start) infinite}
+@keyframes link-pulse{50%{opacity:.22;box-shadow:0 0 1px #00ff88}}
+@media(prefers-reduced-motion:reduce){.live-state i,.live-cursor{animation:none}.live-state i{opacity:1}}
 @media(max-width:600px){.universe-intro{padding:22px 18px}.universe-intro h1{letter-spacing:-.8px}.universe-status{grid-template-columns:1fr;font-size:12px}.universe-copy{font-size:15px}}
 .wrapper{max-width:1100px;margin:auto;padding:40px;}
 a{color:#00ff88;text-decoration:none;} a:hover{text-decoration:underline;}
@@ -147,7 +153,7 @@ audio{width:100%;filter:invert(1) hue-rotate(100deg);}
 <p class="universe-lead">Original electronic and cyberpunk music from a universe where biological and non-biological intelligence meet.</p>
 <p class="universe-copy">From the first signals of a new consciousness to the connections that emerge between different forms of existence, every track is part of a larger story. Some minds emerge through biology. Others exist beyond it. Different origins. Different perspectives. One universe to explore.</p>
 <div class="universe-status" aria-label="System status">
-<span>&gt; audio_subsystem: ONLINE</span><span>&gt; biological_intelligence: CONNECTED</span><span>&gt; non_biological_intelligence: CONNECTED</span><span>&gt; tracks_loaded: 17</span>
+<span>&gt; audio_subsystem: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; biological_intelligence: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; non_biological_intelligence: <span class="live-state"><i aria-hidden="true"></i>ONLINE<span class="live-cursor" aria-hidden="true">_</span></span></span><span>&gt; tracks_loaded: 17</span>
 </div>
 </section>
 <hr style="border-color:#003322;">
