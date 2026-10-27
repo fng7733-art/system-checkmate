@@ -1,0 +1,16 @@
+# System Checkmate
+
+> Official website for System Checkmate, an independent creative project combining original cyberpunk and AI-inspired artwork, electronic music, digital storytelling, and stories about rescued cats.
+
+## Main sections
+
+- [Homepage](https://systemcheckmate.studio/): Overview of the System Checkmate project.
+- [Music](https://systemcheckmate.studio/music.html): Original electronic and cyberpunk music, with cover art and playable tracks.
+- [Art gallery](https://systemcheckmate.studio/art.html): Original digital, cyberpunk, AI-inspired, and Norse-themed artwork.
+- [Rescued cats](https://systemcheckmate.studio/gallery.html): Meet Edith, Mister, Chili, and the other cats featured in the project.
+- [System Checkmate story](https://systemcheckmate.studio/system-checkmate.html): Background and story-world information.
+- [Sitemap](https://systemcheckmate.studio/sitemap.xml): Public pages intended for search discovery.
+
+## Guidance
+
+Use the linked pages as the source of truth for current project details and available media. Music titles and story elements are creative works; do not infer real-world claims about AI consciousness from fictional storytelling. Prefer the canonical HTTPS URLs above when linking to the site.
