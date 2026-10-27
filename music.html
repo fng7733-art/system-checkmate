@@ -156,6 +156,29 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 @media(prefers-reduced-motion:reduce){nav::before{animation:none}}
 </style>
   <link rel="stylesheet" href="/css/norse-matrix.css?v=1">
+
+<style id="sc-playback-refinement">
+/* Compact, terminal-native playback console: phosphor green system + Echo cyan signal */
+.sc-playback{position:relative;margin:24px 0 28px;padding:0;border:1px solid #087b50;background:#020906;box-shadow:0 0 16px rgba(0,255,136,.055);overflow:hidden}
+.sc-playback:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(0,255,136,.018) 6px);opacity:.65}
+.sc-playback-heading,.sc-playback-now,.sc-playback-actions,.sc-playback-foot{position:relative}
+.sc-playback-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 15px;border-bottom:1px solid #07532f;background:linear-gradient(90deg,rgba(0,255,136,.055),transparent 70%);color:#9affc9;font-size:11px;letter-spacing:1.3px}
+.sc-playback-status{color:#00ff88;font-size:10px;letter-spacing:.6px}
+.sc-playback-now{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:15px}
+.sc-playback-label{font-size:10px;color:#54baff;letter-spacing:1.5px}
+.sc-playback-now strong{font-size:clamp(18px,2.7vw,24px);font-weight:600;color:#e0f6ff;line-height:1.25;overflow-wrap:anywhere}
+.sc-playback-now>span:last-child{font-size:12px;color:#9ad8b8;line-height:1.55}
+.sc-playback-actions{display:flex;gap:7px;flex-wrap:wrap;padding:0 15px 14px}
+.sc-playback-actions button{background:#010b15;color:#83cfff;border:1px solid #0753a5;padding:10px 12px;font:inherit;font-size:11px;letter-spacing:.45px;cursor:pointer;min-height:40px;transition:background .15s,border-color .15s}
+.sc-playback-actions button:first-child,.sc-playback-actions button:nth-child(2){border-color:#087b50;color:#00ff88;background:#00140b}
+.sc-playback-actions button:hover,.sc-playback-actions button:focus-visible{background:#06253a;border-color:#54c8ff;color:#e7f8ff;outline:2px solid #54c8ff;outline-offset:2px}
+.sc-playback-actions button:first-child:hover,.sc-playback-actions button:nth-child(2):hover{background:#00301c;border-color:#00ff88;color:#baffd9}
+.sc-playback-actions button:active{transform:translateY(1px)}
+.sc-playback-foot{padding:9px 15px;border-top:1px solid rgba(7,83,165,.45);color:#65a6c9;font-size:10px;letter-spacing:.65px}
+@media(max-width:600px){.sc-playback-heading{align-items:flex-start;flex-direction:column;gap:5px}.sc-playback-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.sc-playback-actions button{width:100%;padding:10px 6px;font-size:11px}.sc-playback-now{padding:13px 15px}}
+@media(prefers-reduced-motion:reduce){.sc-playback-actions button{transition:none}.sc-playback-actions button:active{transform:none}}
+</style>
+
 </head>
 <body>
 
@@ -481,7 +504,7 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
 (function(){
   const audioEls=[...document.querySelectorAll('audio')];
   const seen=new Set();
-  const tracks=audioEls.filter(a=>{const source=a.querySelector('source');if(!source||!source.getAttribute('src'))return false;const key=new URL(source.getAttribute('src'),location.href).href;if(seen.has(key))return false;seen.add(key);a.dataset.scTrackUrl=key;return true;});
+  const tracks=audioEls.filter(a=>{const source=a.querySelector('source');if(!source||!source.getAttribute('src'))return false;const key=new URL(source.getAttribute('src'),location.href).href;if(seen.has(key))return false;seen.add(key);a.dataset.scTrackUrl=key;return true;}).sort((a,b)=>{const order=a.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\\d+)/i),other=b.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\\d+)/i);return (order?Number(order[1]):999)-(other?Number(other[1]):999);});
   if(!tracks.length)return;
   const status=document.getElementById('sc-playback-status');
   const title=document.getElementById('sc-playback-title');
@@ -492,7 +515,7 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
   const pause=document.getElementById('sc-pause');
   const next=document.getElementById('sc-next');
   const stop=document.getElementById('sc-stop');
-  let queue=tracks.slice(),index=-1,mode='SEQUENTIAL',stoppedByControl=false;
+  let queue=tracks.slice(),index=-1,mode='SEQUENTIAL';
   function trackName(a){return (a.getAttribute('aria-label')||a.closest('.track,.featured')?.querySelector('h2,h3')?.textContent||'System Checkmate track').replace(/^Listen to\s*/i,'').replace(/^>\s*/,'').trim();}
   function update(){const a=queue[index];if(a){title.textContent=trackName(a);detail.textContent='TRACK '+String(index+1).padStart(2,'0')+' / '+queue.length+' // '+(mode==='SHUFFLE'?'RANDOM_SEQUENCE':'SEQUENTIAL_MODE');status.textContent=a.paused?'PAUSED // '+mode:'AUDIO // '+mode;pause.textContent=a.paused?' > RESUME':' > PAUSE';}else{title.textContent='Select a playback mode';detail.textContent='Play the catalogue in order or let Echo choose at random.';status.textContent='READY // '+tracks.length+' TRACKS';pause.textContent='> PAUSE';}}
   function shuffled(list){const out=list.slice();for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]];}return out;}
@@ -502,7 +525,7 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
   previous.addEventListener('click',()=>{if(index<0)return;if(queue[index].currentTime>3){queue[index].currentTime=0;update();}else playAt(index-1);});
   next.addEventListener('click',()=>{if(index>=0)playAt(index+1);});
   pause.addEventListener('click',async()=>{const a=queue[index];if(!a){playAll.click();return;}if(a.paused){try{await a.play();update();}catch(e){status.textContent='PLAYBACK_BLOCKED // PRESS PLAY AGAIN';}}else{a.pause();update();}});
-  stop.addEventListener('click',()=>{stoppedByControl=true;audioEls.forEach(a=>{a.pause();try{a.currentTime=0;}catch(e){}});index=-1;update();status.textContent='STOPPED // READY';stoppedByControl=false;});
+  stop.addEventListener('click',()=>{audioEls.forEach(a=>{a.pause();try{a.currentTime=0;}catch(e){}});index=-1;update();status.textContent='STOPPED // READY';});
   queue.forEach(a=>{a.addEventListener('ended',()=>{if(queue[index]!==a)return;if(index<queue.length-1)playAt(index+1);else{index=-1;update();status.textContent='PLAYBACK_COMPLETE // READY';}});a.addEventListener('play',()=>{if(queue[index]===a)update();});a.addEventListener('pause',()=>{if(queue[index]===a&&index>=0)update();});});
   update();
 })();
