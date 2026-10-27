@@ -504,7 +504,7 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
 (function(){
   const audioEls=[...document.querySelectorAll('audio')];
   const seen=new Set();
-  const tracks=audioEls.filter(a=>{const source=a.querySelector('source');if(!source||!source.getAttribute('src'))return false;const key=new URL(source.getAttribute('src'),location.href).href;if(seen.has(key))return false;seen.add(key);a.dataset.scTrackUrl=key;return true;}).sort((a,b)=>{const order=a.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\\d+)/i),other=b.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\\d+)/i);return (order?Number(order[1]):999)-(other?Number(other[1]):999);});
+  const tracks=audioEls.filter(a=>{const source=a.querySelector('source');if(!source||!source.getAttribute('src'))return false;const key=new URL(source.getAttribute('src'),location.href).href;if(seen.has(key))return false;seen.add(key);a.dataset.scTrackUrl=key;return true;}).sort((a,b)=>{const order=a.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\d+)/i),other=b.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\d+)/i);return (order?Number(order[1]):999)-(other?Number(other[1]):999);});
   if(!tracks.length)return;
   const status=document.getElementById('sc-playback-status');
   const title=document.getElementById('sc-playback-title');
