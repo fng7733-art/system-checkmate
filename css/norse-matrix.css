@@ -94,3 +94,64 @@ input,textarea,select{max-width:100%;background:#030a06;color:#d9ffea;border:1px
   html{scroll-behavior:auto}
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
+
+/* --- SYSTEM_CHECKMATE: unified, restrained site-wide finish --- */
+/* Preserve the original 90s terminal identity; improve rhythm and readability. */
+body{
+  line-height:1.65;
+  background-image:
+    radial-gradient(ellipse at 50% -18%,rgba(0,255,136,.055),transparent 55%),
+    linear-gradient(180deg,rgba(0,18,10,.18),transparent 280px);
+}
+a{
+  color:#8fffc0;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+a:hover{color:#d8ffea}
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 16px;
+  padding:12px clamp(12px,2.2vw,20px);
+  margin-bottom:24px;
+}
+nav a{
+  min-height:30px;
+  display:inline-flex;
+  align-items:center;
+  padding:4px 3px;
+  line-height:1.4;
+}
+.wrapper,.wrap{
+  box-sizing:border-box;
+  width:100%;
+}
+.wrapper>h1,.wrap>h1{
+  border-left:2px solid var(--sc-rune)!important;
+  background:
+    radial-gradient(ellipse at 92% 0%,rgba(0,255,136,.085),transparent 48%),
+    linear-gradient(145deg,rgba(3,20,13,.9),rgba(0,0,0,.98) 72%)!important;
+  padding:clamp(18px,3vw,30px);
+}
+h1,h2,h3{
+  line-height:1.28;
+  letter-spacing:-.018em;
+}
+p,li{line-height:1.75}
+img,video,iframe{max-width:100%;height:auto}
+audio{display:block;width:100%;max-width:100%;margin-block:12px}
+button,.btn{min-height:40px}
+footer{
+  border-top:1px solid var(--sc-line);
+  margin-top:32px;
+  padding-top:18px;
+  line-height:1.75;
+}
+@media(max-width:600px){
+  nav{gap:6px 12px;padding:10px 12px;margin-bottom:18px}
+  nav a{min-height:36px}
+  .wrapper>h1,.wrap>h1{padding:20px 16px}
+  p,li{line-height:1.7}
+}
