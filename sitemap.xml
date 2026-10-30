@@ -5,14 +5,11 @@
     <image:image><image:loc>https://systemcheckmate.studio/images/lava.jpg</image:loc></image:image>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://systemcheckmate.studio/gallery.html</loc>
-    <image:image><image:loc>https://systemcheckmate.studio/images/edith1.jpg</image:loc></image:image>
-    <image:image><image:loc>https://systemcheckmate.studio/images/mister.jpg</image:loc></image:image>
-    <image:image><image:loc>https://systemcheckmate.studio/images/chili.jpg</image:loc></image:image>
-    <image:image><image:loc>https://systemcheckmate.studio/images/gubben3.jpg</image:loc></image:image>
-    <priority>0.9</priority>
-  </url>
+  <url><loc>https://systemcheckmate.studio/saved-cats.html</loc>
+<image:image><image:loc>https://systemcheckmate.studio/images/edith1.jpg</image:loc></image:image>
+<image:image><image:loc>https://systemcheckmate.studio/images/mister.jpg</image:loc></image:image>
+<image:image><image:loc>https://systemcheckmate.studio/images/saved-cats/chili-window.webp</image:loc></image:image>
+<image:image><image:loc>https://systemcheckmate.studio/images/gubben3.jpg</image:loc></image:image><priority>0.9</priority></url>
   <url>
     <loc>https://systemcheckmate.studio/art.html</loc>
     <image:image><image:loc>https://systemcheckmate.studio/images/art/black.png</image:loc></image:image>
