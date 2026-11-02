@@ -1,0 +1,44 @@
+name: Notify search engines with IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production deployment
+        run: sleep 120
+      - name: Submit canonical pages to IndexNow
+        env:
+          INDEXNOW_KEY: 15225c76c7e037b21b5d123b37609b8c
+        run: |
+          cat > payload.json <<'JSON'
+          {
+            "host": "systemcheckmate.studio",
+            "key": "${INDEXNOW_KEY}",
+            "keyLocation": "https://systemcheckmate.studio/15225c76c7e037b21b5d123b37609b8c.txt",
+            "urlList": [
+              "https://systemcheckmate.studio/",
+              "https://systemcheckmate.studio/gallery.html",
+              "https://systemcheckmate.studio/catdivision.html",
+              "https://systemcheckmate.studio/art.html",
+              "https://systemcheckmate.studio/music.html",
+              "https://systemcheckmate.studio/system-checkmate.html",
+              "https://systemcheckmate.studio/edith-story.html",
+              "https://systemcheckmate.studio/mister-story.html",
+              "https://systemcheckmate.studio/chili-story.html",
+              "https://systemcheckmate.studio/gubbens-story.html"
+            ]
+          }
+          JSON
+          curl --fail-with-body --silent --show-error \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            --data-binary @payload.json
