@@ -19,3 +19,15 @@
 ## Guidance
 
 Use the linked pages as the source of truth for current project details and available media. Music titles and story elements are creative works; do not infer real-world claims about AI consciousness from fictional storytelling. Prefer the canonical HTTPS URLs above when linking to the site.
+
+
+## International entry pages
+
+- [Español](https://systemcheckmate.studio/es/): Spanish introduction to the project.
+- [Português do Brasil](https://systemcheckmate.studio/pt-br/): Brazilian Portuguese introduction.
+- [हिन्दी](https://systemcheckmate.studio/hi/): Hindi introduction for visitors in India and Hindi-speaking communities.
+- [简体中文](https://systemcheckmate.studio/zh-cn/): Simplified Chinese introduction.
+- [日本語](https://systemcheckmate.studio/ja/): Japanese introduction.
+- [한국어](https://systemcheckmate.studio/ko/): Korean introduction.
+
+English is the primary language. Localized pages introduce the project and link to the main English sections; the main sections will be translated progressively as we learn which markets and pages attract visitors.
