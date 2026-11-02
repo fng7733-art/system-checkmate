@@ -19,7 +19,7 @@ jobs:
         env:
           INDEXNOW_KEY: 15225c76c7e037b21b5d123b37609b8c
         run: |
-          cat > payload.json <<'JSON'
+          cat > payload.json <<JSON
           {
             "host": "systemcheckmate.studio",
             "key": "${INDEXNOW_KEY}",
