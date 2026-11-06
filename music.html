@@ -179,6 +179,40 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 @media(prefers-reduced-motion:reduce){.sc-playback-actions button{transition:none}.sc-playback-actions button:active{transform:none}}
 </style>
 
+
+<style id="sc-floating-player-style">
+
+/* Floating audio dock — quiet, precise, terminal-native */
+#sc-floating-player{position:fixed;z-index:9000;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(760px,calc(100vw - 28px));padding:12px 14px 11px;border:1px solid rgba(0,255,136,.62);background:linear-gradient(112deg,rgba(2,15,10,.97),rgba(2,8,17,.97));box-shadow:0 12px 44px rgba(0,0,0,.58),0 0 24px rgba(0,255,136,.10),inset 0 0 22px rgba(48,155,255,.045);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:#dfffee;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;opacity:1;transition:opacity .2s,transform .2s}
+#sc-floating-player[hidden]{display:none}
+#sc-floating-player:before{content:"";position:absolute;left:14px;right:14px;top:0;height:1px;background:linear-gradient(90deg,transparent,#00ff88 18%,#54c8ff 50%,#00ff88 82%,transparent);opacity:.7}
+.sc-fp-top{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:12px}
+.sc-fp-cover{width:48px;height:48px;object-fit:cover;border:1px solid rgba(84,200,255,.45);box-shadow:0 0 14px rgba(84,200,255,.12);background:#020906}
+.sc-fp-meta{min-width:0}
+.sc-fp-kicker{font-size:9px;letter-spacing:1.7px;color:#69c7ff;margin-bottom:3px}
+.sc-fp-title{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;font-weight:600;color:#e7f8ff;letter-spacing:.15px}
+.sc-fp-state{font-size:10px;color:#8bd9b1;margin-top:3px;letter-spacing:.7px}
+.sc-fp-actions{display:flex;align-items:center;gap:6px}
+.sc-fp-btn{display:grid;place-items:center;width:36px;height:34px;padding:0;border:1px solid rgba(0,255,136,.28);background:rgba(0,255,136,.045);color:#baffd9;font:inherit;font-size:15px;cursor:pointer}
+.sc-fp-btn-primary{width:42px;height:38px;border-color:#00ff88;background:#00ff88;color:#00150b;font-size:17px;box-shadow:0 0 14px rgba(0,255,136,.14)}
+.sc-fp-btn:hover,.sc-fp-btn:focus-visible{border-color:#54c8ff;color:#e7f8ff;background:rgba(20,110,170,.18);outline:2px solid #54c8ff;outline-offset:2px}
+.sc-fp-btn-primary:hover,.sc-fp-btn-primary:focus-visible{background:#baffd9;color:#00150b;border-color:#baffd9}
+.sc-fp-timeline{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;align-items:center;gap:9px;margin:9px 1px 0;color:#80bda0;font-size:9px;font-variant-numeric:tabular-nums}
+#sc-fp-progress{width:100%;height:3px;margin:0;accent-color:#00ff88;cursor:pointer}
+.sc-fp-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;padding-top:7px;border-top:1px solid rgba(0,255,136,.13)}
+.sc-fp-volume{display:flex;align-items:center;gap:7px;color:#74b9d7;font-size:10px}
+#sc-fp-volume{width:74px;height:3px;accent-color:#54c8ff}
+.sc-fp-foot{font-size:9px;letter-spacing:1px;color:#559b78}
+.sc-fp-collapse{width:28px;height:24px;border:0;background:transparent;color:#8bd9b1;font-size:15px;cursor:pointer}
+#sc-floating-player.is-collapsed{width:min(420px,calc(100vw - 28px));padding:9px 12px}
+#sc-floating-player.is-collapsed .sc-fp-cover{width:34px;height:34px}
+#sc-floating-player.is-collapsed .sc-fp-timeline,#sc-floating-player.is-collapsed .sc-fp-bottom{display:none}
+#sc-floating-player.is-collapsed .sc-fp-top{grid-template-columns:34px minmax(0,1fr) auto;gap:9px}
+#sc-floating-player.is-collapsed .sc-fp-title{font-size:12px}
+@media(max-width:520px){#sc-floating-player{bottom:max(10px,env(safe-area-inset-bottom));width:calc(100vw - 18px);padding:10px 10px 9px}.sc-fp-top{grid-template-columns:42px minmax(0,1fr) auto;gap:9px}.sc-fp-cover{width:42px;height:42px}.sc-fp-actions{gap:4px}.sc-fp-btn{width:31px;height:32px}.sc-fp-btn-primary{width:37px;height:36px}.sc-fp-kicker{font-size:8px}.sc-fp-title{font-size:12px}.sc-fp-state{font-size:9px}.sc-fp-foot{font-size:8px}#sc-fp-volume{width:55px}}
+@media(prefers-reduced-motion:reduce){#sc-floating-player{transition:none}}
+
+</style>
 </head>
 <body>
 
@@ -586,6 +620,86 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
   stop.addEventListener('click',()=>{audioEls.forEach(a=>{a.pause();try{a.currentTime=0;}catch(e){}});index=-1;update();status.textContent='STOPPED // READY';});
   queue.forEach(a=>{a.addEventListener('ended',()=>{if(queue[index]!==a)return;if(index<queue.length-1)playAt(index+1);else{index=-1;update();status.textContent='PLAYBACK_COMPLETE // READY';}});a.addEventListener('play',()=>{if(queue[index]===a)update();});a.addEventListener('pause',()=>{if(queue[index]===a&&index>=0)update();});});
   update();
+})();
+</script>
+
+
+<aside id="sc-floating-player" aria-label="Floating music player" hidden>
+  <div class="sc-fp-top">
+    <img class="sc-fp-cover" id="sc-fp-cover" src="/music/covers/can-anybody-hear-me.png" alt="">
+    <div class="sc-fp-meta">
+      <div class="sc-fp-kicker">&gt; SYSTEMCHECKMATE // NOW_TRANSMITTING</div>
+      <strong class="sc-fp-title" id="sc-fp-title">Select a track</strong>
+      <div class="sc-fp-state" id="sc-fp-state" aria-live="polite">AUDIO // READY</div>
+    </div>
+    <div class="sc-fp-actions">
+      <button class="sc-fp-btn" id="sc-fp-prev" type="button" aria-label="Previous track">‹‹</button>
+      <button class="sc-fp-btn sc-fp-btn-primary" id="sc-fp-toggle" type="button" aria-label="Play or pause">▶</button>
+      <button class="sc-fp-btn" id="sc-fp-next" type="button" aria-label="Next track">››</button>
+      <button class="sc-fp-collapse" id="sc-fp-collapse" type="button" aria-label="Minimise player" aria-expanded="true">⌄</button>
+    </div>
+  </div>
+  <div class="sc-fp-timeline">
+    <span id="sc-fp-current">0:00</span>
+    <input id="sc-fp-progress" type="range" min="0" max="1000" value="0" aria-label="Track position">
+    <span id="sc-fp-duration">0:00</span>
+  </div>
+  <div class="sc-fp-bottom">
+    <span class="sc-fp-foot">&gt; AUDIO_LINK // SECURE_STREAM</span>
+    <label class="sc-fp-volume"><span aria-hidden="true">VOL</span><input id="sc-fp-volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></label>
+  </div>
+</aside>
+<script id="sc-floating-player-script">
+(function(){
+  const dock=document.getElementById('sc-floating-player');
+  if(!dock)return;
+  const audioEls=[...document.querySelectorAll('audio')];
+  const tracks=audioEls.filter(a=>a.querySelector('source[src]')).sort((a,b)=>{
+    const n=a.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\d+)/i);
+    const m=b.closest('.track,.featured')?.querySelector('.track-number,.featured-number')?.textContent.match(/TRACK[_ ]?(\d+)/i);
+    return (n?Number(n[1]):999)-(m?Number(m[1]):999);
+  });
+  if(!tracks.length)return;
+  const $=id=>document.getElementById(id);
+  let current=null,raf=0;
+  const titleEl=$('sc-fp-title'),stateEl=$('sc-fp-state'),coverEl=$('sc-fp-cover');
+  const toggle=$('sc-fp-toggle'),progress=$('sc-fp-progress');
+  function nameOf(a){return (a.getAttribute('aria-label')||a.closest('.track,.featured')?.querySelector('h2,h3')?.textContent||'System Checkmate track').replace(/^Listen to\s*/i,'').replace(/^>\s*/,'').trim();}
+  function cardOf(a){return a.closest('.track,.featured');}
+  function fmt(t){if(!Number.isFinite(t))return '0:00';return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0');}
+  function indexOf(a){return tracks.indexOf(a);}
+  function sync(){
+    if(!current)return;
+    const card=cardOf(current),img=card?.querySelector('.track-cover,.featured-cover');
+    titleEl.textContent=nameOf(current);
+    if(img)coverEl.src=img.currentSrc||img.src;
+    stateEl.textContent=current.paused?'AUDIO // PAUSED':'AUDIO // LIVE';
+    toggle.textContent=current.paused?'▶':'Ⅱ';
+    toggle.setAttribute('aria-label',current.paused?'Resume playback':'Pause playback');
+    $('sc-fp-duration').textContent=fmt(current.duration);
+    $('sc-fp-current').textContent=fmt(current.currentTime);
+    progress.value=current.duration?Math.round(current.currentTime/current.duration*1000):0;
+  }
+  function tick(){if(!current||current.paused)return;sync();raf=requestAnimationFrame(tick);}
+  function activate(a){current=a;dock.hidden=false;sync();if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);}
+  audioEls.forEach(a=>{
+    a.addEventListener('play',()=>{audioEls.forEach(other=>{if(other!==a&&!other.paused)other.pause();});activate(a);});
+    a.addEventListener('pause',()=>{if(current===a){sync();if(raf)cancelAnimationFrame(raf);raf=0;}});
+    a.addEventListener('ended',()=>{if(current===a){sync();if(raf)cancelAnimationFrame(raf);raf=0;}});
+    a.addEventListener('loadedmetadata',()=>{if(current===a)sync();});
+  });
+  toggle.addEventListener('click',async()=>{if(!current){await tracks[0].play().catch(()=>{});return;}if(current.paused){await current.play().catch(()=>{stateEl.textContent='PLAYBACK_BLOCKED // TAP_AGAIN';});}else current.pause();});
+  function move(delta){let i=indexOf(current);if(i<0)i=delta>0?-1:0;const next=tracks[(i+delta+tracks.length)%tracks.length];if(next){next.currentTime=0;next.play().catch(()=>{stateEl.textContent='PLAYBACK_BLOCKED // TAP_TRACK_PLAY';});}}
+  $('sc-fp-prev').addEventListener('click',()=>move(-1));
+  $('sc-fp-next').addEventListener('click',()=>move(1));
+  progress.addEventListener('input',()=>{if(current&&Number.isFinite(current.duration))current.currentTime=(Number(progress.value)/1000)*current.duration;});
+  $('sc-fp-volume').addEventListener('input',e=>{audioEls.forEach(a=>a.volume=Number(e.target.value));});
+  $('sc-fp-collapse').addEventListener('click',()=>{
+    const collapsed=dock.classList.toggle('is-collapsed');
+    $('sc-fp-collapse').textContent=collapsed?'⌃':'⌄';
+    $('sc-fp-collapse').setAttribute('aria-expanded',String(!collapsed));
+    $('sc-fp-collapse').setAttribute('aria-label',collapsed?'Expand player':'Minimise player');
+  });
 })();
 </script>
 
