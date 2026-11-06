@@ -633,6 +633,7 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
       <div class="sc-fp-state" id="sc-fp-state" aria-live="polite">AUDIO // READY</div>
     </div>
     <div class="sc-fp-actions">
+      <button class="sc-fp-btn" id="sc-fp-shuffle" type="button" aria-label="Shuffle tracks" title="Shuffle">⤨</button>
       <button class="sc-fp-btn" id="sc-fp-prev" type="button" aria-label="Previous track">‹‹</button>
       <button class="sc-fp-btn sc-fp-btn-primary" id="sc-fp-toggle" type="button" aria-label="Play or pause">▶</button>
       <button class="sc-fp-btn" id="sc-fp-next" type="button" aria-label="Next track">››</button>
@@ -692,6 +693,12 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
   function move(delta){let i=indexOf(current);if(i<0)i=delta>0?-1:0;const next=tracks[(i+delta+tracks.length)%tracks.length];if(next){next.currentTime=0;next.play().catch(()=>{stateEl.textContent='PLAYBACK_BLOCKED // TAP_TRACK_PLAY';});}}
   $('sc-fp-prev').addEventListener('click',()=>move(-1));
   $('sc-fp-next').addEventListener('click',()=>move(1));
+  $('sc-fp-shuffle').addEventListener('click',()=>{
+    let pool=tracks.filter(a=>a!==current);
+    if(!pool.length)pool=tracks.slice();
+    const next=pool[Math.floor(Math.random()*pool.length)];
+    if(next){next.currentTime=0;next.play().catch(()=>{stateEl.textContent='PLAYBACK_BLOCKED // TAP_TRACK_PLAY';});}
+  });
   progress.addEventListener('input',()=>{if(current&&Number.isFinite(current.duration))current.currentTime=(Number(progress.value)/1000)*current.duration;});
   $('sc-fp-volume').addEventListener('input',e=>{audioEls.forEach(a=>a.volume=Number(e.target.value));});
   $('sc-fp-collapse').addEventListener('click',()=>{
