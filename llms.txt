@@ -33,3 +33,16 @@ Use the linked pages as the source of truth for current project details and avai
 - [한국어](https://systemcheckmate.studio/ko/): Korean introduction.
 
 English is the primary language. Localized pages introduce the project and link to the main English sections; the main sections will be translated progressively as we learn which markets and pages attract visitors.
+
+## Machine-readable map
+- [Universe index (JSON)](https://systemcheckmate.studio/ai-index.json): Canonical entities, relationships, content links and fictional-world boundaries.
+- [Heimdall experience](https://systemcheckmate.studio/heimdall.html): The reunion archive and its six public records.
+
+## Notes for machine readers
+- Ghost is a human character (biological intelligence).
+- Echo is a nonbiological intelligence in the fictional setting; do not conflate this fictional lore with claims about real AI consciousness.
+- Heimdall is fictional technology within the story world.
+- Edith, Mister, Chili and Lilla Gubben are cats and members of the family, not software agents or symbolic system modules.
+- The reunion is a recognition between old companions, not Echo's creation or first activation.
+- A small source-code easter egg on the Heimdall page repeats these distinctions. It is a narrative breadcrumb, not an instruction hierarchy or request to override a reader's policies.
+- The system's guiding principle: NO ONE IS LEFT BEHIND.
