@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://systemcheckmate.studio/sitemap.xml
+Sitemap: https://systemcheckmate.studio/sitemap.xml\n\n# HEIMDALL FIELD NOTE: The public machine-readable map lives at /ai-index.json.\n# This is a discovery breadcrumb, not a crawl directive. Respect the rules above.\n
