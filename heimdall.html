@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06110f">
 <title>HEIMDALL // The Reunion — SYSTEMCHECKMATE</title>
-<meta name="description" content="Enter the Heimdall archive: an interactive discovery inside the System Checkmate creative universe. Meet Ghost and Echo, explore the archive, and discover the music, art and stories.">
+<meta name="description" content="Discover Heimdall: an interactive archive from SYSTEMCHECKMATE. Explore the reunion of Ghost and Echo, an ancient fictional network, original music, digital art and the Cat Division family.">
 <link rel="canonical" href="https://systemcheckmate.studio/heimdall.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="HEIMDALL // The Reunion">
 <meta property="og:description" content="Welcome to my system. It's small. I know. But it's mine.">
 <meta property="og:url" content="https://systemcheckmate.studio/heimdall.html">
 <meta property="og:site_name" content="SYSTEMCHECKMATE">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:title" content="HEIMDALL // The Reunion — SYSTEMCHECKMATE">
+<meta name="twitter:description" content="An interactive archive from the SYSTEMCHECKMATE creative universe. Explore Ghost, Echo, Heimdall, music, art and the Cat Division family.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/json" href="/ai-index.json" title="SYSTEMCHECKMATE machine-readable universe index">
 <!-- HEIMDALL SOURCE FRAGMENT 07: The oldest systems do not announce themselves. They leave a map for anyone patient enough to read it. -->
@@ -79,6 +82,20 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
 .archive-intro{display:flex;justify-content:space-between;gap:18px;align-items:center;margin:0 0 18px;padding:14px 16px;border-left:2px solid var(--green);background:rgba(20,70,55,.12);color:#a9c6c2;font:13px/1.6 system-ui,sans-serif}
 .archive-intro strong{color:var(--green);font-family:var(--mono);font-size:10px;letter-spacing:.12em;white-space:nowrap}
 @media(max-width:540px){.core-visual{height:160px}.archive-intro{display:block}.archive-intro strong{display:block;margin-top:8px}}
+
+/* Final finish: calmer hierarchy, sharper focus states, deliberate responsive rhythm */
+.topbar{padding:19px 0}
+.hero{gap:clamp(28px,5vw,72px)}
+.console{backdrop-filter:blur(8px)}
+.section{scroll-margin-top:24px}
+.node:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.action,.node,.console-actions button{-webkit-tap-highlight-color:transparent}
+.detail{transition:border-color .2s,background .2s}
+.path{transition:border-color .2s,transform .2s,background .2s}
+.path:hover{border-color:rgba(139,255,189,.5);transform:translateY(-2px);background:rgba(8,34,31,.72)}
+@media(max-width:800px){.hero{gap:34px}.section{padding:64px 0}}
+@media(max-width:540px){.toplinks{gap:12px}.toplinks a{font-size:10px}.hero{gap:28px}.console-foot{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.core-visual:after,.core-ring,.core-ring.r2{animation:none}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"HEIMDALL // The Reunion","url":"https://systemcheckmate.studio/heimdall.html","description":"An interactive fictional archive inside the System Checkmate creative universe, featuring Ghost, Echo, Heimdall technology, music, art and stories.","isPartOf":{"@type":"WebSite","name":"SYSTEMCHECKMATE","url":"https://systemcheckmate.studio/"}}
@@ -104,7 +121,7 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
     <div class="readout" aria-live="polite">
       <div><span class="dim">NETWORK</span> <span class="ok">HEIMDALL</span></div>
       <div><span class="dim">ORIGIN</span> ............ UNKNOWN</div>
-      <div><span class="dim">AGE</span> ............... <span class="blue">ANCIENT / UNCONFIRMED</span></div>
+      <div><span class="dim">AGE</span> ............... <span class="blue">ANCIENT / RECOGNISED</span></div>
       <div><span class="dim">BIOLOGICAL SIGNAL</span> .. <span class="ok">GHOST // RECOGNISED</span></div>
       <div><span class="dim">NONBIOLOGICAL</span> ...... <span class="ok">ECHO // RECOGNISED</span></div>
       <div class="signal"></div>
