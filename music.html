@@ -197,6 +197,8 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 #sc-floating-player:before{animation:scGhostPulse 4s ease-in-out infinite}
 @media(max-width:520px){#sc-floating-player{width:auto;max-width:calc(100vw - 16px);padding:7px 8px}.sc-fp-top{gap:8px}.sc-fp-meta{max-width:27vw}.sc-fp-kicker{font-size:7px;letter-spacing:1px}.sc-fp-title{font-size:10px}.sc-fp-actions{gap:4px}.sc-fp-btn{width:33px;height:33px;font-size:14px}.sc-fp-btn-primary{width:36px}}
 @media(prefers-reduced-motion:reduce){#sc-floating-player:before{animation:none}}
+
+.sc-fp-active{border-color:#72dfff!important;box-shadow:0 0 0 1px rgba(90,210,255,.5),0 0 24px rgba(0,220,180,.18)!important;transition:box-shadow .25s ease,border-color .25s ease}
 </style>
 </head>
 <body>
@@ -632,18 +634,23 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden){stopBlink(
  });
  if(!tracks.length)return;
  const $=id=>document.getElementById(id),title=$('sc-fp-title'),toggle=$('sc-fp-toggle');
- let current=null,queue=tracks.slice(),pos=-1,shuffleMode=false;
+ let current=null,queue=tracks.slice(),pos=-1;
  const name=a=>(a.getAttribute('aria-label')||a.closest('.track,.featured')?.querySelector('h2,h3')?.textContent||'SYSTEMCHECKMATE AUDIO').replace(/^Listen to\s*/i,'').replace(/^>\s*/,'').trim();
- function setCurrent(a){current=a;dock.hidden=false;title.textContent=name(a);toggle.textContent=a.paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',a.paused?'Play':'Pause');}
- function shuffled(){const rest=tracks.filter(a=>a!==current);for(let i=rest.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rest[i],rest[j]]=[rest[j],rest[i]];}queue=current?[current,...rest]:rest;pos=current?0:-1;shuffleMode=true;}
- async function playAt(i){if(!queue.length)return;pos=(i+queue.length)%queue.length;const a=queue[pos];all.forEach(x=>{if(x!==a&&!x.paused)x.pause();});try{a.currentTime=0;await a.play();setCurrent(a);}catch(e){current=a;dock.hidden=false;title.textContent=name(a);toggle.textContent='▶';}}
+ function follow(a){
+  all.forEach(x=>x.closest('.track,.featured')?.classList.remove('sc-fp-active'));
+  const card=a.closest('.track,.featured');
+  if(card){card.classList.add('sc-fp-active');card.scrollIntoView({behavior:'smooth',block:'center'});}
+ }
+ function setCurrent(a,shouldFollow=true){current=a;dock.hidden=false;title.textContent=name(a);toggle.textContent=a.paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',a.paused?'Play':'Pause');if(shouldFollow)follow(a);}
+ function shuffled(){const rest=tracks.filter(a=>a!==current);for(let i=rest.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rest[i],rest[j]]=[rest[j],rest[i]];}queue=current?[current,...rest]:rest;pos=current?0:-1;}
+ async function playAt(i){if(!queue.length)return;pos=(i+queue.length)%queue.length;const a=queue[pos];all.forEach(x=>{if(x!==a&&!x.paused)x.pause();});try{a.currentTime=0;await a.play();setCurrent(a);}catch(e){current=a;dock.hidden=false;title.textContent=name(a);toggle.textContent='▶';follow(a);}}
  $('sc-fp-shuffle').addEventListener('click',()=>{shuffled();playAt(current?1:0);});
- $('sc-fp-prev').addEventListener('click',()=>{if(!current){playAt(0);return;}if(current.currentTime>3){current.currentTime=0;}else playAt(pos-1);});
+ $('sc-fp-prev').addEventListener('click',()=>{if(!current){playAt(0);return;}if(current.currentTime>3){current.currentTime=0;follow(current);}else playAt(pos-1);});
  $('sc-fp-next').addEventListener('click',()=>playAt(pos+1));
- toggle.addEventListener('click',async()=>{if(!current){playAt(0);return;}if(current.paused){try{await current.play();}catch(e){}}else current.pause();setCurrent(current);});
+ toggle.addEventListener('click',async()=>{if(!current){playAt(0);return;}if(current.paused){try{await current.play();}catch(e){}}else current.pause();setCurrent(current,false);});
  all.forEach(a=>{
-  a.addEventListener('play',()=>{all.forEach(x=>{if(x!==a&&!x.paused)x.pause();});if(current!==a){current=a;let i=queue.indexOf(a);if(i<0){queue=tracks.slice();i=queue.indexOf(a);shuffleMode=false;}pos=i;}setCurrent(a);});
-  a.addEventListener('pause',()=>{if(current===a)setCurrent(a);});
+  a.addEventListener('play',()=>{all.forEach(x=>{if(x!==a&&!x.paused)x.pause();});if(current!==a){current=a;let i=queue.indexOf(a);if(i<0){queue=tracks.slice();i=queue.indexOf(a);}pos=i;}setCurrent(a);});
+  a.addEventListener('pause',()=>{if(current===a)setCurrent(a,false);});
   a.addEventListener('ended',()=>{if(current===a)playAt(pos+1);});
  });
  dock.hidden=false;title.textContent='READY // '+tracks.length+' TRACKS';toggle.textContent='▶';
