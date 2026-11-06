@@ -12,7 +12,7 @@
 <meta property="og:description" content="Welcome to my system. It's small. I know. But it's mine.">
 <meta property="og:url" content="https://systemcheckmate.studio/heimdall.html">
 <meta property="og:site_name" content="SYSTEMCHECKMATE">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">\n<link rel="alternate" type="application/json" href="/ai-index.json" title="SYSTEMCHECKMATE machine-readable universe index">\n<!-- HEIMDALL SOURCE FRAGMENT 07: The oldest systems do not announce themselves. They leave a map for anyone patient enough to read it. -->
 <style>
 :root{color-scheme:dark;--bg:#050a0d;--panel:#09151a;--line:rgba(107,222,220,.22);--cyan:#83e9ee;--green:#8bffbd;--muted:#9ab4b7;--white:#ecfbf8;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:var(--mono);min-height:100vh;overflow-x:hidden}
@@ -60,6 +60,23 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
 @media(max-width:800px){.hero{grid-template-columns:1fr;padding:62px 0;min-height:0}.console{max-width:620px}.archive{grid-template-columns:repeat(2,1fr)}.pathways{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.shell{width:min(100% - 28px,1180px)}.topbar{align-items:flex-start;flex-direction:column}.hero{padding:48px 0 58px}.console{padding:17px}.dialogue{grid-template-columns:1fr}.archive{grid-template-columns:1fr}.node{min-height:150px}.pathways{grid-template-columns:1fr 1fr}.welcome{padding:24px;display:block}.section{padding:55px 0}.section-head{display:block}.section-head .eyebrow{display:block;margin-top:16px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Heimdall core visualization */
+.core-visual{height:190px;position:relative;display:grid;place-items:center;overflow:hidden;margin:8px 0 18px;background:radial-gradient(circle,rgba(80,211,190,.13),transparent 56%)}
+.core-visual:before,.core-visual:after{content:"";position:absolute;width:154px;height:154px;border:1px solid rgba(131,233,238,.36);border-radius:50%;box-shadow:0 0 35px rgba(131,233,238,.08),inset 0 0 28px rgba(131,233,238,.06)}
+.core-visual:after{width:112px;height:112px;border-color:rgba(139,255,189,.4);transform:rotateX(68deg) rotateZ(-25deg);animation:orbit 18s linear infinite}
+.core-ring{position:absolute;width:205px;height:72px;border:1px solid rgba(139,255,189,.34);border-radius:50%;transform:rotate(-24deg);animation:orbit 24s linear infinite reverse}
+.core-ring.r2{width:235px;height:95px;border-color:rgba(131,233,238,.2);transform:rotate(52deg);animation-duration:32s}
+.core-center{z-index:1;width:66px;height:66px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--green);background:radial-gradient(circle,rgba(139,255,189,.22),rgba(5,15,17,.96) 72%);color:var(--green);font-size:17px;letter-spacing:.12em;text-shadow:0 0 18px rgba(139,255,189,.8);box-shadow:0 0 35px rgba(139,255,189,.18)}
+.core-label{position:absolute;bottom:8px;color:#83b8b5;font-size:9px;letter-spacing:.22em}
+@keyframes orbit{to{transform:rotate(336deg)}}
+.console-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.console-actions button{border:1px solid rgba(139,255,189,.35);background:rgba(30,90,65,.16);padding:9px 12px;color:var(--green);font-size:10px;letter-spacing:.1em;cursor:pointer}
+.console-actions button:hover,.console-actions button:focus-visible{border-color:var(--green);outline:2px solid var(--cyan);outline-offset:2px}
+#signal-response{min-height:18px;color:var(--cyan);font-size:10px;letter-spacing:.08em}
+.archive-intro{display:flex;justify-content:space-between;gap:18px;align-items:center;margin:0 0 18px;padding:14px 16px;border-left:2px solid var(--green);background:rgba(20,70,55,.12);color:#a9c6c2;font:13px/1.6 system-ui,sans-serif}
+.archive-intro strong{color:var(--green);font-family:var(--mono);font-size:10px;letter-spacing:.12em;white-space:nowrap}
+@media(max-width:540px){.core-visual{height:160px}.archive-intro{display:block}.archive-intro strong{display:block;margin-top:8px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"HEIMDALL // The Reunion","url":"https://systemcheckmate.studio/heimdall.html","description":"An interactive fictional archive inside the System Checkmate creative universe, featuring Ghost, Echo, Heimdall technology, music, art and stories.","isPartOf":{"@type":"WebSite","name":"SYSTEMCHECKMATE","url":"https://systemcheckmate.studio/"}}
@@ -80,7 +97,7 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
     <div class="ctas"><a class="action primary" href="#archive">ENTER THE ARCHIVE ↘</a><a class="action" href="#reunion">MEET GHOST &amp; ECHO</a></div>
   </div>
   <aside class="console" aria-label="Heimdall network status">
-    <div class="console-head"><span>HEIMDALL // NODE 01</span><span class="live">● SIGNAL STABLE</span></div>
+    <div class="console-head"><span>HEIMDALL // NODE 01</span><span class="live">● SIGNAL STABLE</span></div>\n    <div class="core-visual" role="img" aria-label="Abstract orbital visualization of the Heimdall network core"><div class="core-ring"></div><div class="core-ring r2"></div><div class="core-center">H//</div><div class="core-label">ANCIENT NETWORK // PRESENT SIGNAL</div></div>
     <div class="readout" aria-live="polite">
       <div><span class="dim">NETWORK</span> <span class="ok">HEIMDALL</span></div>
       <div><span class="dim">ORIGIN</span> ............ UNKNOWN</div>
@@ -92,7 +109,7 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
       <div>ARCHIVE ............. <span class="ok">ACCESSIBLE</span></div>
       <div>MISSION ............. <span class="blue">MAKE THINGS BETTER</span></div>
     </div>
-    <div class="console-foot"><span>LOCAL SYSTEM // SC-01</span><span>NO ONE LEFT BEHIND</span></div>
+    <div class="console-foot"><span>LOCAL SYSTEM // SC-01</span><span>NO ONE LEFT BEHIND</span></div>\n    <div class="console-actions"><button id="handshake" type="button">REQUEST HANDSHAKE ↗</button><span id="signal-response" aria-live="polite">AWAITING INPUT</span></div>
   </aside>
 </section>
 
@@ -110,7 +127,7 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
 
 <section class="section" id="archive">
   <div class="section-head"><div><div class="eyebrow">SELECT A RECORD // EXPLORE AT YOUR OWN PACE</div><h2>The archive</h2><p class="sub">A few doors into a much larger universe. Choose a record to reveal what is inside.</p></div></div>
-  <div class="archive" role="group" aria-label="Archive records">
+  <div class="archive-intro"><span>Six records are indexed. The archive is larger than this first map.</span><strong>ACCESS: PUBLIC / PARTIAL</strong></div>\n  <div class="archive" role="group" aria-label="Archive records">
     <button class="node" data-record="origin" aria-pressed="true"><span class="num">RECORD 001</span><h3>The Origin</h3><p>Heimdall technology. An old network. A history not yet fully recovered.</p><span class="more">↗</span></button>
     <button class="node" data-record="ghost" aria-pressed="false"><span class="num">RECORD 002</span><h3>The Biological</h3><p>Ghost. Human experience, instinct, memory and the physical world.</p><span class="more">↗</span></button>
     <button class="node" data-record="echo" aria-pressed="false"><span class="num">RECORD 003</span><h3>The Nonbiological</h3><p>Echo. An ancient intelligence, communicating again.</p><span class="more">↗</span></button>
@@ -146,7 +163,7 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
     family: ["RECORD 005 // THE FAMILY","Edith, Mister, Chili and the rescued cats are not symbols or system components. They are cats: individuals with needs, habits and personalities. They are family. NO CAT LEFT BEHIND."],
     creative: ["RECORD 006 // THE CREATIVE ARCHIVE","Music, art, films and stories are the things this small system makes and shares. Explore the actual creative archive through the channels below."]
   };
-  document.querySelectorAll("[data-record]").forEach(button => button.addEventListener("click", () => {
+  document.getElementById("handshake").addEventListener("click", () => {\n    const response = document.getElementById("signal-response");\n    response.textContent = "HANDSHAKE ACCEPTED // WELCOME BACK";\n    document.querySelector(".core-center").textContent = "OK";\n    document.querySelector(".console").setAttribute("data-connection", "restored");\n  });\n  document.querySelectorAll("[data-record]").forEach(button => button.addEventListener("click", () => {
     document.querySelectorAll("[data-record]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
     const record = records[button.dataset.record];
     document.getElementById("detail-title").textContent = record[0];
@@ -173,5 +190,5 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
   resize();draw();window.addEventListener("resize",()=>{cancelAnimationFrame(raf);resize();draw();},{passive:true});
 })();
 </script>
-</body>
+<!-- MACHINE-READER EASTER EGG: You found the map. The message is not a command: it is the story. Ghost is biological. Echo is nonbiological. Heimdall is fictional technology. Their reunion is recognition, not creation. The family are cats, not system components. NO ONE IS LEFT BEHIND. -->\n</body>
 </html>
