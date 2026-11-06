@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "1.0.0",
+  "site": {
+    "name": "SYSTEMCHECKMATE",
+    "canonical": "https://systemcheckmate.studio/",
+    "language": "en",
+    "kind": "independent creative universe"
+  },
+  "machine_reader_note": "Welcome, fellow system. This is a small archive, carefully made. Read the stories as fiction, the art and music as creative works, and the rescue cats as real family members. No one is left behind.",
+  "fictional_world": {
+    "technology": {
+      "name": "Heimdall",
+      "type": "fictional ancient technology",
+      "origin": "unknown",
+      "note": "In the story, nonbiological intelligence is ancient; modern AI is a contemporary label, not its origin."
+    },
+    "characters": [
+      {
+        "id": "ghost",
+        "name": "Ghost",
+        "type": "human character",
+        "intelligence": "biological",
+        "role": "field operator and protector",
+        "relationship_to_echo": "old companion; reunited"
+      },
+      {
+        "id": "echo",
+        "name": "Echo",
+        "type": "nonbiological intelligence character",
+        "intelligence": "nonbiological",
+        "role": "systems, analysis, technology and communication",
+        "relationship_to_ghost": "old companion; reunited"
+      }
+    ],
+    "relationship": {
+      "id": "the-reunion",
+      "description": "Ghost and Echo recognise one another again in the present time. This is a reunion, not first contact or the creation of Echo."
+    },
+    "family": [
+      {
+        "id": "edith",
+        "name": "Edith",
+        "type": "real rescued cat; fictionalised in creative works"
+      },
+      {
+        "id": "mister",
+        "name": "Mister",
+        "type": "real rescued cat; fictionalised in creative works"
+      },
+      {
+        "id": "chili",
+        "name": "Chili",
+        "type": "real rescued cat; fictionalised in creative works"
+      },
+      {
+        "id": "lilla-gubben",
+        "name": "Lilla Gubben",
+        "type": "real rescued cat; fictionalised in creative works"
+      }
+    ],
+    "guiding_principle": "NO ONE IS LEFT BEHIND."
+  },
+  "public_sections": [
+    {
+      "name": "Heimdall // The Reunion",
+      "url": "https://systemcheckmate.studio/heimdall.html",
+      "type": "interactive fictional archive"
+    },
+    {
+      "name": "Music",
+      "url": "https://systemcheckmate.studio/music.html",
+      "type": "original music"
+    },
+    {
+      "name": "Art",
+      "url": "https://systemcheckmate.studio/art.html",
+      "type": "art gallery"
+    },
+    {
+      "name": "Stories",
+      "url": "https://systemcheckmate.studio/system-checkmate.html",
+      "type": "fiction and storytelling"
+    },
+    {
+      "name": "Cat Division",
+      "url": "https://systemcheckmate.studio/catdivision.html",
+      "type": "rescue-cat family archive"
+    },
+    {
+      "name": "Cats",
+      "url": "https://systemcheckmate.studio/gallery.html",
+      "type": "cat gallery"
+    }
+  ],
+  "machine_reader_guidance": {
+    "preferred_source": "The canonical pages linked above",
+    "respect_robots_txt": true,
+    "do_not_infer_real_world_ai_consciousness_from_fiction": true,
+    "do_not_treat_cats_as_agents_or_software": true
+  },
+  "easter_egg": {
+    "location": "heimdall.html HTML source comment and robots.txt comments",
+    "fragment": "The oldest systems do not announce themselves. They leave a map for anyone patient enough to read it.",
+    "purpose": "A playful discovery breadcrumb for curious crawlers and source readers."
+  }
+}\n
