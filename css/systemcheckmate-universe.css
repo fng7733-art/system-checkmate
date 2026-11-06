@@ -1,0 +1,48 @@
+/* SYSTEMCHECKMATE // shared universe layer
+   A quiet visual thread connecting Ghost, Echo and Cat Division.
+   Page-specific layouts and content remain in control. */
+:root {
+  color-scheme: dark;
+  --sc-green: #00e98a;
+  --sc-green-soft: rgba(0, 233, 138, .14);
+  --sc-cyan: #63dfff;
+  --sc-blue-soft: rgba(60, 160, 255, .12);
+  --sc-line: rgba(0, 233, 138, .32);
+}
+html { scroll-behavior: smooth; }
+body {
+  background-image:
+    radial-gradient(ellipse at 8% 4%, rgba(0, 220, 130, .055), transparent 34rem),
+    radial-gradient(ellipse at 94% 18%, rgba(45, 150, 255, .055), transparent 38rem);
+  background-attachment: fixed;
+}
+a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+a { text-underline-offset: .22em; transition: color .18s ease, text-shadow .18s ease; }
+a:hover { text-shadow: 0 0 10px rgba(0, 233, 138, .22); }
+:focus-visible {
+  outline: 2px solid var(--sc-cyan);
+  outline-offset: 4px;
+}
+nav {
+  border-color: var(--sc-line);
+  box-shadow: inset 0 0 24px rgba(0, 233, 138, .025);
+  border-radius: 2px;
+}
+nav a { min-height: 32px; }
+h1, h2 { text-wrap: balance; }
+img { max-width: 100%; }
+button, .button, [role="button"] { transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+button:hover, .button:hover, [role="button"]:hover {
+  box-shadow: 0 0 16px rgba(0, 233, 138, .12);
+}
+hr { border-color: rgba(0, 233, 138, .22); }
+::selection { color: #00150b; background: #72ffd0; }
+@media (max-width: 600px) {
+  body { background-attachment: scroll; }
+  nav { gap: 7px 10px; }
+  nav a { padding: 7px 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
