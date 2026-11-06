@@ -278,6 +278,15 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 @keyframes sc-cat-glance{0%,37%,58%,100%{transform:rotate(0)}43%,51%{transform:rotate(-24deg)}}
 @media(max-width:620px){.home-hero{padding-bottom:78px}.sc-cat-walker{width:65px;height:42px}.sc-cat-walkway{bottom:12px}}
 @media(prefers-reduced-motion:reduce){.sc-cat-walker{animation:none;left:calc(50% - 38px)}.sc-cat-leg,.sc-cat-tail,.sc-cat-head{animation:none}}
+
+/* PIXEL CAT // alternate 1990s desktop-icon skin */
+.sc-cat-walker{width:82px;height:50px;filter:drop-shadow(0 0 5px rgba(70,245,190,.28))}
+.sc-cat-walker svg{image-rendering:pixelated}
+.sc-cat-body,.sc-cat-detail,.sc-cat-scan{stroke-linejoin:miter;stroke-linecap:square}
+.sc-cat-eye{filter:none}
+.sc-cat-leg{transform-origin:50% 0}
+.sc-cat-tail{transform-origin:25% 65%}
+@media(max-width:620px){.sc-cat-walker{width:70px;height:44px}}
 </style>
 
   <link rel="stylesheet" href="css/systemcheckmate-universe.css">
@@ -336,21 +345,22 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
   <div class="hero-foot">&gt; directive: protect_the_small // no_one_left_behind<span class="blink">_</span></div>
   <div class="sc-cat-walkway" aria-hidden="true">
     <div class="sc-cat-walker">
-      <svg viewBox="0 0 110 64" role="presentation">
-        <path class="sc-cat-scan" d="M3 57H107"/>
-        <path class="sc-cat-detail sc-cat-tail" d="M27 32C12 28 13 11 23 8C29 6 32 12 28 16"/>
-        <path class="sc-cat-body" d="M25 29Q35 18 56 23L70 29Q76 33 72 42L31 43Q20 41 25 29Z"/>
-        <g class="sc-cat-leg"><path class="sc-cat-detail" d="M34 40L31 54L26 55"/></g>
-        <g class="sc-cat-leg alt"><path class="sc-cat-detail" d="M47 41L49 54L54 55"/></g>
-        <g class="sc-cat-leg alt"><path class="sc-cat-detail" d="M61 40L59 53L55 55"/></g>
-        <g class="sc-cat-leg"><path class="sc-cat-detail" d="M69 39L73 52L78 53"/></g>
+      <svg viewBox="0 0 112 64" role="presentation" shape-rendering="crispEdges">
+        <g class="sc-cat-tail"><path d="M24 34H16V26H12V14H20V22H28V30H32V34Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1"/></g>
+        <path d="M28 30H36V26H64V30H72V38H68V46H32V42H24V34H28Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1.2"/>
+        <path d="M36 30H60V34H68V38H32V34H36Z" fill="#142425"/>
+        <g class="sc-cat-leg"><path d="M34 42H42V52H38V56H30V52H34Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1"/></g>
+        <g class="sc-cat-leg alt"><path d="M48 42H56V52H60V56H50V52H48Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1"/></g>
+        <g class="sc-cat-leg alt"><path d="M60 40H68V50H72V54H62V50H60Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1"/></g>
+        <g class="sc-cat-leg"><path d="M68 38H76V48H80V52H70V48H68Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1"/></g>
         <g class="sc-cat-head">
-          <path class="sc-cat-body" d="M63 27L64 12L73 19Q81 14 91 20L100 14L99 31Q95 42 82 42Q68 40 63 27Z"/>
-          <path class="sc-cat-detail" d="M71 24L77 25M89 25L94 24"/>
-          <circle class="sc-cat-eye" cx="77" cy="29" r="1.7"/><circle class="sc-cat-eye" cx="91" cy="29" r="1.7"/>
-          <path class="sc-cat-detail" d="M81 35L84 36L87 35"/>
+          <path d="M64 26V10H72V18H80V14H92V18H100V10H108V30H104V38H96V42H76V38H68V34H64Z" fill="#070d0e" stroke="#8cebd0" stroke-width="1.2"/>
+          <path d="M72 18H80V22H72ZM92 18H100V22H92Z" fill="#243d3b"/>
+          <rect x="78" y="27" width="4" height="4" fill="#a6fff0" class="sc-cat-eye"/>
+          <rect x="94" y="27" width="4" height="4" fill="#a6fff0" class="sc-cat-eye"/>
+          <rect x="86" y="34" width="4" height="3" fill="#8cebd0"/>
         </g>
-        <path class="sc-cat-detail" d="M31 32L40 29M42 35L51 33"/>
+        <path d="M32 34H40V38H32ZM44 34H52V38H44Z" fill="#345451"/>
       </svg>
     </div>
   </div>
