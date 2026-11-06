@@ -257,57 +257,6 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 @media(prefers-reduced-motion:reduce){.explore-link{transition:none}}
 </style>
 
-<style id="sc-home-cat-icon">
-
-/* CAT ICON // a tiny 90s desktop companion, rebuilt for the Heimdall era */
-.home-hero{padding-bottom:82px}
-.sc-cat-walkway{position:absolute;z-index:2;left:0;right:0;bottom:13px;height:54px;overflow:hidden;pointer-events:none;opacity:.96}
-.sc-cat-walker{position:absolute;left:0;bottom:0;width:76px;height:48px;filter:drop-shadow(0 0 5px rgba(90,240,190,.34));animation:sc-cat-cross 17s linear infinite}
-.sc-cat-walker svg{display:block;width:100%;height:100%;overflow:visible}
-.sc-cat-body{fill:#050d0d;stroke:#8cebd0;stroke-width:1.5;stroke-linejoin:round}
-.sc-cat-detail{fill:none;stroke:#8cebd0;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
-.sc-cat-eye{fill:#a6fff0;filter:drop-shadow(0 0 3px #52f4d0)}
-.sc-cat-leg{transform-box:fill-box;transform-origin:top center;animation:sc-cat-step .34s ease-in-out infinite alternate}
-.sc-cat-leg.alt{animation-delay:-.34s}
-.sc-cat-tail{transform-box:fill-box;transform-origin:left center;animation:sc-cat-tail .9s ease-in-out infinite alternate}
-.sc-cat-head{transform-box:fill-box;transform-origin:70% 75%;animation:sc-cat-glance 17s linear infinite}
-.sc-cat-scan{stroke:rgba(120,255,220,.35);stroke-width:.7;stroke-dasharray:2 4;fill:none}
-@keyframes sc-cat-cross{0%{transform:translateX(-100px)} 34%{transform:translateX(34vw)} 43%{transform:translateX(43vw)} 49%{transform:translateX(49vw)} 100%{transform:translateX(calc(100vw + 100px))}}
-@keyframes sc-cat-step{from{transform:rotate(-17deg)}to{transform:rotate(17deg)}}
-@keyframes sc-cat-tail{from{transform:rotate(-10deg)}to{transform:rotate(13deg)}}
-@keyframes sc-cat-glance{0%,37%,58%,100%{transform:rotate(0)}43%,51%{transform:rotate(-24deg)}}
-@media(max-width:620px){.home-hero{padding-bottom:78px}.sc-cat-walker{width:65px;height:42px}.sc-cat-walkway{bottom:12px}}
-@media(prefers-reduced-motion:reduce){.sc-cat-walker{animation:none;left:calc(50% - 38px)}.sc-cat-leg,.sc-cat-tail,.sc-cat-head{animation:none}}
-
-/* PIXEL CAT // alternate 1990s desktop-icon skin */
-.sc-cat-walker{width:82px;height:50px;filter:drop-shadow(0 0 5px rgba(70,245,190,.28))}
-.sc-cat-walker svg{image-rendering:pixelated}
-.sc-cat-body,.sc-cat-detail,.sc-cat-scan{stroke-linejoin:miter;stroke-linecap:square}
-.sc-cat-eye{filter:none}
-.sc-cat-leg{transform-origin:50% 0}
-.sc-cat-tail{transform-origin:25% 65%}
-@media(max-width:620px){.sc-cat-walker{width:70px;height:44px}}
-
-/* 16-BIT CAT DIVISION // a tiny side-scrolling console stage */
-.home-hero{padding-bottom:112px}
-.sc-cat-walkway{height:86px;bottom:12px;overflow:hidden;border:1px solid rgba(98,232,255,.24);background:linear-gradient(180deg,rgba(15,28,65,.16),rgba(5,12,30,.72));box-shadow:inset 0 0 0 2px rgba(255,112,200,.07),0 0 18px rgba(41,170,255,.08)}
-.sc-cat-gamehud{position:absolute;z-index:3;top:5px;left:8px;right:8px;display:flex;justify-content:space-between;font:8px/1.2 monospace;letter-spacing:1.4px;color:#91eaff;text-shadow:0 0 7px rgba(98,232,255,.5)}
-.sc-cat-gamehud i{font-style:normal;color:#ff70c8;margin-left:3px}
-.sc-cat-stars{position:absolute;inset:17px 0 15px;background-image:radial-gradient(circle,#ffdf72 1px,transparent 1.5px),radial-gradient(circle,#62e8ff 1px,transparent 1.5px);background-size:43px 27px,67px 31px;background-position:8px 3px,24px 11px;opacity:.45}
-.sc-cat-walkway:before{content:"";position:absolute;left:0;right:0;bottom:10px;height:9px;background:repeating-linear-gradient(90deg,#203d68 0 12px,#62e8ff 12px 14px,#162744 14px 27px);border-top:2px solid #62e8ff;box-shadow:0 0 10px rgba(98,232,255,.3)}
-.sc-cat-walkway:after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(90deg,#ff70c8 0 8px,#152748 8px 16px,#62e8ff 16px 18px,#152748 18px 28px);opacity:.72}
-.sc-cat-walker{z-index:2;bottom:10px;width:82px;height:50px;filter:drop-shadow(0 2px 0 #ff70c8) drop-shadow(0 0 6px rgba(98,232,255,.55));animation:sc-cat-cross 17s steps(80,end) infinite}
-.sc-cat-walker svg{image-rendering:pixelated}
-.sc-cat-body,.sc-cat-detail,.sc-cat-scan{stroke-linejoin:miter;stroke-linecap:square}
-.sc-cat-eye{filter:drop-shadow(0 0 3px #ffdf72)}
-.sc-cat-leg{transform-origin:50% 0;animation-duration:.22s}
-.sc-cat-leg.alt{animation-delay:-.22s}
-.sc-cat-tail{transform-origin:25% 65%}
-@keyframes sc-cat-cross{0%{transform:translateX(-100px)}36%{transform:translateX(36vw)}43%{transform:translateX(43vw)}49%{transform:translateX(49vw)}100%{transform:translateX(calc(100vw + 100px))}}
-@media(max-width:620px){.home-hero{padding-bottom:108px}.sc-cat-walkway{height:80px;bottom:12px}.sc-cat-walker{width:70px;height:44px}}
-@media(prefers-reduced-motion:reduce){.sc-cat-walker{animation:none;left:calc(50% - 41px)}.sc-cat-leg,.sc-cat-tail,.sc-cat-head{animation:none}}
-</style>
-
   <link rel="stylesheet" href="css/systemcheckmate-universe.css">
 </head>
 
@@ -362,30 +311,6 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
     <a class="btn" href="music.html">ENTER THE MUSIC UNIVERSE <span aria-hidden="true">↗</span></a>
   </div>
   <div class="hero-foot">&gt; directive: protect_the_small // no_one_left_behind<span class="blink">_</span></div>
-  <div class="sc-cat-walkway" aria-hidden="true">
-    <div class="sc-cat-gamehud"><span>CAT DIVISION</span><span>PLAYER 01 <i>●</i></span></div>
-    <div class="sc-cat-stars"></div>
-    <div class="sc-cat-walker">
-      <svg viewBox="0 0 112 64" role="presentation" shape-rendering="crispEdges">
-        <g class="sc-cat-tail"><path d="M24 34H16V26H12V14H20V22H28V30H32V34Z" fill="#090d20" stroke="#62e8ff" stroke-width="1.2"/></g>
-        <path d="M28 30H36V26H64V30H72V38H68V46H32V42H24V34H28Z" fill="#090d20" stroke="#62e8ff" stroke-width="1.4"/>
-        <path d="M36 30H60V34H68V38H32V34H36Z" fill="#1a3150"/>
-        <path d="M34 42H42V52H38V56H30V52H34Z" fill="#090d20" stroke="#62e8ff" stroke-width="1"/>
-        <g class="sc-cat-leg"><path d="M34 42H42V52H38V56H30V52H34Z" fill="#090d20" stroke="#62e8ff" stroke-width="1"/></g>
-        <g class="sc-cat-leg alt"><path d="M48 42H56V52H60V56H50V52H48Z" fill="#090d20" stroke="#62e8ff" stroke-width="1"/></g>
-        <g class="sc-cat-leg alt"><path d="M60 40H68V50H72V54H62V50H60Z" fill="#090d20" stroke="#62e8ff" stroke-width="1"/></g>
-        <g class="sc-cat-leg"><path d="M68 38H76V48H80V52H70V48H68Z" fill="#090d20" stroke="#62e8ff" stroke-width="1"/></g>
-        <g class="sc-cat-head">
-          <path d="M64 26V10H72V18H80V14H92V18H100V10H108V30H104V38H96V42H76V38H68V34H64Z" fill="#090d20" stroke="#62e8ff" stroke-width="1.4"/>
-          <path d="M72 18H80V22H72ZM92 18H100V22H92Z" fill="#29446a"/>
-          <rect x="78" y="27" width="4" height="4" fill="#ffdf72" class="sc-cat-eye"/>
-          <rect x="94" y="27" width="4" height="4" fill="#ffdf72" class="sc-cat-eye"/>
-          <rect x="86" y="34" width="4" height="3" fill="#ff70c8"/>
-        </g>
-        <path d="M32 34H40V38H32ZM44 34H52V38H44Z" fill="#345b79"/>
-      </svg>
-    </div>
-  </div>
 </section>
 
 <section class="mission-panel" aria-labelledby="mission-title">
