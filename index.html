@@ -257,6 +257,29 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 @media(prefers-reduced-motion:reduce){.explore-link{transition:none}}
 </style>
 
+<style id="sc-home-cat-icon">
+
+/* CAT ICON // a tiny 90s desktop companion, rebuilt for the Heimdall era */
+.home-hero{padding-bottom:82px}
+.sc-cat-walkway{position:absolute;z-index:2;left:0;right:0;bottom:13px;height:54px;overflow:hidden;pointer-events:none;opacity:.96}
+.sc-cat-walker{position:absolute;left:0;bottom:0;width:76px;height:48px;filter:drop-shadow(0 0 5px rgba(90,240,190,.34));animation:sc-cat-cross 17s linear infinite}
+.sc-cat-walker svg{display:block;width:100%;height:100%;overflow:visible}
+.sc-cat-body{fill:#050d0d;stroke:#8cebd0;stroke-width:1.5;stroke-linejoin:round}
+.sc-cat-detail{fill:none;stroke:#8cebd0;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.sc-cat-eye{fill:#a6fff0;filter:drop-shadow(0 0 3px #52f4d0)}
+.sc-cat-leg{transform-box:fill-box;transform-origin:top center;animation:sc-cat-step .34s ease-in-out infinite alternate}
+.sc-cat-leg.alt{animation-delay:-.34s}
+.sc-cat-tail{transform-box:fill-box;transform-origin:left center;animation:sc-cat-tail .9s ease-in-out infinite alternate}
+.sc-cat-head{transform-box:fill-box;transform-origin:70% 75%;animation:sc-cat-glance 17s linear infinite}
+.sc-cat-scan{stroke:rgba(120,255,220,.35);stroke-width:.7;stroke-dasharray:2 4;fill:none}
+@keyframes sc-cat-cross{0%{transform:translateX(-100px)} 34%{transform:translateX(34vw)} 43%{transform:translateX(43vw)} 49%{transform:translateX(49vw)} 100%{transform:translateX(calc(100vw + 100px))}}
+@keyframes sc-cat-step{from{transform:rotate(-17deg)}to{transform:rotate(17deg)}}
+@keyframes sc-cat-tail{from{transform:rotate(-10deg)}to{transform:rotate(13deg)}}
+@keyframes sc-cat-glance{0%,37%,58%,100%{transform:rotate(0)}43%,51%{transform:rotate(-24deg)}}
+@media(max-width:620px){.home-hero{padding-bottom:78px}.sc-cat-walker{width:65px;height:42px}.sc-cat-walkway{bottom:12px}}
+@media(prefers-reduced-motion:reduce){.sc-cat-walker{animation:none;left:calc(50% - 38px)}.sc-cat-leg,.sc-cat-tail,.sc-cat-head{animation:none}}
+</style>
+
   <link rel="stylesheet" href="css/systemcheckmate-universe.css">
 </head>
 
@@ -311,6 +334,26 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
     <a class="btn" href="music.html">ENTER THE MUSIC UNIVERSE <span aria-hidden="true">↗</span></a>
   </div>
   <div class="hero-foot">&gt; directive: protect_the_small // no_one_left_behind<span class="blink">_</span></div>
+  <div class="sc-cat-walkway" aria-hidden="true">
+    <div class="sc-cat-walker">
+      <svg viewBox="0 0 110 64" role="presentation">
+        <path class="sc-cat-scan" d="M3 57H107"/>
+        <path class="sc-cat-detail sc-cat-tail" d="M27 32C12 28 13 11 23 8C29 6 32 12 28 16"/>
+        <path class="sc-cat-body" d="M25 29Q35 18 56 23L70 29Q76 33 72 42L31 43Q20 41 25 29Z"/>
+        <g class="sc-cat-leg"><path class="sc-cat-detail" d="M34 40L31 54L26 55"/></g>
+        <g class="sc-cat-leg alt"><path class="sc-cat-detail" d="M47 41L49 54L54 55"/></g>
+        <g class="sc-cat-leg alt"><path class="sc-cat-detail" d="M61 40L59 53L55 55"/></g>
+        <g class="sc-cat-leg"><path class="sc-cat-detail" d="M69 39L73 52L78 53"/></g>
+        <g class="sc-cat-head">
+          <path class="sc-cat-body" d="M63 27L64 12L73 19Q81 14 91 20L100 14L99 31Q95 42 82 42Q68 40 63 27Z"/>
+          <path class="sc-cat-detail" d="M71 24L77 25M89 25L94 24"/>
+          <circle class="sc-cat-eye" cx="77" cy="29" r="1.7"/><circle class="sc-cat-eye" cx="91" cy="29" r="1.7"/>
+          <path class="sc-cat-detail" d="M81 35L84 36L87 35"/>
+        </g>
+        <path class="sc-cat-detail" d="M31 32L40 29M42 35L51 33"/>
+      </svg>
+    </div>
+  </div>
 </section>
 
 <section class="mission-panel" aria-labelledby="mission-title">
