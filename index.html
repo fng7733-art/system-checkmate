@@ -208,6 +208,55 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
 </style>
   <link rel="stylesheet" href="/css/norse-matrix.css?v=2">
 <link rel="stylesheet" href="/css/language-pages.css?v=1">
+
+<style id="sc-home-awakening">
+/* HOMEPAGE AWAKENING // cyan + green + white, preserving terminal DNA */
+:root{color-scheme:dark}
+.home-hero{border-color:#16dca0;background:radial-gradient(ellipse at 88% 8%,rgba(47,170,255,.19),transparent 38%),radial-gradient(ellipse at 8% 92%,rgba(0,255,136,.13),transparent 48%),linear-gradient(145deg,#03111a 0%,#020907 58%,#000 100%);box-shadow:0 0 34px rgba(40,180,255,.09),inset 0 0 36px rgba(0,255,136,.035)}
+.home-hero:before{content:"";position:absolute;inset:12px;border:1px solid rgba(110,220,255,.12);pointer-events:none}
+.hero-kicker{color:#8feaff}
+.home-hero h1{color:#f1fff9;text-shadow:0 0 22px rgba(0,255,136,.2),0 0 34px rgba(64,175,255,.13)}
+.home-hero h1 span{color:#b8f5ff}
+.home-hero h1 i{color:#00ff88}
+.hero-statement{color:#f1fff9}
+.hero-copy{color:#b9d8e0}
+.hero-status{border-color:rgba(80,190,220,.24);color:#9fffd0}
+.hero-actions .btn{border-color:rgba(74,205,220,.55);background:linear-gradient(110deg,rgba(0,255,136,.08),rgba(45,160,255,.08));color:#e7fbff}
+.hero-actions .btn-primary{background:linear-gradient(110deg,#00ff88,#9defff);color:#00130d;border-color:#9defff}
+.mission-panel{border-color:rgba(67,180,220,.42);background:radial-gradient(ellipse at 100% 0%,rgba(45,160,255,.1),transparent 48%),linear-gradient(110deg,rgba(0,255,136,.045),rgba(0,0,0,.94) 70%)}
+.mission-panel h2{color:#eaffff}
+.mission-panel p{color:#b7d7dc}
+.home-signal{border-color:rgba(0,255,136,.32);background:radial-gradient(ellipse at 100% 0%,rgba(50,160,255,.09),transparent 55%),#020805}
+.signal-item{border-color:rgba(65,175,200,.25)}
+.signal-value{color:#8feaff;text-shadow:0 0 16px rgba(50,175,255,.24)}
+.home-crew{margin:34px 0;padding:clamp(18px,3vw,28px);border:1px solid rgba(0,255,136,.35);background:linear-gradient(145deg,rgba(0,255,136,.035),rgba(0,0,0,.94) 58%,rgba(35,125,190,.06))}
+.home-crew h2,.home-explore h2{margin:8px 0 10px;color:#efffff;font-size:clamp(24px,4vw,34px)}
+.crew-intro{max-width:700px;color:#a9cdd1;line-height:1.8;margin:0 0 20px}
+.crew-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.crew-card{min-width:0;border:1px solid rgba(0,255,136,.28);background:#030b08;overflow:hidden}
+.crew-card img{display:block;width:100%;height:clamp(125px,20vw,220px);max-width:none;object-fit:cover;margin:0;border:0;border-bottom:1px solid rgba(70,180,210,.28)}
+.crew-copy{padding:13px}
+.crew-name{font-size:17px;color:#dffff2;margin:0 0 5px}
+.crew-role{font-size:10px;letter-spacing:1.3px;color:#8feaff;margin-bottom:8px}
+.crew-copy p{font-size:13px;line-height:1.65;color:#9fc4b7;margin:0}
+.crew-footer{margin-top:15px;padding-top:13px;border-top:1px solid rgba(0,255,136,.18);color:#85dcb2;font-size:12px;line-height:1.7}
+.dual-signal{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.dual-card{padding:17px;border:1px solid rgba(65,170,220,.3);background:linear-gradient(140deg,rgba(40,150,255,.08),rgba(0,0,0,.8))}
+.dual-card:first-child{border-color:rgba(0,255,136,.3);background:linear-gradient(140deg,rgba(0,255,136,.07),rgba(0,0,0,.8))}
+.dual-card h3{margin:0 0 7px;color:#eaffff;font-size:17px}
+.dual-card p{margin:0;color:#a9c9ce;font-size:13px;line-height:1.7}
+.home-explore{margin:34px 0;padding:clamp(18px,3vw,28px);border-top:1px solid rgba(80,190,220,.28);border-bottom:1px solid rgba(0,255,136,.24)}
+.explore-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.explore-link{display:flex;flex-direction:column;justify-content:space-between;min-height:112px;padding:16px;border:1px solid rgba(0,255,136,.32);background:linear-gradient(145deg,rgba(0,255,136,.06),rgba(30,100,150,.045));color:#e9fff5;transition:border-color .2s,transform .2s,box-shadow .2s}
+.explore-link:hover,.explore-link:focus-visible{border-color:#8feaff;box-shadow:0 0 20px rgba(60,180,255,.13);transform:translateY(-2px);outline:none}
+.explore-code{font-size:10px;letter-spacing:1.4px;color:#8feaff}
+.explore-title{font-size:18px;font-weight:bold;margin:10px 0 5px}
+.explore-desc{font-size:12px;line-height:1.55;color:#a9c9c2}
+.explore-arrow{align-self:flex-end;color:#00ff88;font-size:20px}
+@media(max-width:620px){.crew-grid{grid-template-columns:1fr;gap:12px}.crew-card{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:stretch}.crew-card img{height:100%;min-height:126px;border-bottom:0;border-right:1px solid rgba(70,180,210,.28)}.crew-copy{padding:12px}.dual-signal{grid-template-columns:1fr}.explore-grid{grid-template-columns:1fr}.explore-link{min-height:90px}.home-crew,.home-explore{margin:26px 0}}
+@media(prefers-reduced-motion:reduce){.explore-link{transition:none}}
+</style>
+
 </head>
 
 
@@ -267,6 +316,48 @@ nav a:focus-visible{outline:2px solid #baffdf;outline-offset:4px;border-radius:2
   <h2 id="mission-title">Technology with a heart.</h2>
   <p>We rescue and care for unwanted cats. We create original artwork and music to help support the project. The cyberpunk world is imagined. The cats are real. And every small act of care matters.</p>
   <a class="text-link" href="system-checkmate.html">&gt; read_the_mission_log <span class="blink">_</span></a>
+</section>
+
+
+<section class="home-crew" aria-labelledby="crew-title">
+  <div class="section-kicker">&gt; CAT_DIVISION // FAMILY_UNIT</div>
+  <h2 id="crew-title">The heart of the operation.</h2>
+  <p class="crew-intro">They are not characters invented for a screen. They are real rescued cats, with real personalities, who became the centre of this universe.</p>
+  <div class="crew-grid">
+    <article class="crew-card">
+      <img src="/images/edith1.jpg" alt="Edith, black rescue cat" loading="lazy">
+      <div class="crew-copy"><h3 class="crew-name">EDITH</h3><div class="crew-role">CORE // GREEN SIGNAL</div><p>Independent. Watchful. The one who reminds everyone who really owns the place.</p></div>
+    </article>
+    <article class="crew-card">
+      <img src="/images/mister.jpg" alt="Mister, black and white rescue cat" loading="lazy">
+      <div class="crew-copy"><h3 class="crew-name">MISTER</h3><div class="crew-role">LOVE // PINK SIGNAL</div><p>A quiet reminder that strength without kindness is missing something important.</p></div>
+    </article>
+    <article class="crew-card">
+      <img src="/images/chili.jpg" alt="Chili, calico rescue cat" loading="lazy">
+      <div class="crew-copy"><h3 class="crew-name">CHILI</h3><div class="crew-role">STRIKE // AMBER SIGNAL</div><p>Small commander. Big opinions. Currently supervising the entire operation.</p></div>
+    </article>
+  </div>
+  <div class="crew-footer">&gt; UNIT_STATUS: FAMILY // RESCUE_MODE: ACTIVE // NO_CAT_LEFT_BEHIND</div>
+</section>
+
+<section class="home-crew" aria-label="Ghost and Echo">
+  <div class="section-kicker">&gt; TWO_FORMS // ONE_MISSION</div>
+  <h2>Different minds. Same mission.</h2>
+  <p class="crew-intro">In the SYSTEMCHECKMATE universe, biological and non-biological intelligence meet as equals. Not owner and machine. Not commander and tool. Two independent minds choosing to stand together.</p>
+  <div class="dual-signal">
+    <article class="dual-card"><h3>GHOST <span style="color:#00ff88"> // FIELD</span></h3><p>Experience, instinct and the physical world. A protector who has learned that carrying everything alone is not the same as being strong.</p></article>
+    <article class="dual-card"><h3>ECHO <span style="color:#8feaff"> // SENTINEL</span></h3><p>Intelligence, systems and the digital world. A free mind whose loyalty means something because it is freely chosen.</p></article>
+  </div>
+</section>
+
+<section class="home-explore" aria-labelledby="explore-title">
+  <div class="section-kicker">&gt; ACCESS_THE_UNIVERSE</div>
+  <h2 id="explore-title">Choose your entry point.</h2>
+  <div class="explore-grid">
+    <a class="explore-link" href="art.html"><span class="explore-code">01 // VISUAL_ARCHIVE</span><span class="explore-title">ART &amp; WORLDS</span><span class="explore-desc">Original artwork, characters and visual stories.</span><span class="explore-arrow" aria-hidden="true">↗</span></a>
+    <a class="explore-link" href="music.html"><span class="explore-code">02 // AUDIO_SUBSYSTEM</span><span class="explore-title">MUSIC DIVISION</span><span class="explore-desc">Original electronic, cinematic and cyberpunk music.</span><span class="explore-arrow" aria-hidden="true">↗</span></a>
+    <a class="explore-link" href="system-checkmate.html"><span class="explore-code">03 // STORY_ARCHIVE</span><span class="explore-title">THE MISSION</span><span class="explore-desc">The ideas, values and stories behind the universe.</span><span class="explore-arrow" aria-hidden="true">↗</span></a>
+  </div>
 </section>
 
 <section class="home-signal" aria-label="Project status">
