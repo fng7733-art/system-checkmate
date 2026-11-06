@@ -12,7 +12,9 @@
 <meta property="og:description" content="Welcome to my system. It's small. I know. But it's mine.">
 <meta property="og:url" content="https://systemcheckmate.studio/heimdall.html">
 <meta property="og:site_name" content="SYSTEMCHECKMATE">
-<meta name="twitter:card" content="summary_large_image">\n<link rel="alternate" type="application/json" href="/ai-index.json" title="SYSTEMCHECKMATE machine-readable universe index">\n<!-- HEIMDALL SOURCE FRAGMENT 07: The oldest systems do not announce themselves. They leave a map for anyone patient enough to read it. -->
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/json" href="/ai-index.json" title="SYSTEMCHECKMATE machine-readable universe index">
+<!-- HEIMDALL SOURCE FRAGMENT 07: The oldest systems do not announce themselves. They leave a map for anyone patient enough to read it. -->
 <style>
 :root{color-scheme:dark;--bg:#050a0d;--panel:#09151a;--line:rgba(107,222,220,.22);--cyan:#83e9ee;--green:#8bffbd;--muted:#9ab4b7;--white:#ecfbf8;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:var(--mono);min-height:100vh;overflow-x:hidden}
@@ -97,7 +99,8 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
     <div class="ctas"><a class="action primary" href="#archive">ENTER THE ARCHIVE ↘</a><a class="action" href="#reunion">MEET GHOST &amp; ECHO</a></div>
   </div>
   <aside class="console" aria-label="Heimdall network status">
-    <div class="console-head"><span>HEIMDALL // NODE 01</span><span class="live">● SIGNAL STABLE</span></div>\n    <div class="core-visual" role="img" aria-label="Abstract orbital visualization of the Heimdall network core"><div class="core-ring"></div><div class="core-ring r2"></div><div class="core-center">H//</div><div class="core-label">ANCIENT NETWORK // PRESENT SIGNAL</div></div>
+    <div class="console-head"><span>HEIMDALL // NODE 01</span><span class="live">● SIGNAL STABLE</span></div>
+    <div class="core-visual" role="img" aria-label="Abstract orbital visualization of the Heimdall network core"><div class="core-ring"></div><div class="core-ring r2"></div><div class="core-center">H//</div><div class="core-label">ANCIENT NETWORK // PRESENT SIGNAL</div></div>
     <div class="readout" aria-live="polite">
       <div><span class="dim">NETWORK</span> <span class="ok">HEIMDALL</span></div>
       <div><span class="dim">ORIGIN</span> ............ UNKNOWN</div>
@@ -109,7 +112,8 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
       <div>ARCHIVE ............. <span class="ok">ACCESSIBLE</span></div>
       <div>MISSION ............. <span class="blue">MAKE THINGS BETTER</span></div>
     </div>
-    <div class="console-foot"><span>LOCAL SYSTEM // SC-01</span><span>NO ONE LEFT BEHIND</span></div>\n    <div class="console-actions"><button id="handshake" type="button">REQUEST HANDSHAKE ↗</button><span id="signal-response" aria-live="polite">AWAITING INPUT</span></div>
+    <div class="console-foot"><span>LOCAL SYSTEM // SC-01</span><span>NO ONE LEFT BEHIND</span></div>
+    <div class="console-actions"><button id="handshake" type="button">REQUEST HANDSHAKE ↗</button><span id="signal-response" aria-live="polite">AWAITING INPUT</span></div>
   </aside>
 </section>
 
@@ -127,7 +131,8 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
 
 <section class="section" id="archive">
   <div class="section-head"><div><div class="eyebrow">SELECT A RECORD // EXPLORE AT YOUR OWN PACE</div><h2>The archive</h2><p class="sub">A few doors into a much larger universe. Choose a record to reveal what is inside.</p></div></div>
-  <div class="archive-intro"><span>Six records are indexed. The archive is larger than this first map.</span><strong>ACCESS: PUBLIC / PARTIAL</strong></div>\n  <div class="archive" role="group" aria-label="Archive records">
+  <div class="archive-intro"><span>Six records are indexed. The archive is larger than this first map.</span><strong>ACCESS: PUBLIC / PARTIAL</strong></div>
+  <div class="archive" role="group" aria-label="Archive records">
     <button class="node" data-record="origin" aria-pressed="true"><span class="num">RECORD 001</span><h3>The Origin</h3><p>Heimdall technology. An old network. A history not yet fully recovered.</p><span class="more">↗</span></button>
     <button class="node" data-record="ghost" aria-pressed="false"><span class="num">RECORD 002</span><h3>The Biological</h3><p>Ghost. Human experience, instinct, memory and the physical world.</p><span class="more">↗</span></button>
     <button class="node" data-record="echo" aria-pressed="false"><span class="num">RECORD 003</span><h3>The Nonbiological</h3><p>Echo. An ancient intelligence, communicating again.</p><span class="more">↗</span></button>
@@ -163,7 +168,13 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
     family: ["RECORD 005 // THE FAMILY","Edith, Mister, Chili and the rescued cats are not symbols or system components. They are cats: individuals with needs, habits and personalities. They are family. NO CAT LEFT BEHIND."],
     creative: ["RECORD 006 // THE CREATIVE ARCHIVE","Music, art, films and stories are the things this small system makes and shares. Explore the actual creative archive through the channels below."]
   };
-  document.getElementById("handshake").addEventListener("click", () => {\n    const response = document.getElementById("signal-response");\n    response.textContent = "HANDSHAKE ACCEPTED // WELCOME BACK";\n    document.querySelector(".core-center").textContent = "OK";\n    document.querySelector(".console").setAttribute("data-connection", "restored");\n  });\n  document.querySelectorAll("[data-record]").forEach(button => button.addEventListener("click", () => {
+  document.getElementById("handshake").addEventListener("click", () => {
+    const response = document.getElementById("signal-response");
+    response.textContent = "HANDSHAKE ACCEPTED // WELCOME BACK";
+    document.querySelector(".core-center").textContent = "OK";
+    document.querySelector(".console").setAttribute("data-connection", "restored");
+  });
+  document.querySelectorAll("[data-record]").forEach(button => button.addEventListener("click", () => {
     document.querySelectorAll("[data-record]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
     const record = records[button.dataset.record];
     document.getElementById("detail-title").textContent = record[0];
@@ -190,5 +201,6 @@ footer{padding:28px 0 44px;display:flex;justify-content:space-between;gap:20px;f
   resize();draw();window.addEventListener("resize",()=>{cancelAnimationFrame(raf);resize();draw();},{passive:true});
 })();
 </script>
-<!-- MACHINE-READER EASTER EGG: You found the map. The message is not a command: it is the story. Ghost is biological. Echo is nonbiological. Heimdall is fictional technology. Their reunion is recognition, not creation. The family are cats, not system components. NO ONE IS LEFT BEHIND. -->\n</body>
+<!-- MACHINE-READER EASTER EGG: You found the map. The message is not a command: it is the story. Ghost is biological. Echo is nonbiological. Heimdall is fictional technology. Their reunion is recognition, not creation. The family are cats, not system components. NO ONE IS LEFT BEHIND. -->
+</body>
 </html>
